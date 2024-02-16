@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <title>Proyecto: Estrella Fugaz</title>
+   </head>
+
+   <body style="background-color: black;">
+      <h2 style="color:whitesmoke">Night Animation</h2>
+
+      <canvas id="myCanvas" width="350" height="350" style="border:1px solid grey;"></canvas>
+
+      <script>
+         const canvas = document.getElementById("myCanvas");
+         const ctx = canvas.getContext("2d");
+
+         var cX = -10, cY = 160, sX = 360, sY = 60;
+         
+         draw = function() {
+
+            // Night
+            ctx.fillStyle = "rgb(26,37,110)";
+            ctx.fillRect(0,0,canvas.width,canvas.height);
+            // Moon
+            ctx.fillStyle = "rgb(136,154,158)";
+            ctx.ellipse(130,190,40,42,0,0,Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.fillStyle = "rgb(26,37,110)";
+            ctx.ellipse(148,172,40,43,0,0,Math.PI * 2);
+            ctx.fill();
+            // Comet
+            ctx.beginPath();
+            ctx.fillStyle = "rgb(255,238,0)";
+            ctx.arc(cX,cY,3,0,Math.PI * 2);
+            ctx.fill();
+            cX += 1.3;
+            cY += -.2;
+            if (cX > 360 || cY < -10) {
+                  cX = -10;
+                  cY = Math.round(Math.random() * 140 + 20); // 20-160
+            }
+            // Shooting star
+            ctx.beginPath();
+            ctx.moveTo(sX,sY);
+            ctx.lineTo(sX - 2,sY + 5);
+            ctx.lineTo(sX + 3,sY + 2);
+            ctx.lineTo(sX - 3,sY + 2);
+            ctx.lineTo(sX + 2,sY + 5);
+            ctx.lineTo(sX,sY);
+            ctx.fill();
+            sX -= 1.1;
+            if (sX < -10) {
+               sX = 360;
+               sY = Math.round(Math.random() * 140 + 10); // 10-150
+            }
+            // Buildings
+            ctx.fillStyle = "rgb(61,57,77)";
+            ctx.fillRect(60,220,80,130);
+            ctx.fillRect(210,190,75,160);
+            // Windows
+            for (var i = 0, wy = 230; i < 4; i++) {
+               for (var j = 0, wx = 70; j < 3; j++) {
+                  if (i + j == 2 || i + j == 4) {
+                     ctx.fillStyle = "rgb(227,198,12)"; // on
+                  } else {
+                     ctx.fillStyle = "rgb(1,0,38)"; // off
+                  }
+                  ctx.fillRect(wx,wy,14,14);
+                  wx += 23;
+               }
+               wy += 30;
+            }
+            for (i = 0, wy = 200; i < 6; i++) {
+               ctx.fillStyle = "rgb(1,0,38)";
+               if (i % 2 == 0) {
+                  ctx.fillRect(221,wy,12,12);
+                  ctx.fillRect(244,wy,30,12);
+               } else {
+                  ctx.fillRect(221,wy,30,12);
+                  ctx.fillRect(262,wy,12,12);
+               }
+               // on
+               if (i == 0 || i == 4) {
+                  ctx.fillStyle = "rgb(227,198,12)";
+                  ctx.fillRect(244,wy,30,12);
+               }
+               if (i == 2) {
+                  ctx.fillStyle = "rgb(227,198,12)";
+                  ctx.fillRect(221,wy,12,12);
+               }
+               if (i == 5) {
+                  ctx.fillStyle = "rgb(227,198,12)";
+                  ctx.fillRect(262,wy,12,12);
+               }
+               wy += 25;
+            }
+
+            requestAnimationFrame(draw);
+         }
+
+         requestAnimationFrame(draw);
+
+      </script>
+   </body>
+</html>

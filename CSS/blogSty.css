@@ -1,0 +1,44 @@
+h1 {
+   font-family: monospace;
+   font-size: 3.3em;
+   font-variant: small-caps;
+   word-spacing: -6px;
+   line-height: 38px;
+}
+h2 {
+   font-family: monospace;
+   font-size: 2.7em;
+   line-height: 22px;
+}
+h3 {
+   font-family: sans-serif;
+   font-size: 1.1em;
+   line-height: 11px;
+}
+h6 {
+   font-family: sans-serif;
+   font-size: 0.63em;
+   line-height: 0px;
+}
+ul {
+   font-family: sans-serif;
+   font-size: 0.9em;
+}
+p {
+   font-family: monospace;
+   font-size: 1.03em;
+   text-align: justify;
+}
+em, strong {
+   font--size: 1.1em;
+}
+.developer {
+   font-size: 1.3em;
+   font-variant: small-caps;
+   letter-spacing: 0.06em;
+}
+.fuente {
+   font-family: sans-serif;
+   font-size: 0.63em;
+   letter-spacing: 0.03em;
+}

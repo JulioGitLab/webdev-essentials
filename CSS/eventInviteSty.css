@@ -1,0 +1,85 @@
+body {
+   background-color: rgb(255,242,202);
+   color: rgb(181,0,121);
+   font-family: cursive;
+   font-size: 14px;
+   text-align: justify;
+}
+h1 {
+   background-color: rgb(148,0,171);
+   color: rgb(255,242,202);
+   font-variant: small-caps;
+   font-size: 38px;
+   text-align: center;
+   margin-top: -6px;
+   margin-bottom: 0px;
+   margin-left: -6px;
+   margin-right: -6px;
+   border-style: ridge;
+   border-width: 3px;
+   border-color: rgb(255,0,166);
+   padding: 3px;
+   padding-top: 0px;
+   position: fixed;
+   z-index: 1;
+}
+h2 {
+   background-color: rgb(255,217,161);
+   color: rgb(148,0,181);
+   font-family: serif;
+   font-size: 21px;
+   text-align: center;
+   margin-top: 0px;
+   margin-bottom: 0px;
+   margin-left: -6px;
+   margin-right: -6px;
+   padding: 8px;
+   position: relative;
+   top: 121px;
+}
+#infoGen {
+   position: relative;
+   top: 117px;
+}
+#habra {
+   background-color: rgb(255,217,161);
+   color: rgb(148,0,181);
+   margin-left: -6px;
+   margin-right: -6px;
+   padding: 1px;
+   padding-left: 6px;
+   position: relative;
+   top: 117px;
+}
+#imgTienda {
+   margin-top: 20px;
+   margin-left: 2px;
+   border-style: ridge;
+   border-width: 3px;
+   border-color: rgb(255,0,166);
+   float: left;
+   width: 46%;
+}
+#habraLista {
+   float: right;
+   width: 50%;
+}
+#pieHabra {
+   font-size: 16px;
+   text-align: center;
+   clear: both;
+}
+footer {
+   text-align: center;
+   position: relative;
+   padding-bottom: 13px;
+   top: 122px;
+   clear: both;
+}
+input {
+   color: rgb(255,242,202);
+   background-color: rgb(148,0,171);
+   border-color: rgb(79,0,97);
+   padding-top: 2px;
+   padding-bottom: 3px;
+}

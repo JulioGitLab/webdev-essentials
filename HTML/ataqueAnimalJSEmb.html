@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <title>Proyecto: Ataque Animal</title>
+   </head>
+
+   <body style="background-color: black;">
+      <h2 style="color:gray">Animal Attack Animation</h2>
+
+      <canvas id="aCanvas" width="350" height="350" style="border:1px solid grey;"></canvas>
+
+      <script>
+         const canvas = document.getElementById("aCanvas");
+         const cx = canvas.getContext("2d");
+
+         var bodyX = 150, bodyY = 190, bodyW = 30, bodyH = bodyW * 8 / 11, eyeSz = bodyW / 23;
+
+         draw = function() {
+            cx.fillStyle = "#00cccc";
+            cx.fillRect(0,0,canvas.width,canvas.height);
+            
+            // Tail
+            cx.fillStyle = "rgb(240,209,36)";
+            cx.moveTo(bodyX - bodyW * 10 / 11, bodyY - bodyH * 11 / 11);
+            cx.lineTo(bodyX - bodyW * 15 / 11, bodyY - bodyH * 6 / 11);
+            cx.lineTo(bodyX - bodyW * 4 / 11, bodyY + bodyH * 1 / 17);
+            cx.lineTo(bodyX - bodyW * 10 / 11, bodyY - bodyH * 11 / 11);
+            cx.stroke();
+            cx.fill();
+            // Body
+            cx.beginPath();
+            cx.ellipse(bodyX,bodyY,bodyW,bodyH,0,0,Math.PI * 2);
+            cx.stroke();
+            cx.fill();
+            // Head
+            cx.beginPath();
+            cx.ellipse(bodyX + bodyW * 6 / 7, bodyY - bodyH * 4 / 7, bodyW * 6 / 11, bodyH * 6 / 11, 0, 0, Math.PI * 2);
+            cx.stroke();
+            cx.fill();
+            // Wing
+            cx.beginPath()
+            cx.arc(bodyX - bodyW * 1 / 11, bodyY, bodyW * 3 / 7, 0, Math.PI * 1.4);
+            cx.stroke();
+            cx.fill();
+            // Beak
+            cx.beginPath();
+            cx.fillStyle = "rgb(224,152,27)";
+            cx.moveTo(bodyX + bodyW * 14 / 11, bodyY - bodyH * 6 / 11);
+            cx.lineTo(bodyX + bodyW * 17 / 11, bodyY - bodyH * 3 / 11);
+            cx.lineTo(bodyX + bodyW * 12 / 11, bodyY - bodyH * 4 / 11);
+            cx.lineTo(bodyX + bodyW * 14 / 11, bodyY - bodyH * 6 / 11);
+            cx.stroke();
+            cx.fill();
+            // Eyes
+            cx.beginPath();
+            cx.fillStyle = "rgb(99,70,19)";
+            cx.ellipse(bodyX + bodyW * 10 / 11, bodyY - bodyH * 7 / 11, eyeSz, eyeSz, 0, 0, Math.PI * 2);
+            cx.moveTo(bodyX + bodyW * 12 / 11, bodyY - bodyH * 8 / 11 + eyeSz);
+            cx.ellipse(bodyX + bodyW * 12 / 11, bodyY - bodyH * 8 / 11, eyeSz, eyeSz, 0, 0, Math.PI * 2);
+            cx.stroke();
+            cx.fill();
+
+            // Attack!
+            bodyW *= 1.005;
+            bodyH *= 1.006;
+            eyeSz *= 1.013;
+
+            if (bodyW > 350) {
+               bodyW = 30, bodyH = bodyW * 8 / 11, eyeSz = bodyW / 23;
+            }
+            
+            requestAnimationFrame(draw);
+         }
+
+         requestAnimationFrame(draw);
+
+         </script>
+   </body>
+</html>
