@@ -3,12 +3,18 @@
 <html>
    <head>
       <title>Projecto: Cena</title>
+      <style>
+         h2 {
+            color:gold;
+            font-family:'Courier New';
+         }
+      </style>
    </head>
    
-   <body>
+   <body style="background-color: black;">
       <h2>Test</h2>
    
-      <canvas id="myCanvas0" width="300" height="250" style="border:1px solid grey;"></canvas>
+      <canvas id="myCanvas0" width="300" height="250" style="border:2px solid grey;"></canvas>
    
       <script>
          const canvas0 = document.getElementById("myCanvas0");
@@ -16,6 +22,9 @@
 
          ctx0.fillStyle = "#FF0000";
          ctx0.fillRect(0, 0, 70, 40);
+
+         ctx0.strokeStyle = "white";
+         ctx0.lineWidth = 2;
 
          // Define a circle
          ctx0.beginPath();
@@ -89,7 +98,7 @@
    
       <h2>Breakfast Draw</h2>
    
-      <canvas id="myCanvas" width="300" height="250" style="border:1px solid grey;"></canvas>
+      <canvas id="myCanvas" width="300" height="250" style="border:2px solid grey;"></canvas>
    
       <script>
          const canvas = document.getElementById("myCanvas");
