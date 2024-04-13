@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<!-- All the CSS instructions for this page are embedded in the head element.
+   All the JavaScript code is embedded in the body element -->
 <html>
    <head>
       <title>Proyecto: Estrella Fugaz</title>
@@ -11,25 +13,54 @@
             color:whitesmoke;
             font-family:'Courier New';
          }
+         p {
+            color:whitesmoke;
+            font-family:'Courier New';
+            font-size:small;
+            text-align:justify;
+         }
+         canvas {
+            border:2px solid grey;
+         }
       </style>
    </head>
 
    <body>
       <h2>Night Animation</h2>
 
-      <canvas id="myCanvas" width="350" height="350" style="border:2px solid grey;"></canvas>
+      <p>Multiple stars in the back are added in random positions every time the page loads. The comet and shooting star keep reappearing in random positions.</p>
+
+      <canvas id="myCanvas" width="350" height="350"></canvas>
 
       <script>
          const canvas = document.getElementById("myCanvas");
          const ctx = canvas.getContext("2d");
 
-         var cX = -10, cY = 160, sX = 360, sY = 60;
+         var cX = -10, cY = 160, sX = 360, sY = 60, rsX = [], rsY = [];
+
+         // Initialize rsX and rsY
+         for (let i = 0; i < 19; i++) {
+            rsX[i] = Math.random() * 330 + 10; // 10-340
+            rsY[i] = Math.random() * 300 + 10; // 10-310
+         }
          
          draw = function() {
 
             // Night
             ctx.fillStyle = "rgb(26,37,110)";
             ctx.fillRect(0,0,canvas.width,canvas.height);
+            // Random stars
+            for (let i = 0; i < 19; i++) {
+               ctx.beginPath();
+               ctx.fillStyle = "rgb(255,238,0)";
+               moveTo(rsX[i],rsY[i]);
+               ctx.lineTo(rsX[i] - 2, rsY[i] +5);
+               ctx.lineTo(rsX[i] + 3,rsY[i] + 2);
+               ctx.lineTo(rsX[i] - 3,rsY[i] + 2);
+               ctx.lineTo(rsX[i] + 2,rsY[i] + 5);
+               ctx.lineTo(rsX[i],rsY[i]);
+               ctx.fill();
+            }
             // Moon
             ctx.fillStyle = "rgb(136,154,158)";
             ctx.ellipse(130,190,40,42,0,0,Math.PI * 2);
