@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<!-- The CSS instructions of this page are embedded in the head element,
+   except for one in the opening body tag setting the page background
+   as an example of inline CSS.
+   All the JavaScript code is embedded in the body element. -->
+
+<html>
+   <head>
+      <title>Projecto: Cena</title>
+      <style>
+         h2 {
+            color:gold;
+            font-family:'Courier New';
+         }
+         p {
+            color:goldenrod;
+            font-family:'Courier New';
+            font-size:small;
+            text-align:justify;
+         }
+      </style>
+   </head>
+   
+   <body style="background-color: black;">
+      <h2>Test</h2>
+ 
+      <p>Some figures drawn for testing:</p>
+
+      <canvas id="myCanvas0" width="300" height="250" style="border:2px solid grey;"></canvas>
+   
+      <script>
+         const canvas0 = document.getElementById("myCanvas0");
+         const ctx0 = canvas0.getContext("2d");
+
+         ctx0.fillStyle = "#dc143c"; // crimson
+         ctx0.fillRect(10, 10, 75, 45);
+
+         ctx0.strokeStyle = "white";
+         ctx0.lineWidth = 2;
+
+         // Define a circle
+         ctx0.beginPath();
+         ctx0.arc(140, 35, 25, 0, 2 * Math.PI, false); // false = clockwise (default)
+         ctx0.stroke();
+
+         // Define an irregular polygon
+         ctx0.beginPath();
+         ctx0.moveTo(200, 15);
+         ctx0.lineTo(250, 15);
+         ctx0.lineTo(285, 50);
+         ctx0.lineTo(200, 50);
+         ctx0.lineTo(200, 15);
+         ctx0.stroke();
+
+         ctx0.beginPath();
+
+         // Define a rectangle
+         ctx0.moveTo(10,70);
+         ctx0.lineTo(90,70);
+         ctx0.lineTo(90,110);
+         ctx0.lineTo(10,110);
+         ctx0.lineTo(10,70);
+
+         // Define a triangle
+         ctx0.moveTo(50,70);
+         ctx0.lineTo(90,110);
+         ctx0.lineTo(10,110);
+         ctx0.lineTo(50,70)
+
+         ctx0.strokeStyle = "blue";
+         ctx0.stroke();
+
+         // Define a rectangle using rect()
+         ctx0.beginPath();
+         ctx0.rect(115, 75, 60, 35);
+         ctx0.strokeStyle = "green";
+         ctx0.stroke();
+
+         // Quadratic curves example
+         ctx0.beginPath();
+         ctx0.strokeStyle = "orange";
+         ctx0.moveTo(240,70);
+         ctx0.quadraticCurveTo(210,70,210,85);
+         ctx0.quadraticCurveTo(210,100,225,100);
+         ctx0.quadraticCurveTo(225,110,215,110);
+         ctx0.quadraticCurveTo(235,110,235,100);
+         ctx0.quadraticCurveTo(265,100,265,85);
+         ctx0.quadraticCurveTo(265,70,240,70);
+         ctx0.stroke();
+
+         // Cubic curves example
+         ctx0.beginPath();
+         ctx0.moveTo(50,135);
+         ctx0.bezierCurveTo(45,130,40,130,30,130);
+         ctx0.bezierCurveTo(20,135,20,145,20,150);
+         ctx0.bezierCurveTo(20,160,45,170,50,180);
+         ctx0.bezierCurveTo(55,170,80,160,80,150);
+         ctx0.bezierCurveTo(80,145,80,135,70,130);
+         ctx0.bezierCurveTo(60,130,55,130,50,135);
+         // Original:
+         // ctx0.moveTo(75, 40);
+         // ctx0.bezierCurveTo(75, 37, 70, 25, 50, 25);
+         // ctx0.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5);
+         // ctx0.bezierCurveTo(20, 80, 40, 102, 75, 120);
+         // ctx0.bezierCurveTo(110, 102, 130, 80, 130, 62.5);
+         // ctx0.bezierCurveTo(130, 62.5, 130, 25, 100, 25);
+         // ctx0.bezierCurveTo(85, 25, 75, 37, 75, 40);
+         // ctx0.fillStyle = "#ffffff";
+         ctx0.fill();
+      </script>
+   
+      <h2>Breakfast Draw</h2>
+   
+      <p>The cheese holes, tortilla burn marks and beans change position randomly every time the page is loaded:</p>
+      <canvas id="myCanvas" width="300" height="250" style="border:2px solid grey;"></canvas>
+   
+      <script>
+         const canvas = document.getElementById("myCanvas");
+         const ctx = canvas.getContext("2d");
+
+         // Wooden table
+         ctx.fillStyle = "rgb(186,145,20)";
+         ctx.fillRect(0,0,canvas.width,canvas.height);
+         // Plate
+         ctx.arc(150,125,115,0,Math.PI * 2);
+         ctx.fillStyle = "#FFFFFF";
+         ctx.fill();
+         ctx.moveTo(251,128);
+         ctx.arc(150,125,100,Math.PI * 0.05,Math.PI * 1.77);
+         ctx.stroke();
+         // Cheese
+         ctx.beginPath();
+         ctx.lineWidth = 2;
+         ctx.strokeStyle = "#803300";
+         ctx.moveTo(50,105);
+         ctx.lineTo(80,65);
+         ctx.lineTo(125,95);
+         ctx.lineTo(50,104);
+         ctx.stroke();
+         ctx.fillStyle = "rgb(247,203,27)";
+         ctx.fill();
+         ctx.lineTo(60,125);
+         ctx.lineTo(135,115);
+         ctx.lineTo(126,96);
+         ctx.lineTo(50,105);
+         ctx.stroke();
+         ctx.fill();
+         for (let i = 0; i < 13; i++) {
+            ctx.beginPath();
+            ctx.fillStyle = 'Khaki';
+            ctx.arc(Math.random() * 40 + 68, Math.random() * 33 + 85, Math.random() * 3, 0, 2 * Math.PI);
+            ctx.fill();
+         }
+         // Tortillas
+         ctx.beginPath();
+         ctx.ellipse(216,95,37,37,0,Math.PI,Math.PI * 2);
+         ctx.moveTo(184,100);
+         ctx.ellipse(215,100,36,36,0,Math.PI * .8,Math.PI * 1.7);
+         ctx.moveTo(185,104);
+         ctx.ellipse(220,104,35,36,0,Math.PI,Math.PI * 2);
+         ctx.moveTo(255,110);
+         ctx.ellipse(220,110,35,36,0,0,Math.PI * 2);
+         ctx.stroke();
+         ctx.fillStyle = "rgba(239,239,93,.7)";
+         ctx.fill();
+         for (let i = 0; i < 20; i++) {
+            ctx.beginPath();
+            ctx.fillStyle = 'peru';
+            ctx.arc(Math.random() * 50 + 193, Math.random() * 63 + 70, Math.random() * 2, 0, 2 * Math.PI);
+            ctx.fill();
+         }
+         // Beans
+         ctx.lineWidth = 5;
+         ctx.lineCap = "round";
+         ctx.strokeStyle = "rgba(140,93,13,.9)";
+
+         for (var i = 0; i < 130; i++) {
+            var x = Math.round(Math.random() * 90 + 100); // 100-190
+            var y = Math.round(Math.random() * 40 + 30); // 30-70
+
+            if (x < 110 && y < 35) {
+               i--;
+               continue;
+            } else if (x > 180 && y < 35) {
+               i--;
+               continue;
+            } else if (x < 110 && y > 60) {
+               i--;
+               continue;
+            } else if (x > 175 && y > 55) {
+               i--;
+               continue;
+            }
+
+            ctx.beginPath();
+            ctx.arc(x,y,4,Math.PI * 1.9,Math.PI * .6);
+            ctx.stroke();
+         }
+         // Steak
+         ctx.beginPath();
+         ctx.fillStyle = "darkred";
+         ctx.moveTo(130,150);
+         ctx.quadraticCurveTo(100,135,90,165);
+         ctx.quadraticCurveTo(85,195,130,200);
+         ctx.quadraticCurveTo(185,205,185,170);
+         ctx.quadraticCurveTo(185,150,115,145);
+         ctx.fill();
+         ctx.beginPath();
+         ctx.fillStyle = "crimson";
+         ctx.moveTo(130,145);
+         ctx.quadraticCurveTo(100,130,90,160);
+         ctx.quadraticCurveTo(85,190,130,195);
+         ctx.quadraticCurveTo(185,200,185,165);
+         ctx.quadraticCurveTo(185,145,115,140);
+         ctx.fill();
+         ctx.strokeStyle = "maroon";
+         ctx.lineWidth = 4;
+         ctx.beginPath();
+         ctx.moveTo(100,180);
+         ctx.lineTo(115,145);
+         ctx.moveTo(115,185);
+         ctx.lineTo(130,145);
+         ctx.moveTo(130,190);
+         ctx.lineTo(145,150);
+         ctx.moveTo(145,190);
+         ctx.lineTo(160,150);
+         ctx.moveTo(160,190);
+         ctx.lineTo(175,155);
+         ctx.stroke();
+      </script>
+   </body>
+</html>
