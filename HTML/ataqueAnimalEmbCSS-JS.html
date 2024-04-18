@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 
+<!-- All the CSS instructions for this page are embedded in the head element.
+   All the JavaScript code is embedded in the body element -->
+
 <html>
    <head>
       <title>Proyecto: Ataque Animal</title>
       <style>
+         body {
+            background-color:black;
+         }
          h2 {
-            color:gray;
+            color:whitesmoke;
             font-family:'Courier New';
+         }
+         p {
+            color:whitesmoke;
+            font-family:'Courier New';
+            font-size:small;
+            text-align:justify;
+         }
+         canvas {
+            border: 2px solid grey;
          }
       </style>
    </head>
 
-   <body style="background-color: black;">
+   <body>
       <h2>Animal Attack Animation</h2>
 
-      <canvas id="aCanvas" width="350" height="350" style="border:1px solid grey;"></canvas>
+      <p>The bird's size increases, and when its eyes (which grow faster) cover the whole canvas, everything goes back to its original size and starts growing again.</p>
+
+      <canvas id="aCanvas" width="350" height="350"></canvas>
 
       <script>
          const canvas = document.getElementById("aCanvas");
