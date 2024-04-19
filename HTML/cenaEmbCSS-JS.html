@@ -6,15 +6,20 @@
    color as examples of inline CSS.
    All the JavaScript code is embedded in the body element. -->
 
-<html>
+<html lang="en">
    <head>
-      <title>Projecto: Cena</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="A single page project of an animated dinner
+         plate in a canvas created as an example for web development learners.">
+      <title lang="es">Projecto 1: Cena</title>
       <style>
          h2 {
             color:gold;
             font-family:'Courier New';
          }
          p {
+            margin-top:0;
             color:goldenrod;
             font-family:'Courier New';
             font-size:small;
@@ -26,10 +31,10 @@
    <body style="background-color: black;">
       <h2>Test</h2>
  
-      <p>Some figures drawn for testing:</p>
-
       <canvas id="myCanvas0" width="300" height="250" style="border:2px solid grey;"></canvas>
-   
+ 
+      <p>Some figures drawn for testing.</p>
+
       <script>
          const canvas0 = document.getElementById("myCanvas0");
          const ctx0 = canvas0.getContext("2d");
@@ -112,10 +117,14 @@
       </script>
    
       <h2>Breakfast Draw</h2>
-   
-      <p>The cheese holes, tortilla burn marks and beans change position randomly every time the page is loaded:</p>
+
       <canvas id="myCanvas" width="300" height="250" style="border:2px solid grey;"></canvas>
    
+      <p>
+         The cheese holes, tortilla burn marks and beans change position randomly
+         every time the page is loaded.
+      </p>
+      
       <script>
          const canvas = document.getElementById("myCanvas");
          const ctx = canvas.getContext("2d");

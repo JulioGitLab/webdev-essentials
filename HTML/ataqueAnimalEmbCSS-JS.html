@@ -3,19 +3,24 @@
 <!-- All the CSS instructions for this page are embedded in the head element.
    All the JavaScript code is embedded in the body element -->
 
-<html>
+<html lang="en">
    <head>
-      <title>Proyecto: Ataque Animal</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="A single page project of an animated bird
+      growing in a canvas created as an example for web development learners.">
+      <title lang="es">Proyecto 3: Ataque Animal</title>
       <style>
          body {
             background-color:black;
          }
          h2 {
-            color:whitesmoke;
+            color:goldenrod;
             font-family:'Courier New';
          }
          p {
-            color:whitesmoke;
+            margin-top:0;
+            color:goldenrod;
             font-family:'Courier New';
             font-size:small;
             text-align:justify;
@@ -29,9 +34,13 @@
    <body>
       <h2>Animal Attack Animation</h2>
 
-      <p>The bird's size increases, and when its eyes (which grow faster) cover the whole canvas, everything goes back to its original size and starts growing again.</p>
-
       <canvas id="aCanvas" width="350" height="350"></canvas>
+
+      <p>
+         The bird's size increases, and when its eyes (which grow faster)
+         cover the whole canvas, everything goes back to its original
+         size and starts growing again.
+      </p>
 
       <script>
          const canvas = document.getElementById("aCanvas");
