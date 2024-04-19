@@ -1,0 +1,42 @@
+/* Style instructions for the anuncioRefCSS-JS.html file */
+body {
+   background-color:black;
+}
+h2 {
+   color:whitesmoke;
+   font-family:'Courier New';
+   font-size:xx-large;
+}
+ul {
+   list-style-type:none;
+   padding-left:0;
+   margin-left:0;
+   color:whitesmoke;
+   font-family:'Courier New';
+   font-size:small;
+}
+/* Same emoji for all list items */
+/* li::before {
+   content:"🎯"
+} */
+li:nth-child(1)::before {
+   content:"🎨 ";
+}
+li:nth-child(2)::before {
+   content:"🔻";
+}
+li:nth-child(3)::before {
+   content:"🖱 ";
+}
+li:nth-child(4)::before {
+   content:"↘ ";
+}
+/* p {
+   color:whitesmoke;
+   font-family:'Courier New';
+   font-size:small;
+   text-align:justify;
+} */
+canvas {
+   border: 2px solid grey;
+}

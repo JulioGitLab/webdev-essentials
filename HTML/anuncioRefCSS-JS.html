@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<!-- The CSS instructions and JS code for this page are
+   fully located on their respective .css and .js files.
+    -->
+
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="A single page project of an ad in an
+         animated canvas created as an example for web development learners.">
+      <title>Proyecto 4: Anuncio</title>
+      <link rel="stylesheet" href="/CSS/anuncioSty.css">
+   </head>
+
+   <body>
+      <h2>Ad</h2>
+
+      <ul>
+         <li>The text color changes during the animation.</li>
+         <li>The triangular figure moves from the top-left to the bottom-right
+            as it also grows and changes color.</li>
+         <li>The ellipses color changes depending on the mouse position in the
+               canvas.</li>
+         <li>The triangle movement restarts once it moves out of the canvas and
+                  its colors as well as those of the text are reset.</li>
+      </ul>
+      <!-- // Uncomment in CSS file too
+      <p>
+         The text color changes during the animation.<br>
+         The triangular figure moves from the top-left to the bottom-right
+         as it also grows and changes color.<br>
+         The ellipses color changes depending on the mouse position in the
+         canvas.<br>
+         The triangle movement restarts once it moves out of the canvas and
+         its colors as well as those of the text are reset.
+      </p> -->
+
+      <canvas id="aCanvas" width="350" height="350"></canvas>
+
+      <script src="/JS/anuncioScr.js"></script>
+   </body>
+</html>
