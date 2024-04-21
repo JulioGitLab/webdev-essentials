@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<!-- All the CSS instructions of this page are embedded in the head element for quick testing purposes. -->
+
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="A single page project of a travel page intended for
+         web development learners.">
+      <title lang="es">Proyecto 6: Página Web de Viajes</title>
+      <style>
+         /* @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap'); */
+         @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+         body {
+            background-color:darkgoldenrod;
+            margin:0;
+         }
+
+         header {
+            font-family: 'Permanent Marker';
+            background-color:gold;
+            padding-left:7px;
+            border:3px ridge silver;
+         }
+         
+         header em {color:firebrick;}
+         
+         main {
+            /* font-family:'Shadows Into Light'; */
+            text-align:justify;
+            margin:11px;
+         }
+         
+         .tierra {
+            color:maroon;
+         }
+         
+         #amlo {
+            color:darkred;
+         }
+         
+         .agua {
+            color:navy;
+         }
+         
+         .encab {
+            font-family: 'Permanent Marker';
+            background-color:gold;
+            padding:7px;
+            border:3px ridge silver;
+         }
+
+         ul { font-size:large;}
+         
+         footer {margin:13px;}
+         
+         aside {font-size:small;}
+      </style>
+   </head>
+
+   <body>
+      <header id="top">
+         <h1>Travel to... <em>"La Chingada"</em></h1>
+      </header>
+      
+      <main>
+         <em class="tierra">La Chingada</em> is the ranch of Mexico's president, <a id="amlo"
+         href="https://es.wikipedia.org/wiki/Andr%C3%A9s_Manuel_L%C3%B3pez_Obrador" target="_blank"
+         rel="noreferrer">Andrés Manuel López Obrador</a>. Located at 284 km north of <em class="tierra">
+         Tuxtla Gutiérrez</em>, the <em class="tierra">Chiapas</em> State Capital. The ranch is close to
+         the entrance of the municipal head of <em class="tierra">Palenque</em>, a Chiapas Municipality.
+         <br><br>
+         The house has a modest facade, without any luxury, with a black gate. It is an approximate area
+         of three hectares, where you can see a lagoon and a rustic road guided by coconut palm trees
+         that leads to a house made of concrete with a green roof, in the middle of a wooded area.
+         <br><br>
+         <strong>But this is just one of the Palenque's tourist attractions!</strong> Of mayan origin, it
+         is a city located close to the <em class="agua">Usumacinta river</em>, and it's main attraction
+         is the <em class="tierra">Palenque's archaeological area</em>. A few kilometers away you can
+         also find some popular waterfalls (<em class="agua">Misol-Ha</em>, <em class="agua">Agua Azul
+         </em> and <em class="agua">Agua Clara</em>) and the <em class="agua">Chacamax</em> (<em 
+         class="agua">Ntutun</em>) river.
+      </main>
+
+      <section>
+         <h2 class="encab">Palenque's places to visit:</h2>
+
+         <ul class="tierra">
+            <li><strong>La Chingada</strong></li>
+            <img
+               src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Charles_Goodnight_Ranch_House.jpg/300px-Charles_Goodnight_Ranch_House.jpg"
+               alt="Charles_Goodnight_Ranch_House" /><br /><br />
+            <li><strong>Palenque's archaeological area</strong></li>
+            <img
+               src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Palenque_Collage.jpg/300px-Palenque_Collage.jpg"
+               alt="Palenque_Collage" />
+         </ul>
+         <ul class="agua">
+            <li><strong>Usumacinta river</strong></li>
+            <img
+               src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Ca%C3%B1%C3%B3n_del_Usumacinta.jpg/250px-Ca%C3%B1%C3%B3n_del_Usumacinta.jpg"
+               alt="Usumacinta" /><br /><br />
+            <li><strong>Chacamax (Ntutun) river</strong></li>
+            <li><strong>Misol-Ha waterfall</strong></li>
+            <img
+               src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Misolha_idyllic_upright.jpg/245px-Misolha_idyllic_upright.jpg"
+               alt="Misol-Ha" /><br /><br />
+            <li><strong>Agua Azul waterfall</strong></li>
+            <img
+               src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Chiapas_CascadaAzul.jpg/220px-Chiapas_CascadaAzul.jpg"
+               alt="Agua Azul" /><br /><br />
+            <li><strong>Agua Clara waterfall</strong></li>
+         </ul>
+      </section>
+
+      <footer>
+         <small><a href="#top">Back to the top</a></small>
+         <br><br>
+         <aside>This is a travel page example intended for web development learners.</aside>
+      </footer>
+   </body>
+</html>
