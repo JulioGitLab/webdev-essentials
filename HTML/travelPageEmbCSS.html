@@ -1,60 +1,67 @@
 <!DOCTYPE html>
 
-<!-- All the CSS instructions of this page are embedded in the head element for quick testing purposes. -->
+<!-- All the CSS (pure) instructions of this page are embedded in the head element for quick testing purposes. -->
 
 <html lang="en">
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="description" content="A single page project of a travel page intended for
-         web development learners.">
+      web development learners.">
       <title lang="es">Proyecto 6: Página Web de Viajes</title>
       <style>
          /* @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap'); */
          @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-
+         
          body {
             background-color:darkgoldenrod;
             margin:0;
          }
-
+         
          header {
+            /* font-family:'Shadows Into Light'; */
             font-family: 'Permanent Marker';
             background-color:gold;
-            padding-left:7px;
+            padding-left:11px;
             border:3px ridge silver;
          }
          
          header em {color:firebrick;}
          
          main {
-            /* font-family:'Shadows Into Light'; */
+            font-family:'Candara';
             text-align:justify;
-            margin:11px;
+            margin:13px;
          }
          
-         .tierra {
-            color:maroon;
-         }
+         .tierra { color:maroon;}
          
-         #amlo {
-            color:darkred;
-         }
+         #amlo { color:darkred;}
          
-         .agua {
-            color:navy;
-         }
+         .agua { color:navy;}
          
          .encab {
             font-family: 'Permanent Marker';
             background-color:gold;
-            padding:7px;
+            padding:11px;
             border:3px ridge silver;
          }
-
-         ul { font-size:large;}
          
-         footer {margin:13px;}
+         ul { 
+            font-family:'Rockwell';
+            font-size:large;
+         }
+
+         img {
+            margin:20px;
+            max-width:400px;
+            min-height:300px;
+         }
+         
+         footer {
+            margin:17px;
+            font-family:'Candara';
+         }
          
          aside {font-size:small;}
       </style>
@@ -66,22 +73,24 @@
       </header>
       
       <main>
-         <em class="tierra">La Chingada</em> is the ranch of Mexico's president, <a id="amlo"
-         href="https://es.wikipedia.org/wiki/Andr%C3%A9s_Manuel_L%C3%B3pez_Obrador" target="_blank"
-         rel="noreferrer">Andrés Manuel López Obrador</a>. Located at 284 km north of <em class="tierra">
-         Tuxtla Gutiérrez</em>, the <em class="tierra">Chiapas</em> State Capital. The ranch is close to
-         the entrance of the municipal head of <em class="tierra">Palenque</em>, a Chiapas Municipality.
-         <br><br>
-         The house has a modest facade, without any luxury, with a black gate. It is an approximate area
-         of three hectares, where you can see a lagoon and a rustic road guided by coconut palm trees
-         that leads to a house made of concrete with a green roof, in the middle of a wooded area.
-         <br><br>
-         <strong>But this is just one of the Palenque's tourist attractions!</strong> Of mayan origin, it
-         is a city located close to the <em class="agua">Usumacinta river</em>, and it's main attraction
-         is the <em class="tierra">Palenque's archaeological area</em>. A few kilometers away you can
-         also find some popular waterfalls (<em class="agua">Misol-Ha</em>, <em class="agua">Agua Azul
-         </em> and <em class="agua">Agua Clara</em>) and the <em class="agua">Chacamax</em> (<em 
-         class="agua">Ntutun</em>) river.
+         <p>
+            <em class="tierra">La Chingada</em> is the ranch of Mexico's president, <a id="amlo"
+            href="https://es.wikipedia.org/wiki/Andr%C3%A9s_Manuel_L%C3%B3pez_Obrador" target="_blank"
+            rel="noreferrer">Andrés Manuel López Obrador</a>. Located at 284 km north of <em class="tierra">
+            Tuxtla Gutiérrez</em>, the <em class="tierra">Chiapas</em> State Capital. The ranch is close to
+            the entrance of the municipal head of <em class="tierra">Palenque</em>, a Chiapas Municipality.
+            <br><br>
+            The house has a modest facade, without any luxury, with a black gate. It is an approximate area
+            of three hectares, where you can see a lagoon and a rustic road guided by coconut palm trees
+            that leads to a house made of concrete with a green roof, in the middle of a wooded area.
+            <br><br>
+            <strong>But this is just one of the Palenque's tourist attractions!</strong> Of mayan origin, it
+            is a city located close to the <em class="agua">Usumacinta river</em>, and it's main attraction
+            is the <em class="tierra">Palenque's archaeological area</em>. A few kilometers away you can
+            also find the <em class="agua">Agua Clara</em> ecotouristic center, some popular waterfalls
+            (<em class="agua">Misol-Ha</em> and <em class="agua">Agua Azul</em>) and the <em class="agua">
+            Chacamax</em> (<em class="agua">Nututun</em>) river.
+         </p>
       </main>
 
       <section>
@@ -90,28 +99,52 @@
          <ul class="tierra">
             <li><strong>La Chingada</strong></li>
             <img
-               src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Charles_Goodnight_Ranch_House.jpg/300px-Charles_Goodnight_Ranch_House.jpg"
-               alt="Charles_Goodnight_Ranch_House" /><br /><br />
+               src="https://www.diariocambio.com.mx/2021/media/k2/items/cache/15f2b2f2946797a1c45f922c7c65e12f_L.jpg?t=20220415_180314"
+               alt="Facade of La Chingada ranch and a photo of AMLO's face"/>
             <li><strong>Palenque's archaeological area</strong></li>
             <img
-               src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Palenque_Collage.jpg/300px-Palenque_Collage.jpg"
-               alt="Palenque_Collage" />
+               src="https://visitchiapas.com/v1/admin/archivos/Turismo/multimedia/planquea_x.jpg"
+               alt="Palenque's archaeological area"/>
+            <img
+               src="https://visitchiapas.com/v1/admin/archivos/Turismo/multimedia/planqueb_x.jpg"
+               alt="Palenque's archaeological area"/>
          </ul>
          <ul class="agua">
             <li><strong>Usumacinta river</strong></li>
             <img
-               src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Ca%C3%B1%C3%B3n_del_Usumacinta.jpg/250px-Ca%C3%B1%C3%B3n_del_Usumacinta.jpg"
-               alt="Usumacinta" /><br /><br />
-            <li><strong>Chacamax (Ntutun) river</strong></li>
-            <li><strong>Misol-Ha waterfall</strong></li>
+               src="https://ecochiapas.com/wp-content/uploads/2021/06/IMG_2763.jpg"
+               alt="Usumacinta river expedition"/>
             <img
-               src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Misolha_idyllic_upright.jpg/245px-Misolha_idyllic_upright.jpg"
-               alt="Misol-Ha" /><br /><br />
-            <li><strong>Agua Azul waterfall</strong></li>
+               src="https://www.mexicodesconocido.com.mx/wp-content/uploads/2021/07/selva-lacandona-usumacinta-flickr-guillen-perez-edited-1.jpg"
+               alt="Usumacinta river on a boat"/>
+            <li><strong>Agua Clara</strong></li>
             <img
-               src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Chiapas_CascadaAzul.jpg/220px-Chiapas_CascadaAzul.jpg"
-               alt="Agua Azul" /><br /><br />
-            <li><strong>Agua Clara waterfall</strong></li>
+               src="https://elsouvenir.com/wp-content/uploads/2020/11/%C2%A1Que-bonita-es-Agua-Clara-Foto-La-vida-de-un-Sol.jpg"
+               alt="Agua Clara ecotouristic center"/>
+            <img
+               src="https://elsouvenir.com/wp-content/uploads/2020/11/Kayak_Agua-Clara_Agua-Clara-Chiapas.jpg"
+               alt="Agua Clara ecotouristic center"/>
+            <li><strong>Misol-Ha</strong></li>
+            <img
+               src="https://www.kayak.com.mx/news/wp-content/uploads/sites/29/2018/08/misol_ha_cascadas_mexico.jpg"
+               alt="Misol-Ha waterfalls"/>
+            <img
+               src="https://www.misol-ha.com/content/animalshelter/images/z08.jpg"
+               atl="Misol-Ha aerial view"/>
+            <li><strong>Agua Azul</strong></li>
+            <img
+               src="https://www.kayak.com.mx/news/wp-content/uploads/sites/29/2018/08/agua_azul_cascada_mexico.jpg"
+               alt="Front view of Agua Azul waterfalls"/>
+            <img
+               src="https://cdn.mexicodestinos.com/lugares/cascadas-de-agua-azul-chiapas-princ-min.jpg"
+               alt="Aerial view of Agua Azul waterfalls"/>
+            <li><strong>Chacamax (Nututun) river</strong></li>
+            <img
+               src="https://quehacerenpalenque.com/wp-content/uploads/2019/07/IMG_7631-1000x667.jpg"
+               alt="Visitors picture or Chacamax (Nututun) river"/>
+            <img
+               src="https://quehacerenpalenque.com/wp-content/uploads/2019/07/IMG_7701.jpg"
+               alt="Visitors picture of Chacamax (Nututun) river"/>
          </ul>
       </section>
 
