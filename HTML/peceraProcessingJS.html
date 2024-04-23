@@ -69,7 +69,7 @@
                   // rgb(244,164,96) = SandyBrown
                   fill(random(173,233), random(101,151), random(47,79));
                   for (let j = 0; j < 7; j++) {
-                     ellipse(random(-3,403), random(383,403), random(7,17), random(7,13));
+                     ellipse(random(-3,404), random(383,404), random(7,17), random(7,13));
                   }
                }
             };
@@ -78,7 +78,7 @@
                for (let i = 0; i < 3; i++) {
                   fill(random(43,71), random(23,67), random(13,61));
                   for (let j = 0; j < 7; j++) {
-                     ellipse(random(-4,404), random(373,404), random(11,43), random(11,37));
+                     ellipse(random(-3,404), random(373,404), random(11,43), random(11,37));
                   }
                }
             };
@@ -87,9 +87,9 @@
                noStroke();
                for (let i = 0; i < 3; i++) {
                   var aPoint = random(3,397);
-                  var bPoint = aPoint + random(-17,17);
-                  var cPoint = aPoint + random(-13,13);
-                  var dPoint = aPoint + random(-13,13);
+                  var bPoint = aPoint + random(-17,18);
+                  var cPoint = aPoint + random(-13,14);
+                  var dPoint = aPoint + random(-13,14);
                   // rgb(46,139,87) = SeaGreen
                   fill(random(17,37), random(79,131), random(37,79));
                   quad(aPoint, 400, bPoint, random(317,359), cPoint, random(113,313), dPoint, 400);
@@ -101,7 +101,7 @@
                noStroke();
                for (let i = 0; i < 3; i++) {
                   fill(random(13,37), random(199,239), random(199,239));
-                  ellipse(random(2,398), random(-2,379), random(7,17), random(11,23));
+                  ellipse(random(4,397), random(-2,379), random(7,17), random(11,23));
                }
             };
 
@@ -109,7 +109,7 @@
             mouseClicked = function () {
                noStroke();
                fill(random(13,37), random(199,239), random(199,239));
-               ellipse(random(2,398), random(-2,379), random(7,17), random(11,23));
+               ellipse(random(4,397), random(-2,379), random(7,17), random(11,23));
             };
 
             // drawFish(centerX, centerY, bodyLength, bodyHeight, bodyColor)
