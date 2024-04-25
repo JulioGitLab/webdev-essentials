@@ -5,3 +5,15 @@ Espero que les gusten, y agradezco cualquier comentario o sugerencia que me pued
 The projects in this repository are based on projects that are part of the Khan Academy "Computer Programming" course.
 The level of complexity of their initial versions is very close to what is required in the lessons in which they appear during the course. However, through each commit I try to add slightly more advanced features of each technology involved (HTML, CSS, JavaScript and SQL) with the purpose of converting them into more general examples that other web development learners find more interesting for their analysis.
 I hope you like them, and I appreciate any comments or suggestions that can help me improve.
+
+List of projects in recommended review order:
+
+1) cenaEmbCSS-JS.html
+2) estrellaFugazEmbCSS-JS.html
+3) ataqueAnimalJSEmb.html
+4) anuncioRefCSS-JS.html
+5) peceraProcessingJS.html
+6) travelPageEmbCSS.html
+7) recipeBook.html
+8) blog.html
+9) eventInvite.html
