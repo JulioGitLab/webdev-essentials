@@ -8,12 +8,13 @@ I hope you like them, and I appreciate any comments or suggestions that can help
 
 List of projects in recommended review order:
 
-1) cenaEmbCSS-JS.html
-2) estrellaFugazEmbCSS-JS.html
-3) ataqueAnimalJSEmb.html
-4) anuncioRefCSS-JS.html
-5) peceraProcessingJS.html
-6) travelPageEmbCSS.html
-7) recipeBook.html
-8) blog.html
-9) eventInvite.html
+ 1) cenaEmbCSS-JS.html
+ 2) estrellaFugazEmbCSS-JS.html
+ 3) ataqueAnimalJSEmb.html
+ 4) anuncioRefCSS-JS.html
+ 5) peceraProcessingJS.html
+ 6) travelPageEmbCSS.html
+ 7) recipeBook.html
+ 8) blog.html
+ 9) eventInvite.html
+10) shakkyChihuahuaOO.html
