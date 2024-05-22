@@ -1,3 +1,9 @@
+
+<!-- All the values of the class attributes in the elements of this project are
+   Bootstrap except "time_serves" which is declared on recipeBookSty.css for testing. 
+   Recipies taken from "https://www.bbcgoodfood.com/recipes/category/quick-easy"
+   and "https://www.delish.com/cooking/menus/g1478/quick-dinner-ideas/" -->
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -15,15 +21,14 @@
          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
    </head>
 
-   <body>
-      <header>
-         <h1>Julio's Recipe Book</h1>
+   <body class="bg-black text-bg-dark">
+      <header id="top" class="container-fluid">
+      <!-- <header> -->
+         <h1 class="row bg-danger justify-content-center display-1 my-2 py-3">Julio's Recipe Book</h1>
          
-         <!--Recipies taken from "https://www.bbcgoodfood.com/recipes/category/quick-easy" and "https://www.delish.com/cooking/menus/g1478/quick-dinner-ideas/"-->
+         <h2 class="row gx-2 gy-1">Contents:</h2>
          
-         <h2>Contents:</h2>
-         
-         <ol id="cont">
+         <ol id="cont" class="row gx-2 gy-1">
             <!--<li><a href="?">Recipe #1</a></li>-->
             <li><a href="#recipe1">Chorizo Bean Burgers</a></li>
             <li><a href="#recipe2">Quick Caesar Salad with Roast Chicken & Bacon</a></li>
@@ -31,150 +36,229 @@
          </ol>
       </header>
          
-      <!-- <h2 id="?">Recipe #1</h2> -->
-      <h2 id="recipe1">Chorizo Bean Burgers</h2>
-      <ul class="time_serves">
-         <li>Time: 26 minutes</li>
-         <li>Serves: 2</li>
-      </ul>
-      <table class="table table-striped"> <!-- Bootstrap -->
-         <thead>
-            <tr>
-               <th>Ingredients</th>
-               <th>Quantity</th>
-            </tr>
-         </thread>
-         <tbody>
-            <!-- <tr>
-               <td></td>
-               <td></td>
-            </tr> -->
-            <tr>
-               <td>Mini cooking chorizo</td>
-               <td>100 g, skins removed</td>
-            </tr>
-            <tr>
-               <td>Pork sausages</td>
-               <td>3, squeezed from their skins</td>
-            </tr>
-            <tr>
-               <td>Smoked paprika</td>
-               <td>1/4 tsp</td>
-            </tr>
-            <tr>
-               <td>Lime juice</td>
-               <td>1 tbsp, plus wedges to serve</td>
-            </tr>
-            <tr>
-               <td>Coriander</td>
-               <td>Small bunch, chopped</td>
-            </tr>
-            <tr>
-               <td>Mixed beans</td>
-               <td>1/2 x 400 g can, drained and rinsed</td>
-            </tr>
-            <tr>
-               <td>Egg</td>
-               <td>1 medium, lightly whisked</td>
-            </tr>
-            <tr>
-               <td>Olive oil</td>
-               <td>1 1/2 tbsp, plus extra to drizzle</td>
-            </tr>
-            <tr>
-               <td>Ciabatta rolls</td>
-               <td>2, split and toasted</td>
-            </tr>
-         </tbody>
-      </table>
-      <!-- <p><strong>Step 1:</strong> Do something.</p> -->
-      <p><strong>Step 1:</strong> In a food processor, pulse the chorizo, sausagemeat, paprika, lime juice and coriander until well combined. Add the beans and some seasoning, and quickly pulse again to mix. Tip into a bowl and mix in just enough egg (about half) to bind. Shape into 2 fat burgers, cover and chill for 15 mins. Meanwhile, heat oven to 200C/180C fan/gas 6.</p>
-      <p><strong>Step 2:</strong> Heat the oil in a pan and fry the burgers for 3 mins on each side. Transfer to a baking sheet and cook in the oven for a further 10 mins until cooked through.</p>
-      <p><strong>Step 3:</strong> Serve the burgers in rolls with soured cream, avocado and rocket, with chips and lime wedges on the side, if you like.</p>
-      <p><em>Source: <a target="_blank" href="https://www.bbcgoodfood.com/recipes/chorizo-bean-burgers">bbcgoodfood.com</a></em></p>
+      <main>
+         <section class="container-fluid">
+            <!-- <h2 id="?">Recipe #1</h2> -->
+            <h2 class="row gx-2 gy-2">Chorizo Bean Burgers</h2>
 
-      <h2 id="recipe2">Quick Caesar Salad with Roast Chicken & Bacon</h2>
-      <ul class="time_serves">
-         <li>Time: 25 minutes</li>
-         <li>Serves: 4</li>
-      </ul>
-      <table class="table table-striped"> <!-- Bootstrap -->
-         <thead>
-            <tr>
-               <th>Ingredients</th>
-               <th>Quantity</th>
-            </tr>
-         </thead>
-         <tbody>
-            <tr>
-               <td>Chicken breasts</td>
-               <td>4, skin on</td>
-            </tr>
-            <tr>
-               <td>Streaky bacon</td>
-               <td>8 slices</td>
-            </tr>
-            <tr>
-               <td>Garlic clove</td>
-               <td>1, crushed</td>
-            </tr>
-            <tr>
-               <td>Lemon juice</td>
-               <td>1/2 lemon</td>
-            </tr>
-            <tr>
-               <td>Natural yogurt</td>
-               <td>3 tbsp</td>
-            </tr>
-            <tr>
-               <td>Olive oil</td>
-               <td>3 tbsp</td>
-            </tr>
-            <tr>
-               <td>Parmesan</td>
-               <td>50 g, plus extra to serve</td>
-            </tr>
-            <tr>
-               <td>Romaine lettuces</td>
-               <td>2 small</td>
-            </tr>
-         </tbody>
-      </table>
-      <p><strong>Step 1:</strong> Heat oven to 200C/180C fan/gas 6. Season the chicken and place in a snug roasting tin. Drape the bacon around the chicken and roast for 15-20 mins until the bacon is crisp and the chicken just cooked through.</p>
-      <p><strong>Step 2:</strong> In a bowl, mix the garlic, lemon juice, yogurt, oil and Parmesan, adding a dash of Worcestershire sauce, if you have any in the cupboard. Discard the outer leaves of the lettuce and tear the rest over a platter, mixing gently with the dressing. Serve with the chicken and crisp bacon, shaving over extra Parmesan, if you like.</p>
-      <p><em>Source: <a target="_blank" href="https://www.bbcgoodfood.com/recipes/quick-caesar-salad-roast-chicken-bacon">bbcgoodfood.com</a></em></p>
+            <ul class="time_serves row gx-2 gy-1">
+               <li>Time: 26 minutes</li>
+               <li>Serves: 2</li>
+            </ul>
 
-      <h2 id="recipe3">Best-Ever Grilled Cheese</h2>
-      <ul class="time_serves">
-         <li>Time: 15 minutes</li>
-         <li>Serves 2</li>
-      </ul>
-      <table class="table table-striped"> <!-- Bootstrap -->
-         <thead>
-            <tr>
-               <th>Ingredients</th>
-               <th>Quantity</th>
-            </tr>
-         </thead>
-         <tbody>
-            <tr>
-               <td>Butter</td>
-               <td>5 tbsp, softened and divided</td>
-            </tr>
-            <tr>
-               <td>Sourdough bread</td>
-               <td>4 slices</td>
-            </tr>
-            <tr>
-               <td>Shredded cheddar</td>
-               <td>2 c</td>
-            </tr>
-         </tbody>
-      </table>
-      <p><strong>Step 1:</strong> Spread about 1 tablespoon butter on one side of each slice of bread. With butter side down, top each slice of bread with about ½ c cheddar.</p>
-      <p><strong>Step 2:</strong> Heat a nonstick skillet over medium heat with 1 tablespoon butter. When butter is melted add two slice of bread, butter side down. Cook until bread is golden and cheese is starting to melt, 2 minutes. Flip one pice of bread on top of the other and continue to cook 30 seconds.</p>
-      <p><strong>Step 3:</strong> Repeat for the second sandwich, wiping the skillet clean if necessary.</p>
-      <p><em>Source: <a target="_blank" href="https://www.delish.com/cooking/recipe-ideas/a19610233/how-to-make-best-grilled-cheese/">delish.com</a></em></p>
+            <table class="table table-dark table-striped">
+               <thead>
+                  <tr>
+                     <th>Ingredients</th>
+                     <th>Quantity</th>
+                  </tr>
+               </thread>
+               <tbody class="table-group-divider">
+                  <!-- <tr>
+                     <td></td>
+                     <td></td>
+                  </tr> -->
+                  <tr>
+                     <td>Mini cooking chorizo</td>
+                     <td>100 g, skins removed</td>
+                  </tr>
+                  <tr>
+                     <td>Pork sausages</td>
+                     <td>3, squeezed from their skins</td>
+                  </tr>
+                  <tr>
+                     <td>Smoked paprika</td>
+                     <td>1/4 tsp</td>
+                  </tr>
+                  <tr>
+                     <td>Lime juice</td>
+                     <td>1 tbsp, plus wedges to serve</td>
+                  </tr>
+                  <tr>
+                     <td>Coriander</td>
+                     <td>Small bunch, chopped</td>
+                  </tr>
+                  <tr>
+                     <td>Mixed beans</td>
+                     <td>1/2 x 400 g can, drained and rinsed</td>
+                  </tr>
+                  <tr>
+                     <td>Egg</td>
+                     <td>1 medium, lightly whisked</td>
+                  </tr>
+                  <tr>
+                     <td>Olive oil</td>
+                     <td>1 1/2 tbsp, plus extra to drizzle</td>
+                  </tr>
+                  <tr>
+                     <td>Ciabatta rolls</td>
+                     <td>2, split and toasted</td>
+                  </tr>
+               </tbody>
+            </table>
 
+            <!-- <p><strong>Step 1:</strong> Do something.</p> -->
+            <p>
+               <strong>Step 1:</strong> In a food processor, pulse the chorizo,
+               sausagemeat, paprika, lime juice and coriander until well
+               combined. Add the beans and some seasoning, and quickly pulse
+               again to mix. Tip into a bowl and mix in just enough egg (about
+               half) to bind. Shape into 2 fat burgers, cover and chill for 15
+               mins. Meanwhile, heat oven to 200C/180C fan/gas 6.
+            </p>
+            <p>
+               <strong>Step 2:</strong> Heat the oil in a pan and fry the burgers
+               for 3 mins on each side. Transfer to a baking sheet and cook in
+               the oven for a further 10 mins until cooked through.
+            </p>
+            <p>
+               <strong>Step 3:</strong> Serve the burgers in rolls with soured
+               cream, avocado and rocket, with chips and lime wedges on the side,
+               if you like.
+            </p>
+            <p>
+               <em>Source: <a target="_blank"
+               href="https://www.bbcgoodfood.com/recipes/chorizo-bean-burgers">
+               bbcgoodfood.com</a></em>
+            </p>
+         </section>
+
+         <section class="container-fluid">
+            <h2 id="recipe2" class="row gx-2 gy-2">Quick Caesar Salad with Roast Chicken & Bacon</h2>
+
+            <ul class="time_serves row gx-2 gy-1">
+               <li>Time: 25 minutes</li>
+               <li>Serves: 4</li>
+            </ul>
+
+            <table class="table table-dark table-striped">
+               <thead>
+                  <tr>
+                     <th>Ingredients</th>
+                     <th>Quantity</th>
+                  </tr>
+               </thead>
+               <tbody class="table-group-divider">
+                  <tr>
+                     <td>Chicken breasts</td>
+                     <td>4, skin on</td>
+                  </tr>
+                  <tr>
+                     <td>Streaky bacon</td>
+                     <td>8 slices</td>
+                  </tr>
+                  <tr>
+                     <td>Garlic clove</td>
+                     <td>1, crushed</td>
+                  </tr>
+                  <tr>
+                     <td>Lemon juice</td>
+                     <td>1/2 lemon</td>
+                  </tr>
+                  <tr>
+                     <td>Natural yogurt</td>
+                     <td>3 tbsp</td>
+                  </tr>
+                  <tr>
+                     <td>Olive oil</td>
+                     <td>3 tbsp</td>
+                  </tr>
+                  <tr>
+                     <td>Parmesan</td>
+                     <td>50 g, plus extra to serve</td>
+                  </tr>
+                  <tr>
+                     <td>Romaine lettuces</td>
+                     <td>2 small</td>
+                  </tr>
+               </tbody>
+            </table>
+
+            <p>
+               <strong>Step 1:</strong> Heat oven to 200C/180C fan/gas 6. Season
+               the chicken and place in a snug roasting tin. Drape the bacon
+               around the chicken and roast for 15-20 mins until the bacon is
+               crisp and the chicken just cooked through.
+            </p>
+            <p>
+               <strong>Step 2:</strong> In a bowl, mix the garlic, lemon juice,
+               yogurt, oil and Parmesan, adding a dash of Worcestershire sauce,
+               if you have any in the cupboard. Discard the outer leaves of the
+               lettuce and tear the rest over a platter, mixing gently with the
+               dressing. Serve with the chicken and crisp bacon, shaving over
+               extra Parmesan, if you like.
+            </p>
+            <p>
+               <em>Source: <a target="_blank"
+               href="https://www.bbcgoodfood.com/recipes/quick-caesar-salad-roast-chicken-bacon">
+               bbcgoodfood.com</a></em>
+            </p>
+         </section>
+
+         <section class="container-fluid">
+            <h2 id="recipe3" class="row gx-2 gy-2">Best-Ever Grilled Cheese</h2>
+
+            <ul class="time_serves row gx-2 gy-1">
+               <li>Time: 15 minutes</li>
+               <li>Serves 2</li>
+            </ul>
+
+            <table class="table table-dark table-striped">
+               <thead>
+                  <tr>
+                     <th>Ingredients</th>
+                     <th>Quantity</th>
+                  </tr>
+               </thead>
+               <tbody class="table-group-divider">
+                  <tr>
+                     <td>Butter</td>
+                     <td>5 tbsp, softened and divided</td>
+                  </tr>
+                  <tr>
+                     <td>Sourdough bread</td>
+                     <td>4 slices</td>
+                  </tr>
+                  <tr>
+                     <td>Shredded cheddar</td>
+                     <td>2 c</td>
+                  </tr>
+               </tbody>
+            </table>
+
+            <p>
+               <strong>Step 1:</strong> Spread about 1 tablespoon butter on one
+               side of each slice of bread. With butter side down, top each slice
+               of bread with about ½ c cheddar.
+            </p>
+            <p>
+               <strong>Step 2:</strong> Heat a nonstick skillet over medium heat
+               with 1 tablespoon butter. When butter is melted add two slice of
+               bread, butter side down. Cook until bread is golden and cheese is
+               starting to melt, 2 minutes. Flip one pice of bread on top of the
+               other and continue to cook 30 seconds.
+            </p>
+            <p>
+               <strong>Step 3:</strong> Repeat for the second sandwich, wiping
+               the skillet clean if necessary.
+            </p>
+            <p>
+               <em>Source: <a target="_blank"
+               href="https://www.delish.com/cooking/recipe-ideas/a19610233/how-to-make-best-grilled-cheese/">
+               delish.com</a></em>
+            </p>
+         </section>
+         
+         <div class="container-sm">
+            <small class="row justify-content-center">
+               <a class="col-1 btn btn-sm btn-outline-secondary my-2" href="#top">Back to top</a>
+            </small>
+         </div>
+      </main>
+
+      <footer class="container-lg border-top">
+         <aside class="row m-2">This is an example of a website about cooking recipes intended for
+            web development learners.</aside>
+      </footer>
    </body>
 </html>
