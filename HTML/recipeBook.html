@@ -8,33 +8,36 @@
       web development learners.">
       <title lang="es">Proyecto 7: Recetario</title>
       <link rel="stylesheet" href="/CSS/recipeBookSty.css">
-      <!-- type="text/css" optional?, href="../CSS/recipeBookSty.css" moving one directory backwards -->
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+      <!-- href="../CSS/recipeBookSty.css" moving one directory backwards -->
+      <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+               integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
    </head>
 
    <body>
-      <h1 style="background-color: rgb(202,47,27); color: rgb(255,233,0);" >Julio's Recipe Book</h1>
-      <!--Recipies taken from "https://www.bbcgoodfood.com/recipes/category/quick-easy" and "https://www.delish.com/cooking/menus/g1478/quick-dinner-ideas/"-->
-
-      <div id="cont">
+      <header>
+         <h1>Julio's Recipe Book</h1>
+         
+         <!--Recipies taken from "https://www.bbcgoodfood.com/recipes/category/quick-easy" and "https://www.delish.com/cooking/menus/g1478/quick-dinner-ideas/"-->
+         
          <h2>Contents:</h2>
-
-         <ol>
+         
+         <ol id="cont">
             <!--<li><a href="?">Recipe #1</a></li>-->
             <li><a href="#recipe1">Chorizo Bean Burgers</a></li>
             <li><a href="#recipe2">Quick Caesar Salad with Roast Chicken & Bacon</a></li>
             <li><a href="#recipe3">Best-Ever Grilled Cheese</a></li>
          </ol>
-      </div>
-
-      <!--<h2 id="?">Recipe #1</h2>-->
+      </header>
+         
+      <!-- <h2 id="?">Recipe #1</h2> -->
       <h2 id="recipe1">Chorizo Bean Burgers</h2>
       <ul class="time_serves">
          <li>Time: 26 minutes</li>
          <li>Serves: 2</li>
       </ul>
-      <table class="table table-striped"><!--Bootstrap-->
+      <table class="table table-striped"> <!-- Bootstrap -->
          <thead>
             <tr>
                <th>Ingredients</th>
@@ -42,10 +45,10 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             </tr>
          </thread>
          <tbody>
-            <!--<tr>
+            <!-- <tr>
                <td></td>
                <td></td>
-            </tr>-->
+            </tr> -->
             <tr>
                <td>Mini cooking chorizo</td>
                <td>100 g, skins removed</td>
@@ -84,7 +87,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             </tr>
          </tbody>
       </table>
-      <!--<p><strong>Step 1:</strong> Do something.</p>-->
+      <!-- <p><strong>Step 1:</strong> Do something.</p> -->
       <p><strong>Step 1:</strong> In a food processor, pulse the chorizo, sausagemeat, paprika, lime juice and coriander until well combined. Add the beans and some seasoning, and quickly pulse again to mix. Tip into a bowl and mix in just enough egg (about half) to bind. Shape into 2 fat burgers, cover and chill for 15 mins. Meanwhile, heat oven to 200C/180C fan/gas 6.</p>
       <p><strong>Step 2:</strong> Heat the oil in a pan and fry the burgers for 3 mins on each side. Transfer to a baking sheet and cook in the oven for a further 10 mins until cooked through.</p>
       <p><strong>Step 3:</strong> Serve the burgers in rolls with soured cream, avocado and rocket, with chips and lime wedges on the side, if you like.</p>
@@ -95,7 +98,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
          <li>Time: 25 minutes</li>
          <li>Serves: 4</li>
       </ul>
-      <table class="table table-striped"><!--Bootstrap-->
+      <table class="table table-striped"> <!-- Bootstrap -->
          <thead>
             <tr>
                <th>Ingredients</th>
@@ -146,7 +149,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
          <li>Time: 15 minutes</li>
          <li>Serves 2</li>
       </ul>
-      <table class="table table-striped"><!--Bootstrap-->
+      <table class="table table-striped"> <!-- Bootstrap -->
          <thead>
             <tr>
                <th>Ingredients</th>
