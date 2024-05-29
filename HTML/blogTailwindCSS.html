@@ -1,3 +1,7 @@
+<!-- All the values of the class attributes in the elements of this project are
+   Tailwind CSS except "developer" and "fuente" which are declared on blogSty.cs
+   for testing. -->
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -7,35 +11,36 @@
       <meta name="description" content="Project of a blog about programming languages intended for
       web development learners.">
       <title lang="es">Proyecto 8: Blog</title>
-      <link rel="stylesheet" href="/CSS/blogSty.css">
-      <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"-->
+      <!-- for pure CSS -->
+      <!-- <link rel="stylesheet" href="/CSS/blogSty.css"> -->
+      <!-- for Tailwind CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
    </head>
 
-   <body>
-      <h1>Programming language's blog</h1>
+   <body class="dark:bg-slate-950 dark:text-slate-300 p-3 text-justify">
+      <h1 class="text-4xl text-center font-mono mb-3">Programming language's blog</h1>
 
-      <h3>Contents</h3>
-      <ul>
-         <li><a href="#c"></a>C</li>
+      <h3 class="text-xl">Contents</h3>
+      <ul role="list" class="marker:text-gray-500 list-disc pl-6 space-y-1">
+         <li><a href="#c">C</a></li>
          <li><a href="#python">Python</a></li>
          <li><a href="#java">Java</a></li>
       </ul>
 
-      <h2 id="c">C</h2>
-      <h6>Developed between 1972 and 1973.</h6>
+      <h2 id="c" class="text-3xl m-3">C</h2>
+      <h6 class="text-xs m-1">Developed between 1972 and 1973.</h6>
       <p>Originally developed at <em>Bell Labs</em> by <span class="developer">Dennis Ritchie</span>, <strong>C</strong> (/<em>si:</em>/, as in the letter <em>c</em>) is a general-purpose, procedural computer programming language supporting structured programming, lexical variable scope, and recursion, while a static type system prevents unintended operations. By design, <strong>C</strong> provides constructs that map efficiently to typical machine instructions and has found lasting use in applications previously coded in assembly language. Such applications include operating systems and various application software for computers, from supercomputers to embedded systems.</p>
       <p class="fuente">Source: <a target="_blank" href="https://en.wikipedia.org/wiki/C_(programming_language)">wikipedia.org</a></p>
 
-      <h2 id="python">Python</h2>
-      <h6>Released in 1991.</h6>
+      <h2 id="python" class="text-3xl m-3">Python</h2>
+      <h6 class="text-xs m-1">Released in 1991.</h6>
       <p>Created by <span class="developer">Guido van Rossum</span>, <strong>Python</strong> is an interpreted, high-level, general-purpose programming language. <strong>Python</strong>'s design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects.<br/>
       <strong>Python</strong> is dynamically typed and garbage-collected. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming. <strong>Python</strong> is often described as a "batteries included" language due to its comprehensive standard library.<br/>
       <strong>Python</strong> was conceived in the late 1980s as a successor to the <em>ABC</em> language. <strong>Python 2.0</strong>, released in 2000, introduced features like list comprehensions and a garbage collection system capable of collecting reference cycles. <strong>Python 3.0</strong>, released in 2008, was a major revision of the language that is not completely backward-compatible, and much <strong>Python 2</strong> code does not run unmodified on <strong>Python 3</strong>.</p>
       <p class="fuente">Source: <a target="_blank" href="https://en.wikipedia.org/wiki/Python_(programming_language)">wikipedia.org</a></p>
 
-      <h2 id="java">Java</h2>
-      <h6>Released in 1995.</h6>
+      <h2 id="java" class="text-3xl m-3">Java</h2>
+      <h6 class="text-xs m-1">Released in 1995.</h6>
       <p>Originally developed by <span class="developer">James Gosling</span> at <em>Sun Microsystems</em> (which has since been acquired by <em>Oracle</em>), <strong>Java</strong> is a general-purpose programming language that is class-based, object-oriented, and designed to have as few implementation dependencies as possible. It is intended to let application developers <em>write once, run anywhere (WORA)</em>, meaning that compiled <strong>Java</strong> code can run on all platforms that support <strong>Java</strong> without the need for recompilation. <strong>Java</strong> applications are typically compiled to <em>bytecode</em> that can run on any <em>Java virtual machine (JVM)</em> regardless of the underlying computer architecture. The syntax of <strong>Java</strong> is similar to <em><a href="#c">C</a></em> and <em>C++</em>, but it has fewer low-level facilities than either of them. As of 2019, <strong>Java</strong> was one of the most popular programming languages in use according to <em>GitHub</em>, particularly for client-server web applications, with a reported 9 million developers.</p>
       <p class="fuente">Source: <a target="_blank" href="https://en.wikipedia.org/wiki/Java_(programming_language)">wikipedia.org</a></p>
 

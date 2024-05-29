@@ -15,6 +15,6 @@ List of projects in recommended review order:
  5) peceraProcessingJS.html
  6) travelPageEmbCSS.html
  7) recipeBookB.html
- 8) blog.html
+ 8) blogTailwindCSS.html
  9) eventInvite.html
 10) shakkyChihuahuaOO.html
