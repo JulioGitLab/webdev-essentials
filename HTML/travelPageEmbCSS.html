@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
-<!-- All the CSS (pure) instructions of this page are embedded in the head element for quick testing purposes. -->
+<!-- All the CSS (pure) instructions of this page are embedded in the head element
+   for quick testing purposes. -->
 
 <html lang="en">
    <head>
@@ -9,9 +10,13 @@
       <meta name="description" content="A single page project of a travel page intended for
       web development learners.">
       <title lang="es">Proyecto 6: Página Web de Viajes</title>
+      <link rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons">
       <style>
          /* @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap'); */
          @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+         
+         .material-icons {font-size:1em;}
          
          body {
             background-color:darkgoldenrod;
@@ -34,9 +39,15 @@
             margin:13px;
          }
          
-         .tierra { color:maroon;}
+         #amlo {
+            color:#333;
+            font-weight:bolder;
+            text-decoration:none;
+         }
+
+         #amlo:hover {color:whitesmoke;}
          
-         #amlo { color:darkred;}
+         .tierra { color:maroon;}
          
          .agua { color:navy;}
          
@@ -62,6 +73,20 @@
             margin:17px;
             font-family:'Candara';
          }
+
+         #b2top {
+            color:whitesmoke;
+            background:darkslategray;
+            padding:0.3em;
+            text-decoration:none;
+            border-style:outset;
+            border-color:dimgray;
+         }
+
+         #b2top:hover {
+            color:silver;
+            text-decoration:underline;
+         }
          
          aside {font-size:small;}
       </style>
@@ -76,7 +101,7 @@
          <p>
             <em class="tierra">La Chingada</em> is the ranch of Mexico's president, <a id="amlo"
             href="https://es.wikipedia.org/wiki/Andr%C3%A9s_Manuel_L%C3%B3pez_Obrador" target="_blank"
-            rel="noreferrer">Andrés Manuel López Obrador</a>. Located at 284 km north of <em class="tierra">
+            rel="noreferrer">Andrés Manuel López Obrador<i class="material-icons">launch</i></a>. Located at 284 km north of <em class="tierra">
             Tuxtla Gutiérrez</em>, the <em class="tierra">Chiapas</em> State Capital. The ranch is close to
             the entrance of the municipal head of <em class="tierra">Palenque</em>, a Chiapas Municipality.
             <br><br>
@@ -129,7 +154,7 @@
                src="https://www.kayak.com.mx/news/wp-content/uploads/sites/29/2018/08/misol_ha_cascadas_mexico.jpg"
                alt="Misol-Ha waterfalls"/>
             <img
-               src="https://www.misol-ha.com/content/animalshelter/images/z08.jpg"
+               src="https://www.misol-ha.com/content/animalshelter/images/z07.jpg"
                atl="Misol-Ha aerial view"/>
             <li><strong>Agua Azul</strong></li>
             <img
@@ -149,7 +174,7 @@
       </section>
 
       <footer>
-         <small><a href="#top">Back to the top</a></small>
+         <small><a id="b2top" href="#top">Back to top <i class="material-icons">arrow_upward</i></a></small>
          <br><br>
          <aside>This is a travel page example intended for web development learners.</aside>
       </footer>
