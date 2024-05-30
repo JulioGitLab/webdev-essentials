@@ -21,15 +21,19 @@ ul {
 } */
 li:nth-child(1)::before {
    content:"🎨 ";
+   padding-inline-end: 0.1em;
 }
 li:nth-child(2)::before {
    content:"🔻";
+   padding-inline-end: 0.7em;
 }
 li:nth-child(3)::before {
    content:"🖱 ";
+   padding-inline-end: 0.5em;
 }
 li:nth-child(4)::before {
    content:"↘ ";
+   padding-inline-end: 0.9em;
 }
 /* p {
    color:whitesmoke;
