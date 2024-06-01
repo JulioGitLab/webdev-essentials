@@ -112,7 +112,7 @@ for (let i = 0; i < 40; i++) {
 }
 
 var baseboardX = [];
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 17; i++) {
    baseboardX.push(i * 100);
 }
 
@@ -130,7 +130,7 @@ function draw() {
       rect(baseboardX[i], height * 0.18, 100, 10);
       baseboardX[i] -= 1;
       if (baseboardX[i] <= -100) {
-         baseboardX[i] = 900;
+         baseboardX[i] = 1600;
       }
    }
 

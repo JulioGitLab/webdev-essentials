@@ -1,85 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
 body {
-   background-color: rgb(255,242,202);
-   color: rgb(181,0,121);
-   font-family: cursive;
-   font-size: 14px;
+   margin:0;
+   background-color: moccasin;
+   color: deeppink;
+   font-family: 'Shadows Into Light';
    text-align: justify;
 }
 h1 {
-   background-color: rgb(148,0,171);
-   color: rgb(255,242,202);
+   background-color: darkmagenta;
+   color: moccasin;
    font-variant: small-caps;
-   font-size: 38px;
+   font-size: 4.3em;
    text-align: center;
-   margin-top: -6px;
-   margin-bottom: 0px;
-   margin-left: -6px;
-   margin-right: -6px;
-   border-style: ridge;
-   border-width: 3px;
-   border-color: rgb(255,0,166);
-   padding: 3px;
-   padding-top: 0px;
+   width: 98.6%;
+   margin: 0;
+   border-style: solid;
+   border-width: 0.3rem;
+   border-color: deeppink;
+   padding-top: 0.7rem;
    position: fixed;
    z-index: 1;
+   /* display: none; */
+}
+h1 span {
+   border: medium dotted pink;
+   border-radius: 1.3rem;
+   font-size: 1.3em;
+   background-color: deeppink;
+   padding: 0 0.3rem;
 }
 h2 {
-   background-color: rgb(255,217,161);
-   color: rgb(148,0,181);
-   font-family: serif;
-   font-size: 21px;
+   background-color: pink;
+   color: darkmagenta;
+   font-size: 1.7rem;
    text-align: center;
-   margin-top: 0px;
-   margin-bottom: 0px;
-   margin-left: -6px;
-   margin-right: -6px;
-   padding: 8px;
+   margin: 0;
+   padding: 0.7rem;
    position: relative;
-   top: 121px;
+   top: 17.3rem;
 }
 #infoGen {
    position: relative;
-   top: 117px;
+   top: 16.7rem;
+   padding: 0.7em;
+   font-size: 1.1em;
 }
 #habra {
-   background-color: rgb(255,217,161);
-   color: rgb(148,0,181);
-   margin-left: -6px;
-   margin-right: -6px;
-   padding: 1px;
-   padding-left: 6px;
+   background-color: pink;
+   color: darkmagenta;
+   margin: 0;
    position: relative;
-   top: 117px;
+   top: 16.3rem;
 }
 #imgTienda {
-   margin-top: 20px;
-   margin-left: 2px;
-   border-style: ridge;
-   border-width: 3px;
-   border-color: rgb(255,0,166);
+   margin: 1.7em 0.7em;
+   max-width: 47%;
+   border-style: solid;
+   border-width: 0.2rem;
+   border-color: deeppink;
    float: left;
-   width: 46%;
 }
 #habraLista {
    float: right;
-   width: 50%;
+   width: 47%;
+   font-size: 1.1rem;
+   font-weight: bolder;
 }
+
+#habraLista h3 { margin-bottom: 0;}
+
 #pieHabra {
-   font-size: 16px;
+   padding: 0 0 0.7em;
+   font-size: 1.7rem;
    text-align: center;
    clear: both;
 }
 footer {
    text-align: center;
    position: relative;
-   padding-bottom: 13px;
-   top: 122px;
+   top: 16.3rem;
    clear: both;
 }
 input {
-   color: rgb(255,242,202);
-   background-color: rgb(148,0,171);
-   border-color: rgb(79,0,97);
-   padding-top: 2px;
-   padding-bottom: 3px;
+   color: moccasin;
+   background-color: deeppink;
+   border:outset thick darkmagenta;
+   padding: 0.3em 0.5em;
+   margin-bottom: 2em;
+   font-size: 1.1em;
+   font-weight: bolder;
+   font-family: inherit;
 }
+
+input:hover { color: pink; }
+
+input:active { border-style: inset; }
