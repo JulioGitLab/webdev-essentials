@@ -52,10 +52,10 @@ Chihuahua.prototype.rDown = function() {
    this.y += 5;
 };
 
-Chihuahua.prototype.checkForToyGrab = function (toy) {
+Chihuahua.prototype.checkForToyGrab = function(toy) {
    if ((toy.x >= (this.x - 15) && toy.x <= (this.x + 33)) && 
        (toy.y >= (this.y - 35) && toy.y <= (this.y + 35))) {
-      toy.y = 515;
+      toy.y = 520;
 
       // is chancla?
       if (toy.chancla) {
@@ -66,6 +66,14 @@ Chihuahua.prototype.checkForToyGrab = function (toy) {
       }
    }
 };
+
+Chihuahua.prototype.checkForCatCatch = function(cat) {
+   if ((cat.x >= (this.x - 13) && cat.x <= (this.x + 43)) &&
+       (cat.y >= (this.y - 37) && cat.y <= (this.y + 37))) {
+         this.toys--;
+         this.scare = 17;
+       }
+}
 
 var Toy = function(x, y, chancla) {
    this.x = x;
@@ -90,11 +98,58 @@ Toy.prototype.draw = function() {
    }
 };
 
+var Cat = function(x, y) {
+   this.x = x;
+   this.y = y;
+}
+
+Cat.prototype.draw = function() {
+   strokeWeight(1);
+   stroke('#FF00FF'); // Magenta
+   fill('#000'); // Black
+   // Hind paws
+   ellipse(this.x - 3, this.y - 13, 11, 17);
+   ellipse(this.x - 3, this.y + 13, 11, 17);
+   // Body
+   ellipse(this.x, this.y, 25, 35);
+   // Tail
+   ellipse(this.x + 16, this.y, 9, 3);
+   // Fore paws
+   ellipse(this.x - 11, this.y - 17, 11, 17);
+   ellipse(this.x - 11, this.y + 17, 11, 17);
+   fill('#F8F8FF'); // GhostWhite
+   triangle(this.x - 19, this.y - 23, this.x - 14, this.y - 25, this.x - 14, this.y - 21);
+   triangle(this.x - 19, this.y - 19, this.x - 14, this.y - 21, this.x - 14, this.y - 17);
+   triangle(this.x - 19, this.y - 15, this.x - 14, this.y - 17, this.x - 14, this.y - 13);
+   triangle(this.x - 19, this.y + 15, this.x - 14, this.y + 17, this.x - 14, this.y + 13);
+   triangle(this.x - 19, this.y + 19, this.x - 14, this.y + 21, this.x - 14, this.y + 17);
+   triangle(this.x - 19, this.y + 23, this.x - 14, this.y + 25, this.x - 14, this.y + 21);
+   // head
+   fill('#000'); // Black
+   ellipse(this.x - 3, this.y, 19, 27);
+   fill('#F8F8FF'); // GhostWhite
+   arc(this.x - 5, this.y - 7, 7, 11, HALF_PI, PI * 1.75, CHORD); // PI * DEG/180
+   arc(this.x - 5, this.y + 7, 7, 11, PI * 0.25, PI * 1.5, CHORD);
+   fill('#000'); // Black
+   line(this.x, this.y - 4, this.x + 6, this.y - 8);
+   line(this.x + 6, this.y - 8, this.x, this.y - 11);
+   line(this.x, this.y + 4, this.x + 6, this.y + 8);
+   line(this.x + 6, this.y + 8, this.x, this.y + 11);
+   fill('#FF00FF'); // Magenta
+   ellipse(this.x - 7, this.y - 7, 2, 5);
+   ellipse(this.x - 7, this.y + 7, 2, 5);
+}
+
 var shakky = new Chihuahua(150, 300);
+// var meowwy = new Cat(random(500, 1000), random(50, 200)); // Must check p5.js random()
+// Math.random() * (max - min) + min;
+// var meowwy = new Cat(Math.floor(Math.random() * 100 + 300), 262); // for testing
+var meowwy = new Cat(Math.floor(Math.random() * 750 + 750), // from 750 to 1500
+                     Math.floor(Math.random() * 70 + 50)); // from 50 to 120
 
 var toys = [];
 var chanclas = 0;
-/* for (let i = 0; i < 40; i++) {
+/* for (let i = 0; i < 40; i++) { // Must check p5.js random()
    if (chanclas < 10 && random(1) > 0.75) {
       toys.push(new Toy(i * 40 + 300, random(30, 300), true));
       chanclas++;
@@ -140,6 +195,21 @@ function draw() {
       toys[i].x -= 1;
    }
 
+   meowwy.draw();
+   shakky.checkForCatCatch(meowwy);
+   meowwy.x -= 3.1; // .5 for testing, 3.1 normal
+   meowwy.y += 0.5; // comment for testing
+   if (meowwy.x < -50 && toys[toys.length - 1].x > 750) { // more Meowwys
+      meowwy.x = Math.floor(Math.random() * 1500 + 1000); // x from 1000 to 2500
+      meowwy.y = Math.floor(Math.random() * 70 + 50); // from 50 to 120
+   }
+
+   if (meowwy.x - shakky.x < 300 && meowwy.x - shakky.x > 0) {
+      fill('#FF0000'); // Red
+      textSize(19);
+      text("MEOW!!", meowwy.x + 11, meowwy.y - 13);
+   }
+
    // Score
    fill('#800000') // Maroon
    noStroke();
@@ -147,7 +217,7 @@ function draw() {
    text("Score: " + shakky.toys, 13, 29);
 
    // Outcome
-   if (toys[toys.length -1].x < shakky.x - 15 && shakky.toys / toys.length >= 0.75) {
+   if (toys[toys.length - 1].x < shakky.x - 15 && shakky.toys / toys.length >= 0.75) {
       textSize(37);
       text("YOU WIN!!!", 250, 60);
    } else if (toys[toys.length - 1].x < shakky.x - 15) {
