@@ -143,10 +143,10 @@ Cat.prototype.draw = function() {
 var currSc = 1; // Current Scene
 
 var drawStSc = function() { // Start Scene
-   var sX = width * 0.2;
-   var sY = height * 0.5;
-   var sD = 150;
+   var sX = width * 0.2, sY = height * 0.5, sW = 139;
+   var mX = width * 0.8, mY = height * 0.5, mW = 163;
    
+   strokeJoin(ROUND); // default MITER
    background('#000'); // Black
    fill('#FFE4B5'); // Moccasin
    rectMode(CORNER);
@@ -166,27 +166,27 @@ var drawStSc = function() { // Start Scene
    
    // SHAKKY
    fill('#DAA520'); // GoldenRod
-   // head
    stroke('#B8860B'); // DarkGoldenRod
-   circle(sX, sY, sD);
+   // head
+   ellipse(sX, sY, sW, sW * 1.03);
    // ears
    beginShape();
-   vertex(sX - 65, sY - 33);
+   vertex(sX - 59, sY - 35);
    bezierVertex(sX - 74, sY - 35, sX - 74, sY - 75, sX - 56, sY - 100);
-   bezierVertex(sX - 62, sY - 92, sX - 19, sY - 78, sX - 28, sY - 60);
+   bezierVertex(sX - 61, sY - 89, sX - 19, sY - 79, sX - 27, sY - 63);
    endShape();
    beginShape();
-   vertex(sX + 65, sY - 33);
+   vertex(sX + 59, sY - 35);
    bezierVertex(sX + 74, sY - 35, sX + 74, sY - 75, sX + 56, sY - 100);
-   bezierVertex(sX + 62, sY - 92, sX + 19, sY - 78, sX + 28, sY - 60);
+   bezierVertex(sX + 61, sY - 89, sX + 19, sY - 79, sX + 27, sY - 63);
    endShape();
    // eyes
    fill('#F5F5F5'); // WhiteSmoke
-   circle(sX - 37, sY - 13, sD * .33);
-   circle(sX + 37, sY - 13, sD * .33);
+   circle(sX - 37, sY - 13, sW * .31);
+   circle(sX + 37, sY - 13, sW * .31);
    fill('#B22222'); // FireBrick
-   circle(sX - 37, sY - 13, sD * .23);
-   circle(sX + 37, sY - 13, sD * .23);
+   circle(sX - 36, sY - 10, sW * .19);
+   circle(sX + 36, sY - 10, sW * .19);
    // muzzle
    bezier(sX - 7, sY + 7, sX - 20, sY + 20, sX - 29, sY + 13, sX - 37, sY + 23);
    bezier(sX + 7, sY + 7, sX + 20, sY + 20, sX + 29, sY + 13, sX + 37, sY + 23);
@@ -195,14 +195,51 @@ var drawStSc = function() { // Start Scene
    bezierVertex(sX - 2, sY + 42 , sX - 24, sY + 42, sX - 41, sY + 31);
    bezierVertex(sX + 7, sY + 53, sX - 29, sY + 61, sX, sY + 65);
    bezierVertex(sX + 29, sY + 61, sX - 7, sY + 53, sX + 41, sY + 31);
-   bezierVertex(sX + 24, sY + 42, sX - 2, sY + 42, sX, sY + 33)
+   bezierVertex(sX + 24, sY + 42, sX - 2, sY + 42, sX, sY + 33);
    endShape();
-   ellipse(sX, sY + 23, sD * .19, sD * .14);
+   ellipse(sX, sY + 23, sW * .19, sW * .14);
    // tongue
    fill('#F08080'); // LightCoral
    bezier(sX - 9, sY + 45, sX - 17, sY + 67, sX + 17, sY + 67, sX + 9, sY + 45)
 
+   // Meowwy
+   fill('#000'); // Black
+   stroke('#FF00FF'); // Magenta
+   // head & mouth
+   ellipse(mX, mY, mW, mW * 0.8);
+   arc(mX - 16, mY + 21, 31, 23, 0, PI * .8); // PI * DEG/180
+   arc(mX + 16, mY + 21, 31, 23, PI * .2, PI); // PI * DEG/180
+   // ears
+   beginShape();
+   vertex(mX - 73, mY - 25);
+   bezierVertex(mX - 79, mY - 29, mX - 79, mY - 41, mX - 73, mY - 49);
+   bezierVertex(mX - 70, mY - 60, mX - 63, mY - 151, mX - 31, mY - 59);
+   endShape();
+   beginShape();
+   vertex(mX + 73, mY - 25);
+   bezierVertex(mX + 79, mY - 29, mX + 79, mY - 41, mX + 73, mY - 49);
+   bezierVertex(mX + 70, mY - 60, mX + 63, mY - 151, mX + 31, mY - 59);
+   endShape();
+   // eyes, nose & whiskers
+   bezier(mX - 47, mY - 29, mX - 3, mY - 23, mX - 13, mY - 3, mX - 5, mY + 13);
+   bezier(mX + 47, mY - 29, mX + 3, mY - 23, mX + 13, mY - 3, mX + 5, mY + 13);
+   fill('#F5F5F5'); // WhiteSmoke
+   bezier(mX - 32, mY - 25, mX - 73, mY - 13, mX - 0, mY + 20, mX - 13, mY - 11)
+   bezier(mX + 32, mY - 25, mX + 73, mY - 13, mX + 0, mY + 20, mX + 13, mY - 11)
+   fill('#FF00FF'); // Magenta
+   ellipse(mX - 25, mY - 8, 13, 17);
+   ellipse(mX + 25, mY - 8, 13, 17);
+   triangle(mX - 7, mY + 14, mX, mY + 20, mX + 7, mY + 14);
+   strokeWeight(1);
+   line(mX - 20, mY + 17, mX - 53, mY + 10);
+   line(mX - 15, mY + 23, mX - 61, mY + 23);
+   line(mX - 19, mY + 28, mX - 53, mY + 35);
+   line(mX + 20, mY + 17, mX + 53, mY + 10);
+   line(mX + 15, mY + 23, mX + 61, mY + 23);
+   line(mX + 19, mY + 28, mX + 53, mY + 35);
+   
    // instructions
+   strokeWeight(3);
    stroke('#B22222'); // FireBrick
    textSize(23);
    text("How to play:", width / 2, sY - 60);
