@@ -140,38 +140,89 @@ Cat.prototype.draw = function() {
    ellipse(this.x - 7, this.y + 7, 2, 5);
 }
 
-var shakky = new Chihuahua(150, 300);
-// var meowwy = new Cat(random(500, 1000), random(50, 200)); // Must check p5.js random()
-// Math.random() * (max - min) + min;
-// var meowwy = new Cat(Math.floor(Math.random() * 100 + 300), 262); // for testing
-var meowwy = new Cat(Math.floor(Math.random() * 750 + 750), // from 750 to 1500
-                     Math.floor(Math.random() * 70 + 50)); // from 50 to 120
+var currSc = 1; // Current Scene
 
-var toys = [];
-var chanclas = 0;
-/* for (let i = 0; i < 40; i++) { // Must check p5.js random()
-   if (chanclas < 10 && random(1) > 0.75) {
-      toys.push(new Toy(i * 40 + 300, random(30, 300), true));
-      chanclas++;
-   } else {
-      toys.push(new Toy(i * 40 + 300, random(30, 300)));
-   }
-} */
-for (let i = 0; i < 40; i++) {
-   if (chanclas < 10 && Math.random() > 0.75) {
-      toys.push(new Toy(i * 50 + 350, Math.floor(Math.random() * (470 - 130) + 130), true)); // Random from 130 to 469
-      chanclas++;
-   } else {
-      toys.push(new Toy(i * 50 + 350, Math.floor(Math.random() * 340 + 130))); // Random from 130 to 469
+var drawStSc = function() { // Start Scene
+   var sX = width * 0.2;
+   var sY = height * 0.5;
+   var sD = 150;
+   
+   background('#000'); // Black
+   fill('#FFE4B5'); // Moccasin
+   rectMode(CORNER);
+   rect(0, height * 0.2, width - 15, height * 0.8);
+   fill('#DAA520'); // GoldenRod
+   textFont('Rockwell', 47);
+   textAlign(CENTER, CENTER);
+   strokeWeight(1);
+   text("Shakky Chihuahua!", width / 2, height / 11);
+   
+   strokeWeight(3);
+/*    // Start Button
+   rect(width / 2 - 45, height / 2 - 15, 70, 30);
+   fill('#F5F5F5'); // WhiteSmoke
+   textSize(19);
+   text("START", width / 2 - 10, height / 2) */
+   
+   // SHAKKY
+   fill('#DAA520'); // GoldenRod
+   // head
+   stroke('#B8860B'); // DarkGoldenRod
+   circle(sX, sY, sD);
+   // ears
+   beginShape();
+   vertex(sX - 65, sY - 33);
+   bezierVertex(sX - 74, sY - 35, sX - 74, sY - 75, sX - 56, sY - 100);
+   bezierVertex(sX - 62, sY - 92, sX - 19, sY - 78, sX - 28, sY - 60);
+   endShape();
+   beginShape();
+   vertex(sX + 65, sY - 33);
+   bezierVertex(sX + 74, sY - 35, sX + 74, sY - 75, sX + 56, sY - 100);
+   bezierVertex(sX + 62, sY - 92, sX + 19, sY - 78, sX + 28, sY - 60);
+   endShape();
+   // eyes
+   fill('#F5F5F5'); // WhiteSmoke
+   circle(sX - 37, sY - 13, sD * .33);
+   circle(sX + 37, sY - 13, sD * .33);
+   fill('#B22222'); // FireBrick
+   circle(sX - 37, sY - 13, sD * .23);
+   circle(sX + 37, sY - 13, sD * .23);
+   // muzzle
+   bezier(sX - 7, sY + 7, sX - 20, sY + 20, sX - 29, sY + 13, sX - 37, sY + 23);
+   bezier(sX + 7, sY + 7, sX + 20, sY + 20, sX + 29, sY + 13, sX + 37, sY + 23);
+   beginShape();
+   vertex(sX, sY + 33);
+   bezierVertex(sX - 2, sY + 42 , sX - 24, sY + 42, sX - 41, sY + 31);
+   bezierVertex(sX + 7, sY + 53, sX - 29, sY + 61, sX, sY + 65);
+   bezierVertex(sX + 29, sY + 61, sX - 7, sY + 53, sX + 41, sY + 31);
+   bezierVertex(sX + 24, sY + 42, sX - 2, sY + 42, sX, sY + 33)
+   endShape();
+   ellipse(sX, sY + 23, sD * .19, sD * .14);
+   // tongue
+   fill('#F08080'); // LightCoral
+   bezier(sX - 9, sY + 45, sX - 17, sY + 67, sX + 17, sY + 67, sX + 9, sY + 45)
+
+   // instructions
+   stroke('#B22222'); // FireBrick
+   textSize(23);
+   text("How to play:", width / 2, sY - 60);
+   textSize(15);
+   text("Press the Up & Down arrows", width / 2, sY - 25);
+   text("to help Shakky grab its toys", width / 2, sY );
+   text("across the corridor.", width / 2, sY + 25);
+   text("Avoid the chanclas and", width / 2, sY + 50);
+   text("beware of Meowwy the cat!", width / 2, sY + 75);
+   textSize(31);
+   text("Press Enter to play", width / 2, sY + 150);
+
+   if (keyIsPressed && keyCode === ENTER) {
+      currSc = 2;
    }
 }
 
-var baseboardX = [];
-for (let i = 0; i < 17; i++) {
-   baseboardX.push(i * 100);
-}
+var drawPlaySc = function() { // Play Scene
+   textAlign(LEFT, BOTTOM);
 
-function draw() {
    // static
    background('#F5F5F5'); // WhiteSmoke
    fill('#FFE4B5'); // Moccasin
@@ -229,6 +280,8 @@ function draw() {
       shakky.rUp();
    } else if (keyIsPressed && keyCode === DOWN_ARROW) {
       shakky.rDown();
+   } else if (keyIsPressed && keyCode === BACKSPACE) {
+      currSc = 1;
    }
    
    shakky.draw();
@@ -238,5 +291,44 @@ function draw() {
       textSize(17);
       text("GRRR!!", shakky.x - 13, shakky.y - 17);
       shakky.scare--;
+   }
+}
+
+var shakky = new Chihuahua(150, 300);
+// var meowwy = new Cat(random(500, 1000), random(50, 200)); // Must check p5.js random()
+// Math.random() * (max - min) + min;
+// var meowwy = new Cat(Math.floor(Math.random() * 100 + 300), 262); // for testing
+var meowwy = new Cat(Math.floor(Math.random() * 750 + 750), // from 750 to 1500
+                     Math.floor(Math.random() * 70 + 50)); // from 50 to 120
+
+var toys = [];
+var chanclas = 0;
+/* for (let i = 0; i < 40; i++) { // Must check p5.js random()
+   if (chanclas < 10 && random(1) > 0.75) {
+      toys.push(new Toy(i * 40 + 300, random(30, 300), true));
+      chanclas++;
+   } else {
+      toys.push(new Toy(i * 40 + 300, random(30, 300)));
+   }
+} */
+for (let i = 0; i < 40; i++) {
+   if (chanclas < 10 && Math.random() > 0.75) {
+      toys.push(new Toy(i * 50 + 350, Math.floor(Math.random() * (470 - 130) + 130), true)); // Random from 130 to 469
+      chanclas++;
+   } else {
+      toys.push(new Toy(i * 50 + 350, Math.floor(Math.random() * 340 + 130))); // Random from 130 to 469
+   }
+}
+
+var baseboardX = [];
+for (let i = 0; i < 17; i++) {
+   baseboardX.push(i * 100);
+}
+
+function draw() {
+   if (currSc === 1) {
+      drawStSc();
+   } else if (currSc === 2) {
+      drawPlaySc();
    }
 };
