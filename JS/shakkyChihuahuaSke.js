@@ -141,6 +141,7 @@ Cat.prototype.draw = function() {
 }
 
 var currSc = 1; // Current Scene
+var newG = 1; // New Game flag
 
 var drawStSc = function() { // Start Scene
    var sX = width * 0.2, sY = height * 0.5, sW = 139;
@@ -150,7 +151,7 @@ var drawStSc = function() { // Start Scene
    background('#000'); // Black
    fill('#FFE4B5'); // Moccasin
    rectMode(CORNER);
-   rect(0, height * 0.2, width - 15, height * 0.8);
+   rect(0, height * 0.2, width - 10, height * 0.8);
    fill('#DAA520'); // GoldenRod
    textFont('Rockwell', 47);
    textAlign(CENTER, CENTER);
@@ -244,13 +245,13 @@ var drawStSc = function() { // Start Scene
    textSize(23);
    text("How to play:", width / 2, sY - 60);
    textSize(15);
-   text("Press the Up & Down arrows", width / 2, sY - 25);
+   text("Press the [Up] & [Down] arrows", width / 2, sY - 25);
    text("to help Shakky grab its toys", width / 2, sY );
    text("across the corridor.", width / 2, sY + 25);
    text("Avoid the chanclas and", width / 2, sY + 50);
    text("beware of Meowwy the cat!", width / 2, sY + 75);
    textSize(31);
-   text("Press Enter to play", width / 2, sY + 150);
+   text("Press [Enter] to play", width / 2, sY + 170);
 
    if (keyIsPressed && keyCode === ENTER) {
       currSc = 2;
@@ -262,11 +263,16 @@ var drawPlaySc = function() { // Play Scene
 
    // static
    background('#F5F5F5'); // WhiteSmoke
+   fill('#800000') // Maroon
+   noStroke();
+   textSize(13);
+   text("Press [Backspace] to go back to start", width - 235, 23);
    fill('#FFE4B5'); // Moccasin
    noStroke();
    rectMode(CORNER);
    rect(0, height * 0.2, width, height * 0.8);
 
+   // draws baseboard continuously
    stroke('#B22222'); // FireBrick
    strokeWeight(2);
    for (let i = 0; i < baseboardX.length; i++) {
@@ -307,10 +313,16 @@ var drawPlaySc = function() { // Play Scene
    // Outcome
    if (toys[toys.length - 1].x < shakky.x - 15 && shakky.toys / toys.length >= 0.75) {
       textSize(37);
-      text("YOU WIN!!!", 250, 60);
+      text("YOU WIN!!!", 270, 70);
    } else if (toys[toys.length - 1].x < shakky.x - 15) {
       textSize(31);
       text("You lose...", 260, 70);
+   }
+
+   // back to start scene after game is over
+   if (toys[toys.length - 1].x < shakky.x - 200) {
+      currSc = 1;
+      newG = 1;
    }
 
    if (keyIsPressed && keyCode === UP_ARROW) {
@@ -319,6 +331,7 @@ var drawPlaySc = function() { // Play Scene
       shakky.rDown();
    } else if (keyIsPressed && keyCode === BACKSPACE) {
       currSc = 1;
+      newG = 1;
    }
    
    shakky.draw();
@@ -329,6 +342,25 @@ var drawPlaySc = function() { // Play Scene
       text("GRRR!!", shakky.x - 13, shakky.y - 17);
       shakky.scare--;
    }
+}
+
+var restartGame = function() { // Restarts the game
+   chanclas = 0;
+   shakky.toys = 0;
+
+   for (let i = 0; i < 40; i++) {
+      if (chanclas < 10 && Math.random() > 0.75) {
+         toys[i] = new Toy(i * 50 + 350, Math.floor(Math.random() * (470 - 130) + 130), true); // Random from 130 to 469
+         chanclas++;
+      } else {
+         toys[i] = new Toy(i * 50 + 350, Math.floor(Math.random() * 340 + 130)); // Random from 130 to 469
+      }
+   }
+
+   meowwy.x = Math.floor(Math.random() * 750 + 750);
+   meowwy.y = Math.floor(Math.random() * 70 + 50);
+
+   newG = 0;
 }
 
 var shakky = new Chihuahua(150, 300);
@@ -363,6 +395,11 @@ for (let i = 0; i < 17; i++) {
 }
 
 function draw() {
+   // starts new game
+   if (newG == 1) {
+      restartGame();
+   }
+
    if (currSc === 1) {
       drawStSc();
    } else if (currSc === 2) {
