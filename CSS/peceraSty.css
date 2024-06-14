@@ -12,8 +12,19 @@ canvas {
    border: 0.2em ridge grey;
 }
 p {
+   margin:0.3em 0;
    color:goldenrod;
    font-family:'Courier New', Courier, monospace;
    font-size:small;
    text-align:justify;
+}
+p::first-letter {
+   padding-right: 0.02em;
+   font-size: x-large;
+   font-weight: bolder;
+}
+em {
+   padding: 0.2em 0.3em;
+   font-size: 1.1em;
+   background-color: #222;
 }

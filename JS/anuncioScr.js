@@ -26,6 +26,11 @@ var R = 0, G = 191, B = 255;
 var pantX = 1, pantY = pantX * 11 / 14;
 
 draw = function () {
+   if (pantX === 1) {
+      cx.fillStyle = "LightSalmon";
+      cx.fillRect(0, 0, canvas.width, canvas.height);
+   }
+
    // Text
    cx.fillStyle = "rgb(220,0," + R; // + ")"; // ???
    cx.font = "53px Candara";
