@@ -14,13 +14,13 @@
          fishbowl in a canvas using the procesing.js library. Intended for
          web develpoment learners">
       <title lang="es">Proyecto 5: Pecera</title>
-      <link rel="stylesheet" href="../CSS/peceraSty.css">
+      <link rel="stylesheet" href="../CSS/style.css">
    </head>
 
-   <body>
+   <body class="pecera">
       <h1>Fishbowl</h1>
 
-      <canvas id="mycanvas"></canvas>
+      <canvas id="pecera-canvas"></canvas>
 
       <p>This is an <em>interactive</em> canvas created with the <em>processing.js</em> library.</p>
       <p>All the <em>colors</em> are set <em>randomly</em> when the page loads except for the background, fish body and mouth.</p>
@@ -143,7 +143,7 @@
       };
 
       // Get the canvas that ProcessingJS will use
-      var canvas = document.getElementById("mycanvas");
+      var canvas = document.getElementById("pecera-canvas");
       // Pass the function to ProcessingJS constructor
       var processingInstance = new Processing(canvas, programCode); 
    </script>

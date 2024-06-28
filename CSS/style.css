@@ -1,20 +1,20 @@
 /* Style instructions for the peceraProcessingJS.html file */
 body {
    background-color:black;
+   font-family:'Courier New', Courier, monospace;
+   color:goldenrod;
+}
+body.pecera {
    margin: 1.1em;
 }
 h1 {
-   color:goldenrod;
-   font-family:'Courier New', Courier, monospace;
    font-size:2.3em;
 }
-canvas {
+#pecera-canvas {
    border: 0.2em ridge grey;
 }
 p {
    margin:0.3em 0;
-   color:goldenrod;
-   font-family:'Courier New', Courier, monospace;
    font-size:small;
    text-align:justify;
 }
