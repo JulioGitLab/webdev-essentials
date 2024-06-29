@@ -1,10 +1,10 @@
 Los proyectos en este repositorio se basan en proyectos que son parte del curso "Programación de computadoras" de Khan Academy.
-El nivel de complejidad de sus versiones iniciales es muy cercano a lo requerido en las lecciones en las que aparecen durante el curso. Sin embargo, a través de cada commit trato de agregar características un poco más avanzadas de cada tenología involucrada (HTML, CSS, JavaScript y SQL) con la finalidad de convertirlos en ejemplos más generales que otros aprendices de desarrollo web encuentren más interesantes para su análisis.
-Espero que les gusten, y agradezco cualquier comentario o sugerencia que me pueda ayudar a mejorar.
+El nivel de complejidad de sus versiones iniciales es muy cercano a lo requerido en las lecciones en las que aparecen durante el curso. Sin embargo, a través de cada commit trato de agregar características un poco más avanzadas de cada tenología involucrada (HTML, CSS, JavaScript, SQL, etc.) con la finalidad de que otros aprendices de desarrollo web más avanzados también los encuentren interesantes para su análisis.
+Espero que les gusten, y agradezco cualquier comentario o sugerencia que me ayude a mejorar.
 
 The projects in this repository are based on projects that are part of the Khan Academy "Computer Programming" course.
-The level of complexity of their initial versions is very close to what is required in the lessons in which they appear during the course. However, through each commit I try to add slightly more advanced features of each technology involved (HTML, CSS, JavaScript and SQL) with the purpose of converting them into more general examples that other web development learners find more interesting for their analysis.
-I hope you like them, and I appreciate any comments or suggestions that can help me improve.
+The level of complexity of their initial versions is very close to what is required in the lessons in which they appear during the course. However, through each commit I try to add slightly more advanced features of each technology involved (HTML, CSS, JavaScript, SQL, etc.) with the aim that other more advanced web development learners also find them interesting for their analysis.
+I hope you like them, and I appreciate any comments or suggestions that help me improve.
 
 List of projects in recommended review order:
 
@@ -18,3 +18,4 @@ List of projects in recommended review order:
  8) blogTailwindCSS.html
  9) eventInvite.html
 10) shakkyChihuahuaOO.html
+11) tic-tac-toe.html
