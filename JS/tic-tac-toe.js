@@ -40,12 +40,64 @@ const color = {
    White:'#FFF'
 }
 
-var pTurn = 0, nCols = 3, nRows = 3, width = 503, height = 503;
+var pTurn = 0, nCols = 3, nRows = 3, width = 503, height = 503, wLine = 0;
 var SYMBOLS = ["O", "X"];
 
 var tiles = [];
 
-var checkWin = function() {}; // PENDING
+var checkWin = function() {
+   if (tiles[0].label !== "" && tiles[0].label === tiles[1].label && tiles[0].label === tiles[2].label) {
+      wLine = 1;
+   } else if (tiles[3].label !== "" && tiles[3].label === tiles[4].label && tiles[3].label === tiles[5].label) {
+      wLine = 2;
+   } else if (tiles[6].label !== "" && tiles[6].label === tiles[7].label && tiles[6].label === tiles[8].label) {
+      wLine = 3;
+   } else if (tiles[0].label !== "" && tiles[0].label === tiles[3].label && tiles[0].label === tiles[6].label) {
+      wLine = 4;
+   } else if (tiles[1].label !== "" && tiles[1].label === tiles[4].label && tiles[1].label === tiles[7].label) {
+      wLine = 5;
+   } else if (tiles[2].label !== "" && tiles[2].label === tiles[5].label && tiles[2].label === tiles[8].label) {
+      wLine = 6;
+   } else if (tiles[0].label !== "" && tiles[0].label === tiles[4].label && tiles[0].label === tiles[8].label) {
+      wLine = 7;
+   } else if (tiles[6].label !== "" && tiles[6].label === tiles[4].label && tiles[6].label === tiles[2].label) {
+      wLine = 8;
+   }
+
+   // draws the winning lines
+   if (wLine > 0) {
+      stroke(color.FireBrick);
+      strokeWeight(11);
+   }
+   switch (wLine) {
+      case 1:
+         line(width * 0.16, height * 0.09, width * 0.16, height * 0.91);
+         break;
+      case 2:
+         line(width * 0.5, height * 0.09, width * 0.5, height * 0.91);
+         break;
+      case 3:
+         line(width * 0.84, height * 0.09, width * 0.84, height * 0.91);
+         break;
+      case 4:
+         line(width * 0.09, height * 0.15, width * 0.91, height * 0.15);
+         break;
+      case 5:
+         line(width * 0.09, height * 0.5, width * 0.91, height * 0.5);
+         break;
+      case 6:
+         line(width * 0.09, height * 0.83, width * 0.91, height * 0.83);
+         break;
+      case 7:
+         line(width * 0.13, height * 0.13, width * 0.87, height * 0.87);
+         break;
+      case 8:
+         line(width * 0.87, height * 0.13, width * 0.13, height * 0.87);
+         break;
+      default:
+         break;
+   }
+}; // PENDING
 
 var Tile = function(x, y) {
    this.x = x;
@@ -110,4 +162,5 @@ function draw() {
    createCanvas(500, 500);
    background(color.DimGrey);
    drawTiles();
+   checkWin();
 };
