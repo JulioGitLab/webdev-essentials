@@ -61,6 +61,10 @@ var score = [0, 0];
 var tiles = [];
 
 var checkWin = function() {
+   for (let i = 0; i < 9; i++) {
+      if (tiles[i].label !== "") { tie++; }
+   }
+
    if (tiles[0].label !== "" && tiles[0].label === tiles[1].label && tiles[0].label === tiles[2].label) {
       (tiles[0].label === "🐶") ? winner = 0 : winner = 1;
       winLine = 1;
@@ -85,13 +89,13 @@ var checkWin = function() {
    } else if (tiles[6].label !== "" && tiles[6].label === tiles[4].label && tiles[6].label === tiles[2].label) {
       (tiles[6].label === "🐶") ? winner = 0 : winner = 1;
       winLine = 8;
+   } else if (tie === 9) {
+      winner = 2;
    } else {
-      for (let i in tiles) {
-         if (tiles[i].label !== "") { tie++; }
-      }
-      (tie === 9) ? winner = 2 : tie = 0;
+      tie = 0;
    }
 
+   // updates score
    if (winner === 0 || winner === 1) { score[winner]++; };
 }
 
@@ -122,8 +126,16 @@ Tile.prototype.onClick = function() {
    // put player's symbol
    this.label = SYMBOLS[pTurn];
 
-   // 2 players change turn
+   checkWin();
+   
+   // change turn
    (pTurn) ? pTurn = 0 : pTurn = 1;
+
+   // if there is a winner, exit
+   if (winner !== -1) { return; }
+
+   // VS PC mode. Comment for 2 player mode
+   if (pTurn) { pcTurn(); }
 };
 
 Tile.prototype.handleMouseClick = function(x, y) {
@@ -160,15 +172,11 @@ mouseReleased = function() {
    }
 }
 
-var PCTurn = function() {
-   // VS PC mode
-   do {
+var pcTurn = function() {
+   while (pTurn) {
       let r = Math.floor(Math.random() * 9);
-      if (tiles[r].label === "") {
-         tiles[r].label = SYMBOLS[pTurn];
-         pTurn = 0;
-      }
-   } while (pTurn);
+      tiles[r].onClick();
+   }
 }
 
 var drawWin = function() {
@@ -209,10 +217,11 @@ var drawWin = function() {
 }
 
 var restartGame = function() {
+   pTurn = 0;
    winner = -1;
+   tie = 0;
    winLine = 0;
    restartT = 0;
-   tie = 0;
    for (let i in tiles) { tiles[i].label = ""; }
    noStroke();
 }
@@ -223,9 +232,8 @@ function draw() {
    drawTiles();
    if (winner === -1) {
       checkWin();
-      // if (pTurn === 1) { PCTurn(); } // Comment for 2 player mode
    } else {
       drawWin();
-      if (restartT++ === 139) { restartGame(); }
+      if (restartT++ === 131) { restartGame(); }
    }
 }
