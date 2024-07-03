@@ -18,7 +18,7 @@ h1 {
    border: 0.2em ridge grey;
 }
 #tic-tac-toe-canvas {
-   display: block;
+   /* display: block; */
    border: 0.3em ridge grey;
 }
 p {
