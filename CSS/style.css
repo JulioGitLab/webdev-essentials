@@ -11,6 +11,10 @@ body.tic-tac-toe {
    display: flex;
    justify-content: center;
 }
+body.memoji {
+   display: flex;
+   justify-content: center;
+}
 h1 {
    font-size:2.3em;
 }
@@ -19,6 +23,9 @@ h1 {
 }
 #tic-tac-toe-canvas {
    /* display: block; */
+   border: 0.3em ridge grey;
+}
+#memoji-canvas {
    border: 0.3em ridge grey;
 }
 p {
