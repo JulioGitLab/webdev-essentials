@@ -3,6 +3,7 @@ const cW = 1920 / 2, cH = 1080 / 2;
 function setup() {
    let canvas = createCanvas(cW, cH);
    canvas.id("memoji-canvas");
+   frameRate(50);
 }
 
 const color = {
@@ -50,7 +51,7 @@ const color = {
 var Tile = function(x, y, face) {
    this.x = x;
    this.y = y;
-   this.size = 75;
+   this.size = 97;
    this.face = face;
    this.faceUp = false;
    this.match = false;
@@ -58,14 +59,14 @@ var Tile = function(x, y, face) {
 
 Tile.prototype.draw = function() {
    fill(color.GoldenRod);
-   strokeWeight(2);
+   strokeWeight(3);
    rect(this.x, this.y, this.size, this.size, 11);
-   textSize(47);
+   textSize(67);
    textAlign(CENTER, CENTER);
    if (this.faceUp) {
-      text(this.face, this.x + this.size / 2, this.y + this.size / 2);
+      text(this.face, this.x + this.size / 2, this.y + this.size / 2 + 5);
    } else {
-      text("🐶", this.x + this.size / 2, this.y + this.size / 2);
+      text("🐶", this.x + this.size / 2, this.y + this.size / 2 + 5);
    }
 };
 
@@ -77,14 +78,13 @@ Tile.prototype.tileClick = function(x, y) {
 // Global config
 var N_COLS = 5, N_ROWS = 4;
 
-// Array of all possible faces
+// All possible faces
 var faces = [
    '💩','😼','😾','🐾','🐩','🐕','🐈‍⬛',
    '🦴','🏃','🤾','🩴','🥎','💉','🗞️'
-   // "💩","😼","😾","🐾","🐩","🐕","🐈‍⬛",
-   // "🦴","🏃","🤾","🩴","🥎","💉","🗞️"
 ];
 
+// All possible hit phrases
 var hit = [
    "Well done!","Great job!","Nice one!","Impressive!","Keep it up!",
    "Nicely done!","Excellent shot!","Bullseye!","Fantastic!","Way to go!",
@@ -92,6 +92,7 @@ var hit = [
    "Wow!","Great move!","You're on a roll!","Well played!"
 ];
 
+// All possible miss phrases
 var miss = [
    "Keep trying","That's ok","Learn from this miss","No worries",
    "It happens to the best of us","You'll get the next one",
@@ -147,8 +148,8 @@ var createTiles = function() {
 
    for (let i = 0; i < N_COLS; i++) {
       for (let j = 0; j < N_ROWS; j++) {
-         let tileX = i * 83 + 270;
-         let tileY = j * 83 + 100;
+         let tileX = i * 103 + 223;
+         let tileY = j * 103 + 79;
          let tileFace = selected.pop();
          tiles.push(new Tile(tileX, tileY, tileFace));
       }
@@ -156,18 +157,48 @@ var createTiles = function() {
 }
 createTiles();
 
-// restartBtn
+// Restart button
+var restartBtn = {
+   x: cW - 97,
+   y: 19,
+   width: 71,
+   height: 31,
+   label: "Restart"
+};
 
-// drawBtn
+var drawBtn = function(btn) {
+   fill(color.Silver);
+   stroke(color.Black);
+   strokeWeight(3);
+   rect(btn.x, btn.y, btn.width, btn.height, 7);
+   fill(color.Black);
+   noStroke();
+   textSize(17);
+   // textAlign(CENTER, CENTER);
+   text(btn.label, btn.x + btn.width / 2, btn.y + btn.height / 2);
+};
 
-// btnClick
+var btnClick = function(btn) {
+   return (mouseX >= btn.x && mouseX <= (btn.x + btn.width) &&
+           mouseY >= btn.y && mouseY <= (btn.y + btn.height));
+};
 
 var nTries = 0, nMatches = 0;
 var flippedTiles = [];
 var delayStartFC = null;
-// hit_miss, rHit, rMiss
+var hit_miss = 0;
+var rHit = null, rMiss = null;
 
-// restartGame
+var restartGame = function() {
+   nTries = 0;
+   nMatches = 0;
+   flippedTiles.length = 0;
+   delayStartFC = null;
+   hit_miss = 0;
+   randomArray(faces);
+   shuffleArray(selected);
+   createTiles();
+}
 
 mouseClicked = function() {
 // function mouseClicked() {
@@ -187,8 +218,14 @@ mouseClicked = function() {
                   flippedTiles[1].match = true;
                   flippedTiles.length = 0;
                   nMatches++;
-                  // hit_miss, rHit
-               } // else hit_miss, rMiss
+                  hit_miss = 2;
+                  // rHit = floor(random(hit.length));
+                  rHit = Math.floor(Math.random() * hit.length);
+               } else {
+                  hit_miss = 1;
+                  // rMiss = floor(random(miss.length));
+                  rMiss = Math.floor(Math.random() * miss.length);
+               }
 
                delayStartFC = frameCount;
             }
@@ -197,15 +234,28 @@ mouseClicked = function() {
       }
    }
 
-   // if btnClick
+   // Restarts game
+   if (btnClick(restartBtn)) {
+      restartGame();
+      loop();
+   }
 }
 
 function draw() {
    background(color.Navy);
 
-   // drawBtn
+   drawBtn(restartBtn);
 
-   if (delayStartFC && (frameCount - delayStartFC) > 31) {
+   // Header
+   fill(color.GoldenRod);
+   textFont('Rockwell', 47);
+   stroke(color.Black);
+   strokeWeight(5);
+   strokeJoin(ROUND);
+   text("Memoji Quest!", cW / 2, cH * 0.07);
+   noStroke();
+
+   if (delayStartFC && (frameCount - delayStartFC) > 23) {
       for (let i = 0; i < tiles.length; i++) {
          let tile = tiles[i];
          if (!tile.match) { tile.faceUp = false; }
@@ -216,20 +266,32 @@ function draw() {
       noLoop();
    }
 
+   stroke(color.Black);
    for (let i = 0; i < tiles.length; i++) { tiles[i].draw(); }
+   noStroke();
 
    // Shows motivational text
+   if (hit_miss === 1) {
+      textSize(23);
+      text(miss[rMiss], width / 2, cH * 0.95);
+  } else if (hit_miss === 2) {
+      textSize(23);
+      text(hit[rHit], width / 2, cH * 0.95);
+  }
 
    if (nMatches === tiles.length / 2) {
+      textSize(29);
+      text("Completed in\n" + nTries + " tries!", cW * 0.88, cH * 0.92);
+   } else {
       fill(color.Black);
-      textSize(23);
-      text("Completed in " + nTries + " tries!", cW / 2, cH - 61);
+      textSize(17);
+      text("Tries: " + nTries, cW - 53, cH - 17);
    }
 
-   // Shows current frame count and tries
+   // Shows current frame count
    fill(color.Black);
-   textSize(11);
-   text("FC: " + frameCount + "\tTries: " + nTries, 53, cH - 17);
+   textSize(13);
+   text("FC: " + frameCount, 53, cH - 17);
 }
 
 noLoop(); // ??

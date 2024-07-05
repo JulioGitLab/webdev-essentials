@@ -146,18 +146,27 @@ Tile.prototype.handleMouseClick = function(x, y) {
    }
 };
 
+// Creates tiles
 for (let i = 0; i < nCols; i++) {
    for (let j = 0; j < nRows; j++) {
       tiles.push(new Tile(i * (cW / nCols + 3), j * (cW / nRows + 3)));
    }
 }
 
+// Draws header and score board
 var drawScoreBoard = function() {
+   fill(color.GoldenRod);
+   textFont('Rockwell', 47);
+   stroke(color.Black);
+   strokeWeight(5);
+   strokeJoin(ROUND);
+   text("Tic-tac-toe!", width / 2, 37);
    fill(color.Black);
+   noStroke();
    textSize(19);
-   text("Dog: " + score[0], 37, 23);
-   text("Cat: " + score[1], 337, 23);
-   text("Turn: " + SYMBOLS[pTurn], 181, 23);
+   text("Dog: " + score[0], 37, 89);
+   text("Cat: " + score[1], 337, 89);
+   text("Turn: " + SYMBOLS[pTurn], cW / 2, 89);
 }
 
 var drawTiles = function() {
@@ -212,8 +221,9 @@ var drawWin = function() {
          break;
    }
 
+   strokeJoin(MITER);
    textSize(61);
-   (winner === 2) ? text("It's a tie", 179, 199) : text(SYMBOLS[winner] + "Wins", 173, 199);
+   (winner === 2) ? text("It's a tie", cW / 2, 191) : text(SYMBOLS[winner] + "Wins", cW / 2, 191);
 }
 
 var restartGame = function() {
