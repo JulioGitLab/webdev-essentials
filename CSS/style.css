@@ -15,6 +15,9 @@ body.memoji {
    display: flex;
    justify-content: center;
 }
+.orthohedron {
+   text-align: center;
+}
 h1 {
    font-size:2.3em;
 }
@@ -27,6 +30,9 @@ h1 {
 }
 #memoji-canvas {
    border: 0.3em ridge grey;
+}
+#orthohedron-canvas {
+   border: 0.2em ridge grey;
 }
 p {
    margin:0.3em 0;
