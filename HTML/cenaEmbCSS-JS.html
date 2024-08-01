@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 
-<!-- The CSS instructions for this page are embedded in the head element,
-   except for one in the opening body tag setting the page background and
-   two more in each opening canvas tag setting their borders width and
-   color as examples of inline CSS.
-   All the JavaScript code is embedded in the body element. -->
+<!-- A single page project using the Canvas API to draw a plate with dinner served.
+
+   The CSS instructions for this page are embedded in the head element except for some
+   examples of inline CSS; one in the opening body tag setting the page background,
+   two more in each opening canvas tag setting their borders width and color.
+
+   All the JavaScript code is embedded in the body element.
+   Canvas API article https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API -->
 
 <html lang="en">
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="A single page project of an animated dinner
-         plate in a canvas created as an example for web development learners.">
+      <meta name="description" content="A single page project of a dinner plate in a canvas.
+         Intended for web development learners.">
       <title lang="es">Projecto 1: Cena</title>
       <style>
          h1 {
+            margin: 0.5em 0 0.3em;
             color:gold;
             font-family:'Courier New';
             font-size: 2.3em;
          }
          p {
-            margin-top:0;
+            margin-top: 0.3em;
             color:goldenrod;
             font-family:'Courier New';
-            font-size:small;
+            font-size: smaller;
             text-align:justify;
          }
       </style>
@@ -143,6 +147,7 @@
          // Cheese
          ctx.beginPath();
          ctx.lineWidth = 2;
+         ctx.lineJoin = "round";
          ctx.strokeStyle = "#803300";
          ctx.moveTo(50,105);
          ctx.lineTo(80,65);
@@ -157,11 +162,19 @@
          ctx.lineTo(50,105);
          ctx.stroke();
          ctx.fill();
-         for (let i = 0; i < 13; i++) {
-            ctx.beginPath();
+         for (let i = 0; i < 7; i++) {
+            // holes
             ctx.fillStyle = 'Khaki';
-            ctx.arc(Math.random() * 40 + 68, Math.random() * 33 + 85, Math.random() * 3, 0, 2 * Math.PI);
-            ctx.fill();
+            let x1 = Math.random() * 7 + 79, y1 = Math.random() * 13 + 71;
+            let x2 = Math.random() * 43 + 67, y2 = Math.random() * 7 + 89;
+            let x3 = Math.random() * 67 + 59, y3 = Math.random() * 5 + 101;
+            let x4 = Math.random() * 67 + 61, y4 = Math.random() * 5 + 109;
+            if (y1 > 79) { (x1 < 83) ? x1 -= 3 : x1 += 7; }
+            drawMiniArc(x1, y1, (y1 > 79) ? 3 : 2);
+            drawMiniArc(x2, y2, 3);
+            drawMiniArc(x3, y3, 4);
+            if (x4 < 89) { y4 += 3; }
+            drawMiniArc(x4, y4, (x4 < 101) ? 4 : 2);
          }
          // Tortillas
          ctx.beginPath();
@@ -175,11 +188,15 @@
          ctx.stroke();
          ctx.fillStyle = "rgba(239,239,93,.7)";
          ctx.fill();
-         for (let i = 0; i < 20; i++) {
-            ctx.beginPath();
+         for (let i = 0; i < 31; i++) {
+            // burn marks
             ctx.fillStyle = 'peru';
-            ctx.arc(Math.random() * 50 + 193, Math.random() * 63 + 70, Math.random() * 2, 0, 2 * Math.PI);
-            ctx.fill();
+            let x = Math.random() * 71 + 181, y = Math.random() * 79 + 61;
+            if (x < 191) { y < 97 ? y += 19 : y -= 23; }
+            if (x > 241) { y < 97 ? y += 19 : y -= 13; }
+            if (y < 71) { x < 211 ? x += 13 : x -= 7; }
+            if (y > 131) { x < 211 ? x += 13 : x -= 7; }
+            drawMiniArc(x, y, 2);
          }
          // Beans
          ctx.lineWidth = 5;
@@ -239,6 +256,12 @@
          ctx.moveTo(160,190);
          ctx.lineTo(175,155);
          ctx.stroke();
+
+         function drawMiniArc(x, y, w) {
+            ctx.beginPath();
+            ctx.arc(x, y, Math.random() * w, 0, 2 * Math.PI);
+            ctx.fill();
+         }
       </script>
    </body>
 </html>
