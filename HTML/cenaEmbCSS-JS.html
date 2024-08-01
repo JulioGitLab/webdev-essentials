@@ -109,7 +109,7 @@
          ctx0.bezierCurveTo(55,170,80,160,80,150);
          ctx0.bezierCurveTo(80,145,80,135,70,130);
          ctx0.bezierCurveTo(60,130,55,130,50,135);
-         // Original:
+         // Old
          // ctx0.moveTo(75, 40);
          // ctx0.bezierCurveTo(75, 37, 70, 25, 50, 25);
          // ctx0.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5);
@@ -137,6 +137,7 @@
          // Wooden table
          ctx.fillStyle = "rgb(186,145,20)";
          ctx.fillRect(0,0,canvas.width,canvas.height);
+
          // Plate
          ctx.arc(150,125,115,0,Math.PI * 2);
          ctx.fillStyle = "#FFFFFF";
@@ -144,6 +145,7 @@
          ctx.moveTo(251,128);
          ctx.arc(150,125,100,Math.PI * 0.05,Math.PI * 1.77);
          ctx.stroke();
+
          // Cheese
          ctx.beginPath();
          ctx.lineWidth = 2;
@@ -162,7 +164,7 @@
          ctx.lineTo(50,105);
          ctx.stroke();
          ctx.fill();
-         for (let i = 0; i < 7; i++) {
+         for (let i = 0; i < 5; i++) {
             // holes
             ctx.fillStyle = 'Khaki';
             let x1 = Math.random() * 7 + 79, y1 = Math.random() * 13 + 71;
@@ -176,6 +178,7 @@
             if (x4 < 89) { y4 += 3; }
             drawMiniArc(x4, y4, (x4 < 101) ? 4 : 2);
          }
+
          // Tortillas
          ctx.beginPath();
          ctx.ellipse(216,95,37,37,0,Math.PI,Math.PI * 2);
@@ -198,15 +201,14 @@
             if (y > 131) { x < 211 ? x += 13 : x -= 7; }
             drawMiniArc(x, y, 2);
          }
+
          // Beans
          ctx.lineWidth = 5;
          ctx.lineCap = "round";
          ctx.strokeStyle = "rgba(140,93,13,.9)";
-
-         for (var i = 0; i < 130; i++) {
+         for (var i = 0; i < 131; i++) {
             var x = Math.round(Math.random() * 90 + 100); // 100-190
             var y = Math.round(Math.random() * 40 + 30); // 30-70
-
             if (x < 110 && y < 35) {
                i--;
                continue;
@@ -220,11 +222,11 @@
                i--;
                continue;
             }
-
             ctx.beginPath();
             ctx.arc(x,y,4,Math.PI * 1.9,Math.PI * .6);
             ctx.stroke();
          }
+         
          // Steak
          ctx.beginPath();
          ctx.fillStyle = "darkred";
@@ -244,19 +246,17 @@
          ctx.fill();
          ctx.strokeStyle = "maroon";
          ctx.lineWidth = 4;
-         ctx.beginPath();
-         ctx.moveTo(100,180);
-         ctx.lineTo(115,145);
-         ctx.moveTo(115,185);
-         ctx.lineTo(130,145);
-         ctx.moveTo(130,190);
-         ctx.lineTo(145,150);
-         ctx.moveTo(145,190);
-         ctx.lineTo(160,150);
-         ctx.moveTo(160,190);
-         ctx.lineTo(175,155);
+         ctx.beginPath(); // grill marks
+         for (let i = 5, j = 173, x = 100, y1 = 139; i > 0; i--, j += 3) {
+            let y2 = Math.random() * 5 + j;
+            y1 += Math.random() * 3 + i;
+            ctx.moveTo(x, y2);
+            x += Math.random() * 3 + 13;
+            ctx.lineTo(x, y1)
+         }
          ctx.stroke();
 
+         // for drawing cheese holes and tortilla burn marks
          function drawMiniArc(x, y, w) {
             ctx.beginPath();
             ctx.arc(x, y, Math.random() * w, 0, 2 * Math.PI);
