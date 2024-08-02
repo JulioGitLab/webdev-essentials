@@ -9,21 +9,16 @@
 const canvas = document.getElementById("aCanvas");
 const cx = canvas.getContext("2d");
 
-var mouseX = 0, mouseY = 0;
+let mouseX = 0, mouseY = 0;
 canvas.addEventListener('mousemove', (event) => {
    mouseX = event.offsetX;
    mouseY = event.offsetY;
-
    // console.log(`Mouse X: ${mouseX}`);
    // console.log(`Mouse Y: ${mouseY}`);
 });
 
-cx.fillStyle = "LightSalmon";
-cx.fillRect(0, 0, canvas.width, canvas.height);
-
-// var R = 70, G = 200, B = 230;
-var R = 0, G = 191, B = 255;
-var pantX = 1, pantY = pantX * 11 / 14;
+let R = 0, G = 191, B = 255;
+let pantX = 1, pantY = pantX * 11 / 14;
 
 draw = function () {
    if (pantX === 1) {
@@ -33,25 +28,29 @@ draw = function () {
 
    // Text
    cx.fillStyle = "rgb(220,0," + R; // + ")"; // ???
-   cx.font = "53px Candara";
-   cx.fillText("BKute", 180, 70);
+   cx.font = "61px Candara";
+   cx.fillText("BK", 140, 75);
+   cx.font = "43px Candara";
+   cx.fillText("UTE", 210, 75);
    cx.fillStyle = "rgb(163," + B + "," + R;
    cx.font = "31px Candara";
-   cx.fillText("La mejor", 183, 120);
+   cx.fillText("La mejor", 183, 130);
    cx.fillStyle = "rgb(" + R + ",69," + B;
    cx.font = "37px Candara";
-   cx.fillText('!', 300, 120);
+   cx.fillText('!', 300, 130);
    cx.fillStyle = "rgb(" + R + ",33," + B;
    cx.font = "41px Candara";
-   cx.fillText('!', 310, 120);
+   cx.fillText('!', 310, 130);
    cx.fillStyle = "rgb(" + R + ",0," + B;
    cx.font = "47px Candara";
-   cx.fillText('!', 320, 120);
-   cx.fillStyle = "rgb(" + R + ',' + B + ",216)";
-   cx.font = "23px serif";
-   cx.fillText("y al mejor precio!", 20, 310);
+   cx.fillText('!', 320, 130);
+   cx.fillStyle = "rgb(" + R + ',' + B + ",101)";
+   cx.font = "19px sans-serif";
+   cx.fillText("y al mejor precio!", 23, 310);
+
    // Figures
-   // strokeWeight(0.6); // Must modify to pure JS
+   cx.lineWidth = 1.3;
+   cx.lineJoin = "round";
    cx.beginPath();
    cx.fillStyle = "rgb(" + R + ',' + G + ',' + B;
    cx.moveTo(pantX, pantY);
@@ -84,7 +83,13 @@ draw = function () {
 
    if (pantX > 500) R = 0, G = 191, B = 255, pantX = 1, pantY = pantX * 11 / 14;
 
-   requestAnimationFrame(draw);
+   requestAnimationFrame(fpsTo50); // for 50 fps
+   // requestAnimationFrame(draw); // for default fps
 }
 
-requestAnimationFrame(draw);
+function fpsTo50() {
+   setTimeout(draw, 1000/50); // ms/fps
+}
+
+requestAnimationFrame(fpsTo50); // for 50 fps
+// requestAnimationFrame(draw); // for default fps
