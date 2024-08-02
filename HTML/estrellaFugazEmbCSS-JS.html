@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 
-<!-- All the CSS instructions for this page are embedded in the head element.
-   All the JavaScript code is embedded in the body element -->
+<!-- A single page project using the canvas API to draw an animated night in the city.
+   
+   All the CSS instructions for this page are embedded in the head element.
+   
+   All the JavaScript code is embedded in the body element.
+   Canvas API article https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API -->
    
 <html lang="en">
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="A single page project of an animated night in
-         a city in a canvas created as an example for web development learners.">
+      <meta name="description" content="A single page project of an animated night in the city
+      in a canvas. Intended as an example for web development learners.">
       <title lang="es">Proyecto 2: Estrella Fugaz</title>
       <style>
          body {
@@ -21,7 +25,7 @@
             font-size: 2.3em;
          }
          p {
-            margin-top:0;
+            margin-top:0.3em;
             color:whitesmoke;
             font-family:'Courier New';
             font-size:small;
@@ -39,9 +43,9 @@
       <canvas id="myCanvas" width="350" height="350"></canvas>
 
       <p>
-         Multiple stars in the back are added in random positions every time
-         the page loads.<br>The comet and shooting star keep reappearing in
-         random positions.
+         Multiple stars in the back are added in random positions every time the page loads.<br />
+         The comet and shooting star keep reappearing in random positions. <br />Click on the
+         canvas to add stars at the pointer position.
       </p>
 
       <script>
@@ -51,28 +55,40 @@
          var cX = -10, cY = 160, sX = 360, sY = 60, rsX = [], rsY = [];
 
          // Initialize rsX and rsY
-         for (let i = 0; i < 19; i++) {
+         for (let i = 0; i < 13; i++) {
             rsX[i] = Math.random() * 330 + 10; // 10-340
-            rsY[i] = Math.random() * 300 + 10; // 10-310
+            rsY[i] = Math.random() * 250 + 10; // 10-260
          }
+
+         function drawStar(x, y) {
+            ctx.beginPath();
+            ctx.fillStyle = "rgb(255,238,0)";
+            ctx.moveTo(x, y);
+            ctx.lineTo(x - 2, y + 5);
+            ctx.lineTo(x + 3, y + 2);
+            ctx.lineTo(x - 3, y + 2);
+            ctx.lineTo(x + 2, y + 5);
+            ctx.lineTo(x, y);
+            ctx.fill();
+         }
+
+         // Adds stars by clicking on the canvas
+         canvas.addEventListener("click", (e) => {
+            let rect = canvas.getBoundingClientRect();
+            rsX.push(e.clientX - rect.left);
+            rsY.push(e.clientY - rect.top);
+         });
          
          draw = function() {
-
             // Night
             ctx.fillStyle = "rgb(26,37,110)";
             ctx.fillRect(0,0,canvas.width,canvas.height);
+
             // Random stars
-            for (let i = 0; i < 19; i++) {
-               ctx.beginPath();
-               ctx.fillStyle = "rgb(255,238,0)";
-               moveTo(rsX[i],rsY[i]);
-               ctx.lineTo(rsX[i] - 2, rsY[i] +5);
-               ctx.lineTo(rsX[i] + 3,rsY[i] + 2);
-               ctx.lineTo(rsX[i] - 3,rsY[i] + 2);
-               ctx.lineTo(rsX[i] + 2,rsY[i] + 5);
-               ctx.lineTo(rsX[i],rsY[i]);
-               ctx.fill();
+            for (let i = 0; i < rsX.length; i++) {
+               drawStar(rsX[i], rsY[i]);
             }
+
             // Moon
             ctx.fillStyle = "rgb(136,154,158)";
             ctx.ellipse(130,190,40,42,0,0,Math.PI * 2);
@@ -81,6 +97,7 @@
             ctx.fillStyle = "rgb(26,37,110)";
             ctx.ellipse(148,172,40,43,0,0,Math.PI * 2);
             ctx.fill();
+
             // Comet
             ctx.beginPath();
             ctx.fillStyle = "rgb(255,238,0)";
@@ -92,26 +109,20 @@
                   cX = -10;
                   cY = Math.round(Math.random() * 140 + 20); // 20-160
             }
+
             // Shooting star
-            ctx.beginPath();
-            ctx.moveTo(sX,sY);
-            ctx.lineTo(sX - 2,sY + 5);
-            ctx.lineTo(sX + 3,sY + 2);
-            ctx.lineTo(sX - 3,sY + 2);
-            ctx.lineTo(sX + 2,sY + 5);
-            ctx.lineTo(sX,sY);
-            ctx.fill();
+            drawStar(sX, sY);
             sX -= 1.1;
             if (sX < -10) {
                sX = 360;
                sY = Math.round(Math.random() * 140 + 10); // 10-150
             }
+
             // Buildings
             ctx.fillStyle = "rgb(61,57,77)";
             ctx.fillRect(60,220,80,130);
-            ctx.fillRect(210,190,75,160);
-            // Windows
-            for (var i = 0, wy = 230; i < 4; i++) {
+            ctx.fillRect(210,190,75,160)
+            for (var i = 0, wy = 230; i < 4; i++) { // windows
                for (var j = 0, wx = 70; j < 3; j++) {
                   if (i + j == 2 || i + j == 4) {
                      ctx.fillStyle = "rgb(227,198,12)"; // on
