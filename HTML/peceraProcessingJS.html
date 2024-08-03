@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 
-<!-- This project uses the processing.js library.
+<!-- A single page project using the processing.js library to draw an interactive fishbowl.
+
    All the JS code is embedded in the body to show its functionality.
    Fish, sand, stones, algae and bubbles are drawn using functions.
-   New bubbles are drawn in random positions by clicking with the mouse on the canvas.
-    -->
+   New bubbles are drawn in random positions by clicking with the mouse on the canvas. -->
 
 <html lang="en">
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="A single page project of an interactive
-         fishbowl in a canvas using the procesing.js library. Intended for
-         web develpoment learners">
+      <meta name="description" content="A single page project of an interactive fishbowl
+         drawn with the procesing.js library. Intended for web development learners">
       <title lang="es">Proyecto 5: Pecera</title>
       <link rel="stylesheet" href="../CSS/style.css">
    </head>
@@ -29,16 +28,15 @@
    </body>
 
    <!-- Include the processing.js library -->
-   <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
-   <!-- <script src="https://cdn.jsdelivr.net/processing.js/1.6.6/processing.min.js"></script> -->
+   <!-- <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> -->
+   <script src="https://cdn.jsdelivr.net/processing.js/1.6.6/processing.min.js"></script>
    <script>
       var programCode = function (processingInstance) {
          with (processingInstance) {
             size(400,400);
             frameRate(30);
 
-            // rgb(0,255,255) = Aqua
-            background(0,255,255);
+            background(0,255,255); // Aqua
 
             var drawFish = function (centerX, centerY, bodyLength, bodyHeight, bodyColor) {
                noStroke();
@@ -63,6 +61,7 @@
             };
 
             var sand = function () {
+               stroke(19,19,19);
                for (let i = 0; i < 7; i++) {
                   // rgb(244,164,96) = SandyBrown
                   fill(random(173,233), random(101,151), random(47,79));
@@ -73,6 +72,7 @@
             };
 
             var stones = function () {
+               stroke(19,19,19);
                for (let i = 0; i < 3; i++) {
                   fill(random(43,71), random(23,67), random(13,61));
                   for (let j = 0; j < 7; j++) {
@@ -104,11 +104,16 @@
             };
 
             // Draws more bubbles by clicking the mouse
-            mouseClicked = function () {
+            /* mouseClicked = function () { // for processing.js v1.4.8
                noStroke();
                fill(random(13,37), random(199,239), random(199,239));
                ellipse(random(4,397), random(-2,379), random(7,17), random(11,23));
-            };
+            }; */
+            canvas.addEventListener("click", () => { // for processing.js v1.6.6
+               noStroke();
+               fill(random(13,37), random(199,239), random(199,239));
+               ellipse(random(4,397), random(-2,379), random(7,17), random(11,23));
+            });
 
             // drawFish(centerX, centerY, bodyLength, bodyHeight, bodyColor)
             sand();
