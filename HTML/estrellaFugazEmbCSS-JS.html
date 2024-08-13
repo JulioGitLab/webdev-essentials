@@ -52,7 +52,7 @@
          const canvas = document.getElementById("myCanvas");
          const ctx = canvas.getContext("2d");
 
-         var cX = -10, cY = 160, sX = 360, sY = 60, rsX = [], rsY = [];
+         let cX = -10, cY = 160, sX = 360, sY = 60, rsX = [], rsY = [];
 
          // Initialize rsX and rsY
          for (let i = 0; i < 13; i++) {
@@ -122,8 +122,8 @@
             ctx.fillStyle = "rgb(61,57,77)";
             ctx.fillRect(60,220,80,130);
             ctx.fillRect(210,190,75,160)
-            for (var i = 0, wy = 230; i < 4; i++) { // windows
-               for (var j = 0, wx = 70; j < 3; j++) {
+            for (let i = 0, wy = 230; i < 4; i++) { // windows
+               for (let j = 0, wx = 70; j < 3; j++) {
                   if (i + j == 2 || i + j == 4) {
                      ctx.fillStyle = "rgb(227,198,12)"; // on
                   } else {
