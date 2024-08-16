@@ -46,7 +46,7 @@ const color = {
    White:'#FFF'
 }
 
-var Chihuahua = function(x,y) {
+const Chihuahua = function(x,y) {
    this.x = x;
    this.y = y;
    this.toys = 0;
@@ -117,7 +117,7 @@ Chihuahua.prototype.checkForCatCatch = function(cat) {
        }
 }
 
-var Toy = function(x, y, chancla) {
+const Toy = function(x, y, chancla) {
    this.x = x;
    this.y = y;
    this.chancla = chancla || false;
@@ -140,7 +140,7 @@ Toy.prototype.draw = function() {
    }
 };
 
-var Cat = function(x, y) {
+const Cat = function(x, y) {
    this.x = x;
    this.y = y;
 }
@@ -182,12 +182,12 @@ Cat.prototype.draw = function() {
    ellipse(this.x - 7, this.y + 7, 2, 5);
 }
 
-var currSc = 1; // Current Scene
-var newG = 1; // New Game flag
+let currSc = 1; // Current Scene
+let newG = 1; // New Game flag
 
-var drawStSc = function() { // Start Scene
-   var sX = width * 0.2, sY = height * 0.5, sW = 139;
-   var mX = width * 0.8, mY = height * 0.5, mW = 163;
+const drawStSc = function() { // Start Scene
+   let sX = width * 0.2, sY = height * 0.5, sW = 139;
+   let mX = width * 0.8, mY = height * 0.5, mW = 163;
    
    strokeJoin(ROUND); // default MITER
    background(color.Black);
@@ -300,7 +300,7 @@ var drawStSc = function() { // Start Scene
    }
 }
 
-var drawPlaySc = function() { // Play Scene
+const drawPlaySc = function() { // Play Scene
    textAlign(LEFT, BOTTOM);
 
    // static
@@ -386,7 +386,7 @@ var drawPlaySc = function() { // Play Scene
    }
 }
 
-var restartGame = function() { // Restarts the game
+const restartGame = function() { // Restarts the game
    chanclas = 0;
    shakky.toys = 0;
 
@@ -405,15 +405,15 @@ var restartGame = function() { // Restarts the game
    newG = 0;
 }
 
-var shakky = new Chihuahua(150, 300);
-// var meowwy = new Cat(random(500, 1000), random(50, 200)); // Must check p5.js random()
+const shakky = new Chihuahua(150, 300);
+// const meowwy = new Cat(random(500, 1000), random(50, 200)); // Must check p5.js random()
 // Math.random() * (max - min) + min;
-// var meowwy = new Cat(Math.floor(Math.random() * 100 + 300), 262); // for testing
-var meowwy = new Cat(Math.floor(Math.random() * 750 + 750), // from 750 to 1500
+// const meowwy = new Cat(Math.floor(Math.random() * 100 + 300), 262); // for testing
+const meowwy = new Cat(Math.floor(Math.random() * 750 + 750), // from 750 to 1500
                      Math.floor(Math.random() * 70 + 50)); // from 50 to 120
 
-var toys = [];
-var chanclas = 0;
+let toys = [];
+let chanclas = 0;
 /* for (let i = 0; i < 40; i++) { // Must check p5.js random()
    if (chanclas < 10 && random(1) > 0.75) {
       toys.push(new Toy(i * 40 + 300, random(30, 300), true));
@@ -431,7 +431,7 @@ for (let i = 0; i < 40; i++) {
    }
 }
 
-var baseboardX = [];
+const baseboardX = [];
 for (let i = 0; i < 17; i++) {
    baseboardX.push(i * 100);
 }
