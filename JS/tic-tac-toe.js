@@ -53,14 +53,14 @@ const color = {
    White:'#FFF'
 };
 
-var pTurn = 0, nCols = 3, nRows = 3, winner = -1, tie = 0; winLine = 0, restartT = 0;
-// var SYMBOLS = ["O", "X"];
-var SYMBOLS = ["🐶", "😾"];
-var score = [0, 0];
+let pTurn = 0, nCols = 3, nRows = 3, winner = -1, tie = 0; winLine = 0, restartT = 0;
+// const SYMBOLS = ["O", "X"];
+const SYMBOLS = ["🐶", "😾"];
+let score = [0, 0];
 
-var tiles = [];
+let tiles = [];
 
-var checkWin = function() {
+const checkWin = function() {
    for (let i = 0; i < 9; i++) {
       if (tiles[i].label !== "") { tie++; }
    }
@@ -99,7 +99,7 @@ var checkWin = function() {
    if (winner === 0 || winner === 1) { score[winner]++; };
 }
 
-var Tile = function(x, y) {
+const Tile = function(x, y) {
    this.x = x;
    this.y = y + 277;
    this.size = cW / nCols - 7;
@@ -154,7 +154,7 @@ for (let i = 0; i < nCols; i++) {
 }
 
 // Draws header and score board
-var drawScoreBoard = function() {
+const drawScoreBoard = function() {
    fill(color.GoldenRod);
    textFont('Rockwell', 47);
    stroke(color.Black);
@@ -169,7 +169,7 @@ var drawScoreBoard = function() {
    text("Turn: " + SYMBOLS[pTurn], cW / 2, 89);
 }
 
-var drawTiles = function() {
+const drawTiles = function() {
    for (let i in tiles) {
       tiles[i].draw();
    }
@@ -181,14 +181,14 @@ mouseReleased = function() {
    }
 }
 
-var pcTurn = function() {
+const pcTurn = function() {
    while (pTurn) {
       let r = Math.floor(Math.random() * 9);
       tiles[r].onClick();
    }
 }
 
-var drawWin = function() {
+const drawWin = function() {
    stroke(color.FireBrick);
    strokeWeight(11);
    
@@ -226,7 +226,7 @@ var drawWin = function() {
    (winner === 2) ? text("It's a tie", cW / 2, 191) : text(SYMBOLS[winner] + "Wins", cW / 2, 191);
 }
 
-var restartGame = function() {
+const restartGame = function() {
    pTurn = 0;
    winner = -1;
    tie = 0;
