@@ -48,7 +48,7 @@ const color = {
    White:'#FFF'
 };
 
-var Tile = function(x, y, face) {
+const Tile = function(x, y, face) {
    this.x = x;
    this.y = y;
    this.size = 97;
@@ -76,16 +76,16 @@ Tile.prototype.tileClick = function(x, y) {
 };
 
 // Global config
-var N_COLS = 5, N_ROWS = 4;
+const N_COLS = 5, N_ROWS = 4;
 
 // All possible faces
-var faces = [
+const faces = [
    '💩','😼','😾','🐾','🐩','🐕','🐈‍⬛',
    '🦴','🏃','🤾','🩴','🥎','💉','🗞️'
 ];
 
 // All possible hit phrases
-var hit = [
+const hit = [
    "Well done!","Great job!","Nice one!","Impressive!","Keep it up!",
    "Nicely done!","Excellent shot!","Bullseye!","Fantastic!","Way to go!",
    "Bravo!","Superb!","Incredible!","Magnificent!","That was pure skill!",
@@ -93,7 +93,7 @@ var hit = [
 ];
 
 // All possible miss phrases
-var miss = [
+const miss = [
    "Keep trying","That's ok","Learn from this miss","No worries",
    "It happens to the best of us","You'll get the next one",
    "Better luck next time","You're still doing great",
@@ -103,10 +103,10 @@ var miss = [
    "Don't give up!","You're almost there!","Keep pushing!"
 ];
 
-var selected = [];
+let selected = [];
 
 // Makes an array which has 2 of each faces, then randomizes it
-var randomArray = function(arr) {
+const randomArray = function(arr) {
    let possibleFaces = arr.slice(0);
    selected = [];
 
@@ -125,7 +125,7 @@ var randomArray = function(arr) {
 randomArray(faces);
 
 // Now shuffles the elements of that array
-var shuffleArray = function(arr) {
+const shuffleArray = function(arr) {
    let counter = arr.length;
 
    // While there are elements
@@ -142,8 +142,8 @@ var shuffleArray = function(arr) {
 shuffleArray(selected);
 
 // Creates the tiles
-var tiles = [];
-var createTiles = function() {
+let tiles = [];
+const createTiles = function() {
    tiles = [];
 
    for (let i = 0; i < N_COLS; i++) {
@@ -158,7 +158,7 @@ var createTiles = function() {
 createTiles();
 
 // Restart button
-var restartBtn = {
+const restartBtn = {
    x: cW - 97,
    y: 19,
    width: 71,
@@ -166,7 +166,7 @@ var restartBtn = {
    label: "Restart"
 };
 
-var drawBtn = function(btn) {
+const drawBtn = function(btn) {
    fill(color.Silver);
    stroke(color.Black);
    strokeWeight(3);
@@ -178,18 +178,18 @@ var drawBtn = function(btn) {
    text(btn.label, btn.x + btn.width / 2, btn.y + btn.height / 2);
 };
 
-var btnClick = function(btn) {
+const btnClick = function(btn) {
    return (mouseX >= btn.x && mouseX <= (btn.x + btn.width) &&
            mouseY >= btn.y && mouseY <= (btn.y + btn.height));
 };
 
-var nTries = 0, nMatches = 0;
-var flippedTiles = [];
-var delayStartFC = null;
-var hit_miss = 0;
-var rHit = null, rMiss = null;
+let nTries = 0, nMatches = 0;
+let flippedTiles = [];
+let delayStartFC = null;
+let hit_miss = 0;
+let rHit = null, rMiss = null;
 
-var restartGame = function() {
+const restartGame = function() {
    nTries = 0;
    nMatches = 0;
    flippedTiles.length = 0;
