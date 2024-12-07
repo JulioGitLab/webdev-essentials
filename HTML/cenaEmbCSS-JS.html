@@ -2,8 +2,8 @@
 <!-- A single page project using the Canvas API to draw a plate with dinner served.
 
    The CSS instructions for this page are embedded in the head element except for some
-   examples of inline CSS; one in the opening body tag setting the page background,
-   two more in each opening canvas tag setting their borders width and color.
+   examples of inline CSS; two in each opening h1 tag setting the font size, two more
+   in each opening canvas tag setting their borders width, style, and color.
 
    All the JavaScript code is embedded in the body element.
    Canvas API article https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API -->
@@ -16,27 +16,35 @@
     Intended for web development learners." />
   <title lang="es">Projecto 1: Cena</title>
   <style>
+    body {
+      background-color: black;
+      font-family:'Courier New', Courier, monospace;
+      color: goldenrod;
+      text-align: center;
+    }
+
     h1 {
-      margin: 0.5em 0 0.3em;
-      color: gold;
-      font-family: 'Courier New';
-      font-size: 2.3em;
+      margin: 1em 0 0.3em;
     }
 
     p {
-      margin-top: 0.3em;
-      color: goldenrod;
-      font-family: 'Courier New';
-      font-size: smaller;
-      text-align: justify;
+      margin: 0.3em auto;
+      font-size: small;
+      width: 50%;
+      max-width: 600px;
+    }
+
+    p::first-letter {
+      font-size: large;
+      font-weight: bold;
     }
   </style>
 </head>
 
-<body style="background-color: black; margin: 1.1em;">
-  <h1>Canvas API</h1>
+<body>
+  <h1 style="font-size: 2.3em;">Canvas API</h1>
 
-  <canvas id="myCanvas0" width="300" height="250" style="border: 0.2em ridge grey;"></canvas>
+  <canvas id="myCanvas0" width="300" height="250" style="border: 0.3em ridge grey;"></canvas>
 
   <p>Some figures drawn for testing.</p>
 
@@ -121,13 +129,12 @@
     ctx0.fill();
   </script>
 
-  <h1>Dinner Draw</h1>
+  <h1 style="font-size: 2.3em;">Dinner Draw</h1>
 
-  <canvas id="myCanvas" width="300" height="250" style="border: 0.2em ridge grey;"></canvas>
+  <canvas id="myCanvas" width="300" height="250" style="border: 0.3em ridge grey;"></canvas>
 
   <p>
-    The cheese holes, tortilla burn marks, and beans are randomly positioned
-    each time the page is loaded.
+    The cheese holes, tortilla burn marks, and beans are randomly positioned each time the page is loaded.
   </p>
 
   <script>
