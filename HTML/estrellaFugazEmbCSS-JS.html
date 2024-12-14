@@ -16,25 +16,29 @@
   <style>
     body {
       background-color: black;
-      margin: 1.1em;
+      font-family: 'Courier New', Courier, monospace;
+      color: whitesmoke;
+      text-align: center;
     }
 
     h1 {
-      color: whitesmoke;
-      font-family: 'Courier New';
+      margin: 1em 0 0.3em;
       font-size: 2.3em;
     }
 
-    p {
-      margin-top: 0.3em;
-      color: whitesmoke;
-      font-family: 'Courier New';
-      font-size: small;
-      text-align: justify;
+    canvas {
+      border: 0.3em ridge grey;
     }
 
-    canvas {
-      border: 0.2em ridge grey;
+    p {
+      margin: 0.3em auto;
+      font-size: small;
+      width: 50%;
+    }
+
+    p::first-letter {
+      font-size: large;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -46,9 +50,11 @@
 
   <p>
     Multiple stars in the back are added in random positions every time the page loads.
-    <br />
+  </p>
+  <p>
     The comet and shooting star keep reappearing in random positions.
-    <br />
+  </p>
+  <p>
     Click on the canvas to add stars at the pointer position.
   </p>
 
