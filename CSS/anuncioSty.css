@@ -1,52 +1,63 @@
-/* Style instructions for the anuncioRefCSS-JS.html file */
+/* Style instructions for /HTML/anuncioRefCSS-JS.html file */
 body {
-   background-color:black;
-   margin: 1.3em;
+   background-color: black;
+   font-family: 'Courier New', Courier, monospace;
+   color: whitesmoke;
+   text-align: center;
 }
+
 h1 {
-   margin: 0.7em 0.3em 0.5em;
-   color:whitesmoke;
-   font-family:'Courier New';
-   font-size:2.3em;
+   margin: 1em 0 0.3em;
+   font-size: 2.3em;
 }
+
+canvas {
+   border: 0.3em ridge grey;
+}
+
 ul {
-   list-style-type:none;
-   padding-left:0;
-   margin:0;
-   color:whitesmoke;
-   font-family:'Courier New';
-   font-size:small;
+   list-style-type: none;
+   margin: 2em auto;
+   font-size: small;
+   width: 50%;
+   max-width: 800px;
 }
+
+li {
+   margin-bottom: 1em;
+}
+
 /* Same emoji for all list items */
 /* li::before {
    content:"🎯"
 } */
 li:nth-child(1)::before {
-   content:"🎨 ";
-   font-size:1.7em;
-   padding-inline-end: 0.1em;
+   content: "🎨";
+   font-size: 1.9em;
+   padding-inline-end: 0.3em;
 }
-   li:nth-child(2)::before {
-   content:"🔻";
-   font-size:1.7em;
-   padding-inline-end: 0.7em;
+
+li:nth-child(2)::before {
+   content: "🔻";
+   font-size: 1.9em;
+   padding-inline-end: 0.3em;
 }
-   li:nth-child(3)::before {
-   content:"🖱 ";
-   font-size:1.7em;
-   padding-inline-end: 0.5em;
+
+li:nth-child(3)::before {
+   content: "🖱";
+   font-size: 1.9em;
+   padding-inline-end: 0.3em;
 }
+
 li:nth-child(4)::before {
-   content:"↘ ";
-   font-size: 1.7em;
-   padding-inline-end: 0.9em;
+   content: "↘";
+   font-size: 1.9em;
+   padding-inline-end: 0.3em;
 }
+
 /* p {
    color:whitesmoke;
    font-family:'Courier New';
    font-size:small;
    text-align:justify;
 } */
-canvas {
-   border: 0.2em ridge grey;
-}

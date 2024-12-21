@@ -1,34 +1,33 @@
 <!DOCTYPE html>
-
 <!-- A single page project using the Canvas API to draw an animated ad.
    
-   Both the CSS instructions and JS code for this page are located on
-   their respective .css and .js files. -->
-
+   Both the CSS instructions and JS code for this page are located on their respective
+   .css (/CSS/anuncioSty.css) and .js (/JS/anuncioScr.js) files. -->
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="A single page project of an animated ad.
-         Intended as an example for web development learners.">
-      <title lang="es">Proyecto 4: Anuncio</title>
-      <link rel="stylesheet" href="../CSS/anuncioSty.css">
-   </head>
 
-   <body>
-      <h1>Ad</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A single page project of an animated ad.
+    Intended as an example for web development learners." />
+  <title lang="es">Proyecto 4: Anuncio</title>
+  <link rel="stylesheet" href="../CSS/anuncioSty.css" />
+</head>
 
-      <canvas id="aCanvas" width="350" height="350"></canvas>
+<body>
+  <h1>Ad</h1>
 
-      <ul>
-         <li>The text color changes during the animation.</li>
-         <li>The triangular figure moves from the top-left to the bottom-right as it also
-            grows and changes color.</li>
-         <li>The ellipses color changes depending on the mouse position in the canvas.</li>
-         <li>The triangle movement restarts once it moves out of the canvas and its colors
-            as well as those of the text are reset.</li>
-      </ul>
-      <!-- // ALternative description. Must uncomment in CSS file too
+  <canvas id="aCanvas" width="350" height="350"></canvas>
+
+  <ul>
+    <li>The text color changes during the animation.</li>
+    <li>The triangular figure moves from the top-left to the bottom-right as it also
+      grows and changes color.</li>
+    <li>The ellipses color changes depending on the mouse position in the canvas.</li>
+    <li>The triangle movement restarts once it moves out of the canvas and its colors
+      as well as those of the text are reset.</li>
+  </ul>
+  <!-- // ALternative description. Must uncomment in CSS file too
       <p>
          The text color changes during the animation.<br>
          The triangular figure moves from the top-left to the bottom-right as it also
@@ -37,7 +36,8 @@
          The triangle movement restarts once it moves out of the canvas and its colors
          as well as those of the text are reset.
       </p> -->
-      
-      <script src="../JS/anuncioScr.js"></script>
-   </body>
+
+  <script src="../JS/anuncioScr.js"></script>
+</body>
+
 </html>
