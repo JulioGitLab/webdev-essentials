@@ -1,55 +1,54 @@
 /* Style instructions for: index.html, peceraProcessingJS.html, shakkyChihuahuaOO.html, tic-tac-toe.html */
 body {
-   background-color:black;
-   font-family:'Courier New', Courier, monospace;
-   color:goldenrod;
+   background-color: black;
+   font-family: 'Courier New', Courier, monospace;
+   color: goldenrod;
+   text-align: center;
 }
-body.pecera {
-   margin: 1.1em;
-}
+
 body.tic-tac-toe {
    display: flex;
    justify-content: center;
 }
+
 body.memoji {
    display: flex;
    justify-content: center;
 }
+
 .orthohedron {
    text-align: center;
 }
+
 h1 {
-   font-size:2.3em;
-   text-align: center;
+   margin: 1em 0 0.3em;
+   font-size: 2.3em;
 }
-#pecera-canvas {
-   border: 0.2em ridge grey;
-}
-#tic-tac-toe-canvas {
-   /* display: block; */
+
+canvas {
    border: 0.3em ridge grey;
 }
-#memoji-canvas {
-   border: 0.3em ridge grey;
-}
-#orthohedron-canvas {
-   border: 0.2em ridge grey;
-}
+
 p {
-   margin:0.3em 0;
-   font-size:small;
-   text-align:justify;
+   margin: 1.7em auto;
+   font-size: small;
+   line-height: 1.9em;
+   width: 50%;
+   max-width: 700px;
 }
+
 p::first-letter {
-   padding-right: 0.02em;
    font-size: x-large;
-   font-weight: bolder;
+   font-weight: bold;
 }
+
 em {
-   padding: 0.2em 0.3em;
+   padding: 0.3em 0.3em 0.2em;
+   border-radius: 7px;
    font-size: 1.1em;
    background-color: #222;
 }
+
 footer {
    position: absolute;
    right: 0;
@@ -60,14 +59,17 @@ footer {
    font-size: 0.79em;
    text-align: center;
 }
+
 a {
    color: goldenrod;
    font-size: 0.89rem;
    text-decoration: none;
 }
+
 a:visited {
    color: darkgoldenrod;
 }
+
 a:hover {
    color: silver;
 }
