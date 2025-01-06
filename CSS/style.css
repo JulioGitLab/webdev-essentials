@@ -6,20 +6,6 @@ body {
    text-align: center;
 }
 
-body.tic-tac-toe {
-   display: flex;
-   justify-content: center;
-}
-
-body.memoji {
-   display: flex;
-   justify-content: center;
-}
-
-.orthohedron {
-   text-align: center;
-}
-
 h1 {
    margin: 1em 0 0.3em;
    font-size: 2.3em;
