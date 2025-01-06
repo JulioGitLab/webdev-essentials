@@ -1,6 +1,8 @@
 /* Sketch code for the shakkyChihuahuaOO.html file */
+const canvasW = Math.floor(window.innerWidth * 0.97);
+
 function setup() {
-   createCanvas(window.innerWidth, 500);
+   createCanvas(canvasW, 500);
    frameRate(60);
 };
 
@@ -318,10 +320,10 @@ const drawPlaySc = function() { // Play Scene
    stroke(color.FireBrick);
    strokeWeight(2);
    for (let i = 0; i < baseboardX.length; i++) {
-      rect(baseboardX[i], height * 0.18, 100, 10);
+      rect(baseboardX[i], height * 0.18, 99, 10);
       baseboardX[i] -= 1;
-      if (baseboardX[i] <= -100) {
-         baseboardX[i] = 1600;
+      if (baseboardX[i] < -99) {
+         baseboardX[i] += (Math.ceil(canvasW / 100) + 1) * 100;
       }
    }
 
@@ -432,7 +434,7 @@ for (let i = 0; i < 40; i++) {
 }
 
 const baseboardX = [];
-for (let i = 0; i < 17; i++) {
+for (let i = 0; i < Math.ceil(canvasW / 100) + 1; i++) {
    baseboardX.push(i * 100);
 }
 
