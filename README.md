@@ -1,12 +1,24 @@
-Los proyectos en este repositorio se basan en proyectos que son parte del curso "Programación de computadoras" de Khan Academy.
-El nivel de complejidad de sus versiones iniciales es muy cercano a lo requerido en las lecciones en las que aparecen durante el curso. Sin embargo, a través de cada commit trato de agregar características un poco más avanzadas de cada tenología involucrada (HTML, CSS, JavaScript, SQL, etc.) con la finalidad de que otros aprendices de desarrollo web más avanzados también los encuentren interesantes para su análisis.
-Espero que les gusten, y agradezco cualquier comentario o sugerencia que me ayude a mejorar.
+# Colección de conceptos básicos de desarrollo web
+Los proyectos presentes en este repositorio han sido creados por mí.<br /><br />
+Algunos se inspiran en ejercicios de cursos y programas educativos de terceros, como [Khan Academy](https://www.khanacademy.org/) y [freeCodeCamp](https://www.freecodecamp.org/).<br /><br />
+Sus versiones iniciales son bastante simples, y he ido añadiendo características más avanzadas de las tecnologías involucradas en cada `commit`, con la intención de que desarrolladores web con más experiencia también los encuentren interesantes para su análisis.
+<!-- También crea una línea en blanco -->
+Espero que los disfruten.
 
-The projects in this repository are based on projects that are part of the Khan Academy "Computer Programming" course.
-The level of complexity of their initial versions is very close to what is required in the lessons in which they appear during the course. However, through each commit I try to add slightly more advanced features of each technology involved (HTML, CSS, JavaScript, SQL, etc.) with the aim that other more advanced web development learners also find them interesting for their analysis.
-I hope you like them, and I appreciate any comments or suggestions that help me improve.
+¿Me ayudarías a mejorar? Si tienes alguna sugerencia o comentario, estaré encantado de escucharlo. ¡Gracias de antemano!
+<hr />
 
-List of projects in recommended review order:
+# Collection of web development essentials
+The projects that appear in this repository have been created by me.<br /><br />
+Some are inspired by exercises from courses and educational programs offered by third parties, such as [Khan Academy](https://www.khanacademy.org/) and [freeCodeCamp](https://www.freecodecamp.org/).<br /><br />
+Their initial versions are quite simple, and I have been adding more advanced features of the technologies involved in each `commit`, with the intention that more experienced web developers also find them interesting for analysis.
+<!-- This also creates a blank line -->
+I hope you enjoy them.
+
+Would you like to help me improve? If you have any suggestions or comments, I would be happy to hear them. Thank you in advance!
+<hr /><br />
+
+#### Lista de proyectos en orden de revisión recomendado / List of projects in recommended review order:
 
  1) cenaEmbCSS-JS.html
  2) estrellaFugazEmbCSS-JS.html
