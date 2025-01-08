@@ -10,7 +10,7 @@
   <title lang="es">Proyecto 6: Página Web de Viajes</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <style>
-    /* @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap'); */
+    @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
     
     html {
@@ -24,23 +24,24 @@
     }
     
     header {
-      /* font-family:'Shadows Into Light'; */
-      font-family: 'Permanent Marker';
-      font-size: 1.1em;
-      background-color: gold;
-      /* padding-left:11px; */
+      padding: 1em;
       border: 5px ridge silver;
+      font-family: 'Permanent Marker';
+      font-size: 1.3em;
       text-align: center;
     }
     
     header em {
       color: firebrick;
-      font-size: 1.3em;
+      font-size: 1.5em;
     }
     
     main {
+      margin: 3em 4.3em;
+      font-size: 1.3em;
+      line-height: 1.5em;
       text-align: justify;
-      margin: 13px;
+      align-content: center;
     }
     
     #amlo {
@@ -49,12 +50,12 @@
       text-decoration: none;
     }
     
-    .material-icons {
-      font-size: 1em;
+    #amlo:hover {
+      color: silver;
     }
 
-    #amlo:hover {
-      color: whitesmoke;
+    .material-icons {
+      font-size: 1em;
     }
 
     .tierra {
@@ -65,50 +66,77 @@
       color: navy;
     }
 
-    .encab {
-      font-family: 'Permanent Marker';
-      background-color: gold;
-      padding: 11px;
-      border: 3px ridge silver;
+    #amlo, .tierra, .agua {
+      font-size: 1.1em;
     }
 
-    ul {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      font-size: large;
+    .places {
+      padding: 0.7em 1em;
+      border: 3px ridge silver;
+      font-family: 'Permanent Marker';
+      font-size: 2em;
+    }
+
+    header, .places {
+      background: linear-gradient(gold, goldenrod);
+    }
+
+    dl {
+      padding-top: 0.2em;
+      font-family: 'Shadows Into Light', 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+      font-size: 1.7em;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+
+    dt {
+      margin: 1em 0 0.7em;
     }
 
     img {
-      margin: 1.3em;
+      margin-bottom: 1em;
+      border: 2px ridge silver;
+      border-radius: 7px;
       /* max-width:450px; */
       max-height: 320px;
     }
 
     hr {
-      width: 90%;
-      margin: 0.2em 0.3em 1.3em 0.7em;
+      width: 83%;
+      margin: 0.3em auto 1.3em;
       border: thin ridge silver;
     }
 
+    hr:last-of-type {
+      margin-bottom: 0;
+    }
+
     footer {
-      margin: 1.3em;
+      margin: 3em 0 2.3em;
       text-align: center;
     }
 
     #b2top {
       color: whitesmoke;
       background: darkslategray;
-      padding: 0.3em;
-      text-decoration: none;
       border-style: outset;
       border-color: dimgray;
+      padding: 0.5em;
+      font-family: sans-serif;
+      text-decoration: none;
     }
 
     #b2top:hover {
       color: silver;
-      text-decoration: underline dashed black;
+    }
+
+    #b2top:active {
+      border-style: inset;
     }
 
     aside {
+      color: #333;
+      margin-top: 2em;
       font-size: small;
     }
   </style>
@@ -121,7 +149,7 @@
 
   <main>
     <p>
-      <em class="tierra">La Chingada</em> is the ranch of Mexico's former president (2018-2024),
+      <em class="tierra">La Chingada</em> is the ranch of Mexico's former president (2018 - 2024),
       <a id="amlo" href="https://es.wikipedia.org/wiki/Andr%C3%A9s_Manuel_L%C3%B3pez_Obrador" target="_blank" rel="noreferrer" title="wikipedia.org">
         Andrés Manuel López Obrador<span class="material-icons">launch</span>
       </a>.
@@ -139,54 +167,66 @@
   </main>
 
   <section>
-    <h2 class="encab">Palenque's places to visit:</h2>
-    <ul class="tierra">
-      <li><strong>La Chingada</strong></li>
-      <img src="https://www.diariocambio.com.mx/2021/media/k2/items/cache/15f2b2f2946797a1c45f922c7c65e12f_L.jpg?t=20220415_180314"
-        alt="Facade of La Chingada ranch and a photo of AMLO's face" />
+    <h2 class="places">Palenque's places to visit:</h2>
+    <dl>
+      <dt class="tierra"><strong>La Chingada</strong></dt>
+      <dd>
+        <img src="https://polemon.mx/wp-content/uploads/2024/01/AMLO-rancho.jpg"
+          alt="Facade of La Chingada ranch and a photo of AMLO's face" />
+      </dd>
       <hr />
-      <li><strong>Palenque's archaeological area</strong></li>
-      <img src="https://visitchiapas.com/v1/admin/archivos/Turismo/multimedia/planquea_x.jpg"
-        alt="Palenque's archaeological area" />
-      <img src="https://visitchiapas.com/v1/admin/archivos/Turismo/multimedia/planqueb_x.jpg"
-        alt="Palenque's archaeological area" />
+      <dt class="tierra"><strong>Palenque's archaeological area</strong></dt>
+      <dd>
+        <img src="https://visitchiapas.com/v1/admin/archivos/Turismo/multimedia/planquea_x.jpg"
+          alt="Palenque's archaeological area" />
+        <img src="https://visitchiapas.com/v1/admin/archivos/Turismo/multimedia/planqueb_x.jpg"
+          alt="Palenque's archaeological area" />
+      </dd>
       <hr />
-    </ul>
-    <ul class="agua">
-      <li><strong>Usumacinta river</strong></li>
-      <img src="https://ecochiapas.com/wp-content/uploads/2021/06/IMG_2763.jpg" alt="Usumacinta river expedition" />
-      <img src="https://www.mexicodesconocido.com.mx/wp-content/uploads/2021/07/selva-lacandona-usumacinta-flickr-guillen-perez-edited-1.jpg"
-        alt="Usumacinta river on a boat" />
+      <dt class="agua"><strong>Usumacinta river</strong></dt>
+      <dd>
+        <img src="https://ecochiapas.com/wp-content/uploads/2021/06/IMG_2763.jpg" alt="Usumacinta river expedition" />
+        <img
+          src="https://www.mexicodesconocido.com.mx/wp-content/uploads/2021/07/selva-lacandona-usumacinta-flickr-guillen-perez-edited-1.jpg"
+          alt="Usumacinta river on a boat" />
+      </dd>
       <hr />
-      <li><strong>Agua Clara</strong></li>
-      <img src="https://elsouvenir.com/wp-content/uploads/2020/11/%C2%A1Que-bonita-es-Agua-Clara-Foto-La-vida-de-un-Sol.jpg"
-        alt="Agua Clara ecotouristic center" />
-      <img src="https://elsouvenir.com/wp-content/uploads/2020/11/Kayak_Agua-Clara_Agua-Clara-Chiapas.jpg"
-        alt="Agua Clara ecotouristic center" />
+      <dt class="agua"><strong>Agua Clara</strong></dt>
+      <dd>
+        <img src="https://elsouvenir.com/wp-content/uploads/2020/11/%C2%A1Que-bonita-es-Agua-Clara-Foto-La-vida-de-un-Sol.jpg"
+          alt="Agua Clara ecotouristic center" />
+        <img src="https://elsouvenir.com/wp-content/uploads/2020/11/Kayak_Agua-Clara_Agua-Clara-Chiapas.jpg"
+          alt="Agua Clara ecotouristic center" />
+      </dd>
       <hr />
-      <li><strong>Misol-Ha</strong></li>
-      <img src="https://www.kayak.com.mx/news/wp-content/uploads/sites/29/2018/08/misol_ha_cascadas_mexico.jpg"
-        alt="Misol-Ha waterfalls" />
-      <img src="https://www.misol-ha.com/content/animalshelter/images/z07.jpg" atl="Misol-Ha aerial view" />
+      <dt class="agua"><strong>Misol-Ha</strong></dt>
+      <dd>
+        <img src="https://www.kayak.com.mx/news/wp-content/uploads/sites/29/2018/08/misol_ha_cascadas_mexico.jpg"
+          alt="Misol-Ha waterfalls" />
+        <img src="https://www.misol-ha.com/content/animalshelter/images/z07.jpg" atl="Misol-Ha aerial view" />
+      </dd>
       <hr />
-      <li><strong>Agua Azul</strong></li>
-      <img src="https://www.kayak.com.mx/news/wp-content/uploads/sites/29/2018/08/agua_azul_cascada_mexico.jpg"
-        alt="Front view of Agua Azul waterfalls" />
-      <img src="https://cdn.mexicodestinos.com/lugares/cascadas-de-agua-azul-chiapas-princ-min.jpg"
-        alt="Aerial view of Agua Azul waterfalls" />
+      <dt class="agua"><strong>Agua Azul</strong></dt>
+      <dd>
+        <img src="https://www.kayak.com.mx/news/wp-content/uploads/sites/29/2018/08/agua_azul_cascada_mexico.jpg"
+          alt="Front view of Agua Azul waterfalls" />
+        <img src="https://cdn.mexicodestinos.com/lugares/cascadas-de-agua-azul-chiapas-princ-min.jpg"
+          alt="Aerial view of Agua Azul waterfalls" />
+      </dd>
       <hr />
-      <li><strong>Chacamax (Nututun) river</strong></li>
-      <img src="https://quehacerenpalenque.com/wp-content/uploads/2019/07/IMG_7631-1000x667.jpg"
-        alt="Visitors picture or Chacamax (Nututun) river" />
-      <img src="https://quehacerenpalenque.com/wp-content/uploads/2019/07/IMG_7701.jpg"
-        alt="Visitors picture of Chacamax (Nututun) river" />
+      <dt class="agua"><strong>Chacamax (Nututun) river</strong></dt>
+      <dd>
+        <img src="https://quehacerenpalenque.com/wp-content/uploads/2019/07/IMG_7631-1000x667.jpg"
+          alt="Visitors picture or Chacamax (Nututun) river" />
+        <img src="https://quehacerenpalenque.com/wp-content/uploads/2019/07/IMG_7701.jpg"
+          alt="Visitors picture of Chacamax (Nututun) river" />
+      </dd>
       <hr />
-    </ul>
+    </dl>
   </section>
 
   <footer>
-    <small><a id="b2top" href="#top" title="Thanks for reading!">Back to top <span class="material-icons">arrow_upward</span></a></small>
-    <br /><br />
+    <a id="b2top" href="#top" title="Thanks for reading!">Back to top <span class="material-icons">arrow_upward</span></a>
     <aside>This is a travel page example intended for web development learners.</aside>
   </footer>
 </body>
