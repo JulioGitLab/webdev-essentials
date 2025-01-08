@@ -1,191 +1,194 @@
-<!-- All the CSS (pure) instructions of this page are embedded in the head element
-   for quick testing purposes. -->
-   
 <!DOCTYPE html>
-
+<!-- All the CSS (pure) instructions of this page are embedded in the head element for demonstration purposes. -->
 <html lang="en">
+
 <head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="description" content="A single page project of a travel page intended for
-   web development learners.">
-   <title lang="es">Proyecto 6: Página Web de Viajes</title>
-   <link rel="stylesheet"
-   href="https://fonts.googleapis.com/icon?family=Material+Icons">
-   <style>
-      /* @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap'); */
-      @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-      
-      .material-icons {font-size:1em;}
-      
-      html {scroll-behavior: smooth;}
-      
-      body {background-color:darkgoldenrod; margin:0;}
-      
-      header {
-         /* font-family:'Shadows Into Light'; */
-         font-family: 'Permanent Marker';
-         font-size:1.1em;
-         background-color:gold;
-         /* padding-left:11px; */
-         border:5px ridge silver;
-         text-align:center;
-      }
-      
-      header em {color:firebrick; font-size:1.3em;}
-      
-      main {
-         font-family:'Candara';
-         text-align:justify;
-         margin:13px;
-      }
-      
-      #amlo {
-         color:#333;
-         font-weight:bolder;
-         text-decoration:none;
-      }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A single page project of a travel page.
+    Intended as an example for web development learners." />
+  <title lang="es">Proyecto 6: Página Web de Viajes</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <style>
+    /* @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap'); */
+    @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      margin: 0;
+      background-color: darkgoldenrod;
+      font-family: 'Candara', serif;
+    }
+    
+    header {
+      /* font-family:'Shadows Into Light'; */
+      font-family: 'Permanent Marker';
+      font-size: 1.1em;
+      background-color: gold;
+      /* padding-left:11px; */
+      border: 5px ridge silver;
+      text-align: center;
+    }
+    
+    header em {
+      color: firebrick;
+      font-size: 1.3em;
+    }
+    
+    main {
+      text-align: justify;
+      margin: 13px;
+    }
+    
+    #amlo {
+      color: #333;
+      font-weight: bolder;
+      text-decoration: none;
+    }
+    
+    .material-icons {
+      font-size: 1em;
+    }
 
-      #amlo:hover {color:whitesmoke;}
-      
-      .tierra {color:maroon;}
-      
-      .agua {color:navy;}
-      
-      .encab {
-         font-family: 'Permanent Marker';
-         background-color:gold;
-         padding:11px;
-         border:3px ridge silver;
-      }
-      
-      ul { 
-         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-         font-size:large;
-      }
+    #amlo:hover {
+      color: whitesmoke;
+    }
 
-      img {
-         margin:1.3em;
-         /* max-width:450px; */
-         max-height:320px;
-      }
+    .tierra {
+      color: maroon;
+    }
 
-      hr {
-         width:90%;
-         margin:0.2em 0.3em 1.3em 0.7em;
-         border:thin ridge silver;
-      }
-      
-      footer {
-         margin:1.3em;
-         font-family:'Candara';
-         text-align:center;
-      }
+    .agua {
+      color: navy;
+    }
 
-      #b2top {
-         color:whitesmoke;
-         background:darkslategray;
-         padding:0.3em;
-         text-decoration:none;
-         border-style:outset;
-         border-color:dimgray;
-      }
+    .encab {
+      font-family: 'Permanent Marker';
+      background-color: gold;
+      padding: 11px;
+      border: 3px ridge silver;
+    }
 
-      #b2top:hover {
-         color:silver;
-         text-decoration:underline dashed black;
-      }
-      
-      aside {font-size:small;}
-   </style>
+    ul {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: large;
+    }
+
+    img {
+      margin: 1.3em;
+      /* max-width:450px; */
+      max-height: 320px;
+    }
+
+    hr {
+      width: 90%;
+      margin: 0.2em 0.3em 1.3em 0.7em;
+      border: thin ridge silver;
+    }
+
+    footer {
+      margin: 1.3em;
+      text-align: center;
+    }
+
+    #b2top {
+      color: whitesmoke;
+      background: darkslategray;
+      padding: 0.3em;
+      text-decoration: none;
+      border-style: outset;
+      border-color: dimgray;
+    }
+
+    #b2top:hover {
+      color: silver;
+      text-decoration: underline dashed black;
+    }
+
+    aside {
+      font-size: small;
+    }
+  </style>
 </head>
 
 <body>
-   <header id="top">
-      <h1>Travel to... <em>"La Chingada"</em></h1>
-   </header>
-   
-   <main>
-      <p>
-         <em class="tierra">La Chingada</em> is the ranch of Mexico's former president (2018-2024), 
-         <a id="amlo" href="https://es.wikipedia.org/wiki/Andr%C3%A9s_Manuel_L%C3%B3pez_Obrador"
-         target="_blank" rel="noreferrer" title="wikipedia.org">Andrés Manuel López Obrador<span
-         class="material-icons">launch</span></a>. Located at 284 km north of <em class="tierra">
-         Tuxtla Gutiérrez</em>, the <em class="tierra">Chiapas</em> State Capital. The ranch is close to
-         the entrance of the municipal head of <em class="tierra">Palenque</em>, a Chiapas Municipality.
-         <br><br>
-         The house has a modest facade, without any luxury, with a black gate. It is an approximate area
-         of three hectares, where you can see a lagoon and a rustic road guided by coconut palm trees
-         that leads to a house made of concrete with a green roof, in the middle of a wooded area.
-         <br><br>
-         <strong>But this is just one of the Palenque's tourist attractions!</strong> Of mayan origin, it
-         is a city located close to the <em class="agua">Usumacinta river</em>, and it's main attraction
-         is the <em class="tierra">Palenque's archaeological area</em>. A few kilometers away you can
-         also find the <em class="agua">Agua Clara</em> ecotouristic center, some popular waterfalls
-         (<em class="agua">Misol-Ha</em> and <em class="agua">Agua Azul</em>) and the <em class="agua">
-         Chacamax</em> (<em class="agua">Nututun</em>) river.
-      </p>
-   </main>
+  <header id="top">
+    <h1>Travel to... <em>"La Chingada"</em></h1>
+  </header>
 
-   <section>
-      <h2 class="encab">Palenque's places to visit:</h2>
+  <main>
+    <p>
+      <em class="tierra">La Chingada</em> is the ranch of Mexico's former president (2018-2024),
+      <a id="amlo" href="https://es.wikipedia.org/wiki/Andr%C3%A9s_Manuel_L%C3%B3pez_Obrador" target="_blank" rel="noreferrer" title="wikipedia.org">
+        Andrés Manuel López Obrador<span class="material-icons">launch</span>
+      </a>.
+      Located at 284 km north of <em class="tierra">Tuxtla Gutiérrez</em>, the <em class="tierra">Chiapas</em> State Capital. The ranch is close to
+      the entrance of the municipal head of <em class="tierra">Palenque</em>, a Chiapas Municipality.
+      <br /><br />
+      The house has a modest facade, without any luxury, with a black gate. It is an approximate area of three hectares, where you can see a lagoon
+      and a rustic road guided by coconut palm trees that leads to a house made of concrete with a green roof, in the middle of a wooded area.
+      <br /><br />
+      <strong>But this is just one of the Palenque's tourist attractions!</strong> Of mayan origin, it is a city located close to the
+      <em class="agua">Usumacinta river</em>, and it's main attraction is the <em class="tierra">Palenque's archaeological area</em>.
+      A few kilometers away you can also find the <em class="agua">Agua Clara</em> ecotouristic center, some popular waterfalls
+      (<em class="agua">Misol-Ha</em> and <em class="agua">Agua Azul</em>) and the <em class="agua">Chacamax</em> (<em class="agua">Nututun</em>) river.
+    </p>
+  </main>
 
-      <ul class="tierra">
-         <li><strong>La Chingada</strong></li>
-         <img
-            src="https://www.diariocambio.com.mx/2021/media/k2/items/cache/15f2b2f2946797a1c45f922c7c65e12f_L.jpg?t=20220415_180314"
-            alt="Facade of La Chingada ranch and a photo of AMLO's face"/><hr />
-         <li><strong>Palenque's archaeological area</strong></li>
-         <img
-            src="https://visitchiapas.com/v1/admin/archivos/Turismo/multimedia/planquea_x.jpg"
-            alt="Palenque's archaeological area"/>
-         <img
-            src="https://visitchiapas.com/v1/admin/archivos/Turismo/multimedia/planqueb_x.jpg"
-            alt="Palenque's archaeological area"/><hr />
-      </ul>
-      <ul class="agua">
-         <li><strong>Usumacinta river</strong></li>
-         <img
-            src="https://ecochiapas.com/wp-content/uploads/2021/06/IMG_2763.jpg"
-            alt="Usumacinta river expedition"/>
-         <img
-            src="https://www.mexicodesconocido.com.mx/wp-content/uploads/2021/07/selva-lacandona-usumacinta-flickr-guillen-perez-edited-1.jpg"
-            alt="Usumacinta river on a boat"/><hr />
-         <li><strong>Agua Clara</strong></li>
-         <img
-            src="https://elsouvenir.com/wp-content/uploads/2020/11/%C2%A1Que-bonita-es-Agua-Clara-Foto-La-vida-de-un-Sol.jpg"
-            alt="Agua Clara ecotouristic center"/>
-         <img
-            src="https://elsouvenir.com/wp-content/uploads/2020/11/Kayak_Agua-Clara_Agua-Clara-Chiapas.jpg"
-            alt="Agua Clara ecotouristic center"/><hr />
-         <li><strong>Misol-Ha</strong></li>
-         <img
-            src="https://www.kayak.com.mx/news/wp-content/uploads/sites/29/2018/08/misol_ha_cascadas_mexico.jpg"
-            alt="Misol-Ha waterfalls"/>
-         <img
-            src="https://www.misol-ha.com/content/animalshelter/images/z07.jpg"
-            atl="Misol-Ha aerial view"/><hr />
-         <li><strong>Agua Azul</strong></li>
-         <img
-            src="https://www.kayak.com.mx/news/wp-content/uploads/sites/29/2018/08/agua_azul_cascada_mexico.jpg"
-            alt="Front view of Agua Azul waterfalls"/>
-         <img
-            src="https://cdn.mexicodestinos.com/lugares/cascadas-de-agua-azul-chiapas-princ-min.jpg"
-            alt="Aerial view of Agua Azul waterfalls"/><hr />
-         <li><strong>Chacamax (Nututun) river</strong></li>
-         <img
-            src="https://quehacerenpalenque.com/wp-content/uploads/2019/07/IMG_7631-1000x667.jpg"
-            alt="Visitors picture or Chacamax (Nututun) river"/>
-         <img
-            src="https://quehacerenpalenque.com/wp-content/uploads/2019/07/IMG_7701.jpg"
-            alt="Visitors picture of Chacamax (Nututun) river"/><hr />
-      </ul>
-   </section>
+  <section>
+    <h2 class="encab">Palenque's places to visit:</h2>
+    <ul class="tierra">
+      <li><strong>La Chingada</strong></li>
+      <img src="https://www.diariocambio.com.mx/2021/media/k2/items/cache/15f2b2f2946797a1c45f922c7c65e12f_L.jpg?t=20220415_180314"
+        alt="Facade of La Chingada ranch and a photo of AMLO's face" />
+      <hr />
+      <li><strong>Palenque's archaeological area</strong></li>
+      <img src="https://visitchiapas.com/v1/admin/archivos/Turismo/multimedia/planquea_x.jpg"
+        alt="Palenque's archaeological area" />
+      <img src="https://visitchiapas.com/v1/admin/archivos/Turismo/multimedia/planqueb_x.jpg"
+        alt="Palenque's archaeological area" />
+      <hr />
+    </ul>
+    <ul class="agua">
+      <li><strong>Usumacinta river</strong></li>
+      <img src="https://ecochiapas.com/wp-content/uploads/2021/06/IMG_2763.jpg" alt="Usumacinta river expedition" />
+      <img src="https://www.mexicodesconocido.com.mx/wp-content/uploads/2021/07/selva-lacandona-usumacinta-flickr-guillen-perez-edited-1.jpg"
+        alt="Usumacinta river on a boat" />
+      <hr />
+      <li><strong>Agua Clara</strong></li>
+      <img src="https://elsouvenir.com/wp-content/uploads/2020/11/%C2%A1Que-bonita-es-Agua-Clara-Foto-La-vida-de-un-Sol.jpg"
+        alt="Agua Clara ecotouristic center" />
+      <img src="https://elsouvenir.com/wp-content/uploads/2020/11/Kayak_Agua-Clara_Agua-Clara-Chiapas.jpg"
+        alt="Agua Clara ecotouristic center" />
+      <hr />
+      <li><strong>Misol-Ha</strong></li>
+      <img src="https://www.kayak.com.mx/news/wp-content/uploads/sites/29/2018/08/misol_ha_cascadas_mexico.jpg"
+        alt="Misol-Ha waterfalls" />
+      <img src="https://www.misol-ha.com/content/animalshelter/images/z07.jpg" atl="Misol-Ha aerial view" />
+      <hr />
+      <li><strong>Agua Azul</strong></li>
+      <img src="https://www.kayak.com.mx/news/wp-content/uploads/sites/29/2018/08/agua_azul_cascada_mexico.jpg"
+        alt="Front view of Agua Azul waterfalls" />
+      <img src="https://cdn.mexicodestinos.com/lugares/cascadas-de-agua-azul-chiapas-princ-min.jpg"
+        alt="Aerial view of Agua Azul waterfalls" />
+      <hr />
+      <li><strong>Chacamax (Nututun) river</strong></li>
+      <img src="https://quehacerenpalenque.com/wp-content/uploads/2019/07/IMG_7631-1000x667.jpg"
+        alt="Visitors picture or Chacamax (Nututun) river" />
+      <img src="https://quehacerenpalenque.com/wp-content/uploads/2019/07/IMG_7701.jpg"
+        alt="Visitors picture of Chacamax (Nututun) river" />
+      <hr />
+    </ul>
+  </section>
 
-   <footer>
-      <small><a id="b2top" href="#top" title="Thanks for reading!">Back to top <span class="material-icons">arrow_upward</span></a></small>
-      <br><br>
-      <aside>This is a travel page example intended for web development learners.</aside>
-   </footer>
+  <footer>
+    <small><a id="b2top" href="#top" title="Thanks for reading!">Back to top <span class="material-icons">arrow_upward</span></a></small>
+    <br /><br />
+    <aside>This is a travel page example intended for web development learners.</aside>
+  </footer>
 </body>
+
 </html>
