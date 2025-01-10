@@ -18,18 +18,4 @@ I hope you enjoy them.
 Would you like to help me improve? If you have any suggestions or comments, I would be happy to hear them. Thank you in advance!
 <hr /><br />
 
-#### Lista de proyectos en orden de revisión recomendado / List of projects in recommended review order:
-
- 1) cenaEmbCSS-JS.html
- 2) estrellaFugazEmbCSS-JS.html
- 3) ataqueAnimalEmbCSS-JS.html
- 4) anuncioRefCSS-JS.html
- 5) peceraProcessingJS.html
- 6) travelPageEmbCSS.html
- 7) recipeBookB.html
- 8) blogTailwindCSS.html
- 9) eventInvite.html
-10) shakkyChihuahuaOO.html
-11) tic-tac-toe.html
-12) memoji-quest.html
-13) rotating-orthohedron.html
+#### Una lista para ver los proyectos en el navegador en order recomendado de revisión está disponible [aquí](https://juliogitlab.github.io/KhanAcadPrjsRem/) /  A list to view the projects in the browser in the recommended review order is available [here](https://juliogitlab.github.io/KhanAcadPrjsRem/)
