@@ -2,15 +2,52 @@
 <!-- This example project demonstrates the process of creating a form and showcases
   how its components interact with each other. -->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Project on how to create a form.
-      Intended as an example for web development learners" />
-    <title lang="es">Encuesta Para Programadores</title>
-    <link rel="stylesheet" href="../CSS/style.css" />
-  </head>
-  <body>
-   
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Project on how to create a form.
+    Intended as an example for web development learners" />
+  <title lang="es">Encuesta Para Programadores</title>
+  <!-- <link rel="stylesheet" href="../CSS/style.css" /> -->
+</head>
+
+<body>
+  <h1 id="title">Coders Survey</h1>
+  <p id="description">Please take the tame to help us improve</p>
+  <form id="survey-form">
+    <label for="name" id="name-label">
+      Name: <input id="name" name="name" type="text" placeholder="full name" required />
+    </label>
+    <label for="email" id="email-label">
+      Email: <input id="email" name="email" type="email" placeholder="email@email.com" required />
+    </label>
+    <label for="number" id="number-label">
+      Age (number): <input id="number" name="number" type="number" min="13" max="99" placeholder="13-99" />
+    </label>
+    <label for="dropdown">Do you code?
+      <select id="dropdown" name="dropdown">
+        <option value="what">What?</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+    </label>
+    <label>Do you want to be better?
+      <input id="yeah" name="improve" type="radio" value="yeah" class="inline" />Yeah!
+      <input id="oc" name="improve" type="radio" value="oc" class="inline" />Of course!
+    </label>
+    <fieldset>
+      <legend>Which technologies do you know?</legend>
+      <input id="opt1" name="tech" type="checkbox" value="html" class="inline" /><label for="opt1"> HTML5</label>
+      <input id="opt2" name="tech" type="checkbox" value="css" class="inline" /><label for="opt2"> CSS</label>
+      <input id="opt3" name="tech" type="checkbox" value="js" class="inline" /><label for="opt3"> JavaScript</label>
+    </fieldset>
+    <label for="comment">Any comments?:
+      <textarea id="comment" name="comment" rows="3" cols="31" placeholder="I think..."></textarea>
+    </label>
+    <!-- <label for=""><input id="" name="" type="" /></label> -->
+    <input id="submit" type="submit" value="Send" />
+  </form>
+</body>
+
 </html>
