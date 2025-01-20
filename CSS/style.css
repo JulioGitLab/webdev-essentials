@@ -9,8 +9,8 @@ body {
    margin: 0;
    padding: 0;
    background-color: black;
-   font-family: 'Anonymous Pro', 'Courier New', Courier, monospace;
    color: goldenrod;
+   font-family: 'Anonymous Pro', 'Courier New', Courier, monospace;
    text-align: center;
 }
 
@@ -46,6 +46,10 @@ p.index {
    font-size: 1.7rem;
 }
 
+p#description {
+   font-size: 1.5rem;
+}
+
 nav {
    display: flex;
    justify-content: center;
@@ -55,11 +59,93 @@ nav {
    text-align: left;
 }
 
+form {
+   width: 66vw;
+   max-width: 540px;
+   min-width: 320px;
+   margin: 0 auto;
+}
+
+label {
+   display: block;
+   margin: 1.3rem 0;
+   font-size: 1.3rem;
+   font-weight: bold;
+}
+
+.fw400 {
+   font-weight: 400;
+}
+
+fieldset {
+   margin: 2.3rem;
+   border: ridge gray;
+   padding: 2rem;
+}
+
+legend {
+   font-size: 1.3rem;
+   font-weight: bold;
+}
+
+fieldset label {
+   display: inline;
+   margin-right: 3rem;
+}
+
 em {
    padding: 0.2rem 0.3rem 0.3rem 0.5rem;
    border-radius: 5px;
    font-size: 1.1em;
    background-color: #222;
+}
+
+input, textarea {
+   margin: 0.7rem auto 0;
+   width: 100%;
+   min-height: 2rem;
+   border: 1px solid gray;
+   background-color: #131313;
+   color: gainsboro;
+}
+
+input#number {
+   display: block;
+   width: 50%;
+}
+
+select {
+   width: 7rem;
+   height: 2.3rem;
+   margin: 1rem 0;
+}
+
+textarea {
+   padding: 0.5rem;
+}
+
+input[type="submit"] {
+   display: block;
+   width: 20%;
+   min-width: 100px;
+   height: 3rem;
+   margin: 2rem auto;
+   font-size: 1.5rem;
+   background-color: gray;
+   color: #131313;
+   border-radius: 7px;
+   box-shadow: 0.5px 0.5px 1px 2px gainsboro;
+}
+
+.inline {
+   width: unset;
+   margin: 0 0.5rem 0 0;
+   vertical-align: middle;
+}
+
+fieldset .fw400 {
+   margin-left: -0.5rem;
+   vertical-align: middle;
 }
 
 a {

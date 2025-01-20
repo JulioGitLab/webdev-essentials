@@ -8,13 +8,13 @@
   <meta name="description" content="Project on how to create a form.
     Intended as a demo for web development enthusiasts" />
   <title lang="es">Encuesta Para Programadores</title>
-  <!-- <link rel="stylesheet" href="../CSS/style.css" /> -->
+  <link rel="stylesheet" href="../CSS/style.css" />
 </head>
 
 <body>
   <main>
     <h1 id="title">Coders Survey</h1>
-    <p id="description">Please take the tame to help us improve</p>
+    <p id="description">Please take the time to help us improve</p>
     <form id="survey-form">
       <label for="name" id="name-label">
         Name: <input id="name" name="name" type="text" placeholder="full name" required />
@@ -27,30 +27,31 @@
       </label>
       <label for="dropdown">Do you code?
         <select id="dropdown" name="dropdown">
-          <option value="what">What?</option>
+          <option hidden disabled selected value="">select</option>
           <option value="yes">Yes</option>
           <option value="no">No</option>
+          <option value="what">What?</option>
         </select>
       </label>
       <label>Do you want to be better?
-        <input id="yeah" name="improve" type="radio" value="yeah" class="inline" checked />Yeah!
-        <input id="oc" name="improve" type="radio" value="oc" class="inline" />Of course!
+        <input id="yeah" name="improve" type="radio" value="yeah" class="inline" checked /><span class="fw400">Yeah!</span>
+        <input id="oc" name="improve" type="radio" value="oc" class="inline" /><span class="fw400">Of course!</span>
       </label>
       <fieldset>
         <legend>Which technologies do you know?</legend>
-        <input id="opt1" name="tech" type="checkbox" value="html" class="inline" /><label for="opt1"> HTML5</label>
-        <input id="opt2" name="tech" type="checkbox" value="css" class="inline" /><label for="opt2"> CSS</label>
-        <input id="opt3" name="tech" type="checkbox" value="js" class="inline" /><label for="opt3"> JavaScript</label>
+        <input id="opt1" name="tech" type="checkbox" value="html" class="inline" /><label for="opt1"> <span class="fw400">HTML</span></label>
+        <input id="opt2" name="tech" type="checkbox" value="css" class="inline" /><label for="opt2"> <span class="fw400">CSS</span></label>
+        <input id="opt3" name="tech" type="checkbox" value="js" class="inline" /><label for="opt3"> <span class="fw400">JavaScript</span></label>
       </fieldset>
       <label for="comment">Any comments?:
-        <textarea id="comment" name="comment" rows="3" cols="31" placeholder="I think..."></textarea>
+        <textarea id="comment" name="comment" rows="5" cols="31" placeholder="I think..."></textarea>
       </label>
       <!-- <label for=""><input id="" name="" type="" /></label> -->
       <input id="submit" type="submit" value="Send" />
     </form>
   </main>
   <footer>
-    <aside>This is a travel page demo intended for web development enthusiasts.</aside>
+    <small>This is a travel page demo intended for web development enthusiasts.</small>
   </footer>
 </body>
 
