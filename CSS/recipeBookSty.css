@@ -1,42 +1,47 @@
-/* This is a complementary and testing CSS file for recipeBook.html which
-   primarily uses Bootstrap.  */
+/* This is a complementary CSS file for recipeBook.html which primarily uses Bootstrap. */
 
 header h1 {
-   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-   font-size:xx-large;
-   padding:11px;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   font-size: xx-large;
+   padding: 11px;
    /* background-image:url(/ImgVidBackup/Bgs/space_pexels-felixmittermeier.jpg); */
    /* background-color:firebrick; */
-   color:gold;
+   color: gold;
    /* text-align:center; */
 }
+
 h2 {
-   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   background-color: whitesmoke;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   background-color: dimgray;
    /* color:firebrick; */
    border: medium outset silver;
-   padding:5px;
+   padding: 5px;
 }
+
 #cont {
-   background-color:wheat;
-   padding-top:5px;
-   padding-bottom:7px;
+   background-color: moccasin;
+   padding-top: 5px;
+   padding-bottom: 7px;
 }
+
 .time_serves {
-   background-color:khaki;
+   background-color: tomato;
    /* list-style-type:circle; */
-   padding:7px 31px;
-   font-size:13px;
+   padding: 7px 31px;
+   font-size: 13px;
 }
+
 p {
-   background-color:gainsboro;
-   padding:7px;
-   text-align:justify;
+   background-color: dimgray;
+   padding: 7px;
+   text-align: justify;
 }
+
 em {
-   font-size:small;
+   font-size: small;
 }
+
 aside {
-   font-size:small;
-   color:gray;
+   font-size: small;
+   color: gray;
 }
