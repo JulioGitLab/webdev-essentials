@@ -1,8 +1,8 @@
 /* Style instructions for /HTML/anuncioRefCSS-JS.html file */
 body {
    background-color: black;
-   font-family: 'Courier New', Courier, monospace;
    color: whitesmoke;
+   font-family: 'Courier New', Courier, monospace;
    text-align: center;
 }
 
@@ -16,21 +16,24 @@ canvas {
 }
 
 ul {
-   list-style-type: none;
-   margin: 2em auto;
-   font-size: small;
    width: 50%;
    max-width: 800px;
+   margin: 2em auto;
+   font-size: small;
+   list-style-type: none;
+   padding-inline-start: 0;
 }
 
 li {
-   margin-bottom: 1em;
+   margin-bottom: 1.3em;
+   line-height: 1.7em;
 }
 
 /* Same emoji for all list items */
 /* li::before {
    content:"🎯"
 } */
+ 
 li:nth-child(1)::before {
    content: "🎨";
    font-size: 1.9em;
@@ -55,6 +58,7 @@ li:nth-child(4)::before {
    padding-inline-end: 0.3em;
 }
 
+/* For alternative description */
 /* p {
    color:whitesmoke;
    font-family:'Courier New';
