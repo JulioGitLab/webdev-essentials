@@ -23,6 +23,10 @@ canvas {
    border: 3px ridge grey;
 }
 
+#canvas-mt-2vh {
+   margin-top: 2vh;
+}
+
 p {
    width: 60vw;
    max-width: 700px;

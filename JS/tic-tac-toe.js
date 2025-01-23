@@ -2,7 +2,7 @@ const cW = 375, cH = 667;
 
 function setup() {
    let canvas = createCanvas(cW, cH);
-   canvas.id("tic-tac-toe-canvas");
+   canvas.id("canvas-mt-2vh");
 
    /* // Creates a score container with a score element in paragraph
    let scoreContainer = createDiv("Score: ");

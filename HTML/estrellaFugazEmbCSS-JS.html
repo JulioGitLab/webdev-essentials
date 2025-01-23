@@ -10,7 +10,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="An animated night in the city in a canvas.
+  <meta name="description" content="An animated night in the city drawn in a canvas.
     Intended as a demo for web development enthusiasts." />
   <title lang="es">Proyecto 2: Estrella Fugaz</title>
   <style>
@@ -43,6 +43,17 @@
       font-size: large;
       font-weight: bold;
     }
+
+    footer {
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      margin: 2.3em auto;
+      color: silver;
+      font-size: 0.7em;
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -60,6 +71,10 @@
   <p>
     Click on the canvas to add stars at the pointer position.
   </p>
+
+  <footer>
+    <small>This is a Canvas API demo intended for web development enthusiasts</small>
+  </footer>
 
   <script>
     const canvas = document.getElementById("myCanvas");

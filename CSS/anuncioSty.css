@@ -33,7 +33,7 @@ li {
 /* li::before {
    content:"🎯"
 } */
- 
+
 li:nth-child(1)::before {
    content: "🎨";
    font-size: 1.9em;
@@ -65,3 +65,14 @@ li:nth-child(4)::before {
    font-size:small;
    text-align:justify;
 } */
+
+footer {
+   position: absolute;
+   right: 0;
+   left: 0;
+   bottom: 0;
+   margin: 2.3em auto;
+   color: silver;
+   font-size: 0.7em;
+   text-align: center;
+}

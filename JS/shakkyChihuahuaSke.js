@@ -2,7 +2,8 @@
 const canvasW = Math.floor(window.innerWidth * 0.97);
 
 function setup() {
-   createCanvas(canvasW, 500);
+   let canvas = createCanvas(canvasW, 500);
+   canvas.id("canvas-mt-2vh");
    frameRate(60);
 };
 
