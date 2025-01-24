@@ -1,110 +1,137 @@
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 
+:root {
+   font-size: 10px;
+   letter-spacing: 1px;
+}
+
 body {
-   margin:0;
+   margin: 0;
    background-color: moccasin;
    color: deeppink;
    font-family: 'Shadows Into Light';
    text-align: center;
 }
-h1 {
-   background-color: darkmagenta;
-   color: moccasin;
-   font-variant: small-caps;
-   font-size: 4.3em;
-   width: 99.3%;
-   margin: 0;
-   border-style: solid;
-   border-width: 0.3rem;
-   border-color: deeppink;
-   padding: 0.7rem 0;
+
+header {
    position: sticky;
-   top: 0em;
+   top: 0;
 }
-h1 span {
-   border: medium dotted pink;
-   border-radius: 1.3rem;
-   font-size: 1.3em;
-   background-color: deeppink;
-   padding: 0 0.5rem;
-}
-h2 {
-   background-color: pink;
-   color: darkmagenta;
-   font-size: 1.9rem;
-   margin: 0.2em 0 0;
-   padding: 0.7rem;
-}
-em {
-   font-style: normal;
-   font-size: 1.1em;
-}
-#infoGen {
-   padding: 0.7em 3.7em;
-   font-size: 1.1em;
-}
-#habra {
-   background-color: pink;
-   color: darkmagenta;
+
+h1 {
    margin: 0;
+   border-width: 0.3rem;
+   border-style: solid;
+   border-color: deeppink;
+   padding: 1.7rem 2.7rem 2rem;
+   background: linear-gradient(darkmagenta, deeppink, darkmagenta);
+   color: moccasin;
+   font-size: 5.3rem;
+   font-variant: small-caps;
 }
+
+h1 span {
+   border: medium dotted moccasin;
+   border-radius: 17px;
+   padding: 0 0.1em 0.1em;
+   background-color: darkmagenta;
+   color: deeppink;
+   font-size: 1.3em;
+}
+
+h2 {
+   margin: 0.7rem 0;
+   padding: 1.3rem 3rem;
+   background-color: pink;
+   color: darkmagenta;
+   font-size: 2.9rem;
+}
+
+em {
+   font-size: 1.1em;
+   font-style: normal;
+}
+
+#infoGen {
+   width: 70%;
+   margin: 7vh auto;
+   font-size: 1.7rem;
+   line-height: 3.3rem;
+}
+
+#habra {
+   padding: 4.3rem 0 1.3rem;
+   background-color: pink;
+   color: darkmagenta;
+}
+
 #habra div {
    display: flex;
-   justify-content: center;
-   padding: 1.1em;
+   justify-content: space-evenly;
+   align-items: center;
 }
+
 #imgTienda {
-   max-width: 50%;
-   margin: 2.3em 1.3em 0 2.3em;
-   border-style: solid;
-   border-width: 0.2rem;
-   border-color: deeppink;
+   width: 50%;
+   max-width: 750px;
+   min-width: 350px;
+   margin-left: 8%;
+   margin-right: 2%;
+   border: 0.3rem solid deeppink;
 }
-#habraLista {
-   float: right;
-   min-width: 37%;
-   margin: auto 0;
-   font-size: 1.3rem;
+
+ul {
+   width: 40%;
+   min-width: 250px;
+   font-size: 1.9rem;
    text-align: left;
 }
-#habraLista li:first-child {
+
+li:first-child {
    list-style-type: none;
-   margin-bottom: 0.3em;
    font-size: 1.3em;
 }
+
 #pieHabra {
-   margin: 0.7em;
-   padding: 0 0 1.3em;
-   font-size: 1.7rem;
-   /* clear: both; */
+   font-size: 2rem;
 }
 
-footer p { margin-top: 1.9em; }
+.registro p {
+   margin: 3vh 0 1.3rem;
+   font-size: 1.7rem;
+}
 
 input {
-   color: moccasin;
+   margin-bottom: 1.3rem;
+   border: outset darkmagenta;
+   border-radius: 5px;
+   padding: 0.7rem;
    background-color: deeppink;
-   border: outset thick darkmagenta;
-   padding: 0.3em;
-   margin-bottom: 1.9em;
-   font-size: 1.1em;
-   font-weight: bolder;
-   font-family: Georgia, 'Times New Roman', Times, serif;
-}
-input:hover {
-   color: darkmagenta;
-   background-color: pink;
-   border-color: deeppink;
+   color: moccasin;
+   font-size: 1.7em;
+   font-variant: small-caps;
+   font-weight: bold;
+   letter-spacing: 1px;
 }
 
-input:active { border-style: inset; }
+input:hover {
+   border-color: deeppink;
+   background-color: pink;
+   color: darkmagenta;
+}
+
+input:active {
+   border-style: inset;
+}
 
 hr {
-   width:79%;
-   border:thin ridge darkmagenta;
+   width: 70%;
+   border: thin ridge darkmagenta;
 }
+
 aside {
-   margin-bottom: 1.3em;
+   margin: 1.3rem 0 2rem;
    color: darkmagenta;
-   font: small monospace;
+   font-family: monospace;
+   letter-spacing: 0;
 }
