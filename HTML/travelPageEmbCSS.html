@@ -13,7 +13,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
     
-    html {
+    * {
       scroll-behavior: smooth;
     }
     
@@ -21,24 +21,26 @@
       margin: 0;
       background-color: darkgoldenrod;
       font-family: 'Candara', serif;
+      font-size: 10px;
     }
     
     header {
-      padding: 1em;
+      padding: 0.5vw 0;
       border: 5px ridge silver;
       font-family: 'Permanent Marker';
-      font-size: 1.3em;
+      font-size: min(2.3vw, 1.3rem);
+      letter-spacing: 0.5px;
       text-align: center;
     }
     
     header em {
       color: firebrick;
-      font-size: 1.5em;
+      font-size: 1.3em;
     }
     
     main p {
-      margin: 3em 4.3em;
-      font-size: 1.3em;
+      margin: 5vw 11vw;
+      font-size: min(3vw, 1.3rem);
       line-height: 1.5em;
       text-align: justify;
       align-content: center;
@@ -70,45 +72,66 @@
       font-size: 1.1em;
     }
 
-    .places {
-      padding: 0.7em 1em;
+    h2 {
+      margin-bottom: 3.7vw;
+      padding: 1.3vw 1em;
       border: 3px ridge silver;
       font-family: 'Permanent Marker';
-      font-size: 2em;
+      font-size: min(3.7vw, 2rem);
+      letter-spacing: 0.5px;
     }
 
-    header, .places {
+    header, h2 {
       background: linear-gradient(gold, goldenrod);
     }
 
     dl {
-      padding-top: 0.2em;
+      width: 83vw;
+      margin: 0 auto;
       font-family: 'Shadows Into Light', 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
-      font-size: 1.7em;
+      font-size: min(4.3vw, 2rem);
+      letter-spacing: 1.7px;
       text-align: center;
-      letter-spacing: 2px;
     }
 
     dt {
       margin: 1em 0 0.7em;
     }
 
+    dd {
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.3vw;
+      /* align-items: center; */
+    }
+
     img {
-      max-height: 320px;
-      margin-bottom: 1em;
+      height: min(25vw, 380px);
+      min-height: 205px;
+      margin-bottom: 2vw;
       border: 2px ridge silver;
       border-radius: 7px;
     }
 
+    figure {
+      margin: 0 auto 0.7vw;
+    }
+
+    figure img {
+      height: min(30vw, 450px);
+      min-height: 210px;
+    }
+
     figcaption {
-      margin-top: -2em;
+      margin-top: -2.5vw;
       font-family: 'Candara', serif;
-      font-size: 0.5em;
-      letter-spacing: 1px;
+      font-size: min(2.3vw, 1rem);
+      letter-spacing: 0.7px;
     }
 
     hr {
-      width: 83%;
       margin: 0.3em auto 1.3em;
       border: thin ridge silver;
     }
@@ -123,17 +146,21 @@
     }
 
     #b2top {
-      color: whitesmoke;
+      color: silver;
       background: darkslategray;
       border-style: outset;
       border-color: dimgray;
-      padding: 0.5em;
+      padding: 0.5rem;
+      padding-left: 0.7rem;
       font-family: sans-serif;
+      font-size: min(2.9vw, 1.1rem);
+      font-weight: bold;
+      letter-spacing: 0.3px;
       text-decoration: none;
     }
 
     #b2top:hover {
-      color: silver;
+      color: whitesmoke;
     }
 
     #b2top:active {
@@ -172,7 +199,7 @@
     </p>
 
     <section>
-      <h2 class="places">Palenque's places to visit:</h2>
+      <h2>Palenque's places to visit:</h2>
       <dl>
         <dt class="tierra"><strong>La Chingada</strong></dt>
         <dd>
