@@ -20,9 +20,10 @@ header {
 
 h1 {
    margin: 0;
-   border-width: 0.3rem;
    border-style: solid;
-   border-color: deeppink;
+   border-image-source: repeating-linear-gradient(123deg, deeppink 5%, darkmagenta 10%, deeppink 15%);
+   border-image-slice: 11;
+   border-image-width: 0.3rem;
    padding: 1.7rem 2.7rem 2rem;
    background: linear-gradient(darkmagenta, deeppink, darkmagenta);
    color: moccasin;
@@ -77,7 +78,9 @@ em {
    min-width: 350px;
    margin-left: 8%;
    margin-right: 2%;
-   border: 0.3rem solid deeppink;
+   border: 0.5rem solid;
+   border-image-source: repeating-linear-gradient(45deg, deeppink 5%, darkmagenta 10%, deeppink 15%);
+   border-image-slice: 7;
 }
 
 ul {
@@ -126,7 +129,9 @@ input:active {
 
 hr {
    width: 70%;
-   border: thin ridge darkmagenta;
+   border: thin solid;
+   border-image-source: radial-gradient(darkmagenta, deeppink, darkmagenta);
+   border-image-slice: 10;
 }
 
 aside {
