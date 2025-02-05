@@ -38,6 +38,7 @@ h1 span {
    background-color: darkmagenta;
    color: deeppink;
    font-size: 1.3em;
+   text-shadow: -1px -2px 3px moccasin;
 }
 
 h2 {
@@ -64,6 +65,7 @@ em {
    padding: 4.3rem 0 1.3rem;
    background-color: pink;
    color: darkmagenta;
+   text-shadow: 0 0 deeppink;
 }
 
 #habra div {
@@ -97,11 +99,16 @@ li:first-child {
 
 #pieHabra {
    font-size: 2rem;
+   /* text-shadow: 0 0 deeppink; */
 }
 
 .registro p {
    margin: 3vh 0 1.3rem;
    font-size: 1.7rem;
+}
+
+#infoGen, .registro p {
+   text-shadow: -1px 0 3px pink, 0 1px 3px pink;
 }
 
 input {
