@@ -158,11 +158,13 @@ input[type="submit"] {
    background-color: gray;
    color: #131313;
    font-size: 1.5rem;
+   transition: transform 0.5s;
 }
 
 input[type="submit"]:hover {
    background-color: gainsboro;
    color: black;
+   transform: scale(1.1);
 }
 
 input[type="submit"]:active {
