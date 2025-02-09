@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 
-:root {
+* {
+   box-sizing: border-box;
+   scroll-behavior: smooth;
+}
+
+html {
    font-size: 10px;
-   letter-spacing: 1px;
 }
 
 body {
@@ -11,30 +15,32 @@ body {
    color: deeppink;
    font-family: 'Shadows Into Light';
    text-align: center;
+   letter-spacing: 0.5px;
 }
 
 header {
    position: sticky;
-   top: 0;
-}
-
-h1 {
-   margin: 0;
+   top: -5vh;
    border-style: solid;
    border-image-source: repeating-linear-gradient(123deg, deeppink 5%, darkmagenta 10%, deeppink 15%);
    border-image-slice: 11;
-   border-image-width: 0.3rem;
-   padding: 1.7rem 2.7rem 2rem;
+   border-image-width: 0.5vh;
    background: linear-gradient(darkmagenta, deeppink, darkmagenta);
+}
+
+h1 {
+   margin: 1vh 5vw min(1.9vh, 1.9vw);
    color: moccasin;
-   font-size: 5.3rem;
+   font-size: max(4.3vw, 3rem);
    font-variant: small-caps;
+   text-shadow: -1px 0 1px darkmagenta, 0 1px 1px darkmagenta;
+   letter-spacing: 0.7px;
 }
 
 h1 span {
-   border: medium dotted moccasin;
+   border: 0.37vh dotted moccasin;
    border-radius: 17px;
-   padding: 0 0.1em 0.1em;
+   padding: 0 0.1em 0.1em 0.13em;
    background-color: darkmagenta;
    color: deeppink;
    font-size: 1.3em;
@@ -42,11 +48,11 @@ h1 span {
 }
 
 h2 {
-   margin: 0.7rem 0;
-   padding: 1.3rem 3rem;
+   margin-top: 2vw;
+   padding: 1.9vw 13vw;
    background-color: pink;
    color: darkmagenta;
-   font-size: 2.9rem;
+   font-size: max(2.3vw, 2rem);
 }
 
 em {
@@ -56,39 +62,38 @@ em {
 
 #infoGen {
    width: 70%;
-   margin: 7vh auto;
-   font-size: 1.7rem;
-   line-height: 3.3rem;
+   margin: 7vw auto;
+   line-height: min(5.9vw, 3.7rem);
 }
 
 #habra {
-   padding: 4.3rem 0 1.3rem;
+   padding: 5vw 0 2.3vw;
    background-color: pink;
    color: darkmagenta;
-   text-shadow: 0 0 deeppink;
+   font-size: max(1.7vw, 1.7rem);
+   text-shadow: 0 0 1px deeppink;
 }
 
 #habra div {
    display: flex;
+   flex-wrap: wrap;
    justify-content: space-evenly;
    align-items: center;
+   padding: 0 3vw;
 }
 
 #imgTienda {
-   width: 50%;
+   width: 47%;
    max-width: 750px;
-   min-width: 350px;
-   margin-left: 8%;
-   margin-right: 2%;
-   border: 0.5rem solid;
+   min-width: 380px;
+   border: 0.5vh solid;
    border-image-source: repeating-linear-gradient(45deg, deeppink 5%, darkmagenta 10%, deeppink 15%);
    border-image-slice: 7;
 }
 
 ul {
-   width: 40%;
-   min-width: 250px;
-   font-size: 1.9rem;
+   width: 41%;
+   min-width: 240px;
    text-align: left;
 }
 
@@ -98,27 +103,27 @@ li:first-child {
 }
 
 #pieHabra {
-   font-size: 2rem;
-   /* text-shadow: 0 0 deeppink; */
+   margin: 2.3vw 0 0;
+   font-size: 1.2em;
 }
 
 .registro p {
-   margin: 3vh 0 1.3rem;
-   font-size: 1.7rem;
+   margin: 3vW 0 1.7vw;
 }
 
 #infoGen, .registro p {
+   font-size: max(1.5vw, 1.5rem);
    text-shadow: -1px 0 3px pink, 0 1px 3px pink;
 }
 
 input {
-   margin-bottom: 1.3rem;
-   border: outset darkmagenta;
+   margin-bottom: 1.3vw;
+   border: min(0.7vw, 7px) outset darkmagenta;
    border-radius: 5px;
-   padding: 0.7rem;
+   padding: 1vw;
    background-color: deeppink;
    color: moccasin;
-   font-size: 1.7em;
+   font-size: max(1.5vw, 1.5rem);
    font-variant: small-caps;
    font-weight: bold;
    letter-spacing: 1px;
@@ -136,16 +141,44 @@ input:active {
    border-style: inset;
 }
 
+footer {
+   margin: 2vw 0 min(2.3vw, 31px);
+}
+
 hr {
-   width: 70%;
-   border: thin solid;
-   border-image-source: radial-gradient(darkmagenta, deeppink, darkmagenta);
-   border-image-slice: 10;
+   width: max(70%, 380px);
+   border-width: thin;
+   border-image-source: radial-gradient(darkmagenta 25%, deeppink, darkmagenta 75%);
+   border-image-slice: 7;
 }
 
 aside {
-   margin: 1.3rem 0 2rem;
+   margin-top: 1.3vw;
    color: darkmagenta;
    font-family: monospace;
    letter-spacing: 0;
+}
+
+@media (max-width: 1200px) {
+   header {
+      top: -3.1vh;
+   }
+}
+
+@media (max-width: 700px) {
+   h1 {
+      max-height: 101px;
+   }
+
+   #pieHabra {
+      margin: 0 0 0.7vw;
+   }
+
+   input {
+      letter-spacing: 0.7px;
+   }
+
+   aside {
+      font-size: 0.83rem;
+   }
 }
