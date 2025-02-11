@@ -1,12 +1,26 @@
-/* Style instructions for: index.html, peceraProcessingJS.html, shakkyChihuahuaOO.html, tic-tac-toe.html */
+/* Style instructions for:
+   index.html
+   peceraProcessingJS.html
+   coders-survey.html
+   shakkyChihuahuaOO.html
+   tic-tac-toe.html
+   memoji-quest.html
+   rotating-orthohedron.html */
 @import url(https://fonts.bunny.net/css?family=anonymous-pro:400,400i,700,700i);
 
 html {
+   box-sizing: border-box;
+   position: relative;
+   min-height: 100%;
    font-size: 10px;
 }
 
+*, *::before, *::after {
+   box-sizing: inherit;
+}
+
 body {
-   margin: 0;
+   margin: 0 0 7vh;
    padding: 0;
    background-color: black;
    color: goldenrod;
@@ -203,10 +217,11 @@ a:hover {
 
 footer {
    position: absolute;
-   right: 0;
-   left: 0;
+   /* right: 0; */
+   /* left: 0; */
    bottom: 0;
-   margin: 2.3rem auto;
+   width: 100%;
+   margin-bottom: 2vw;
    color: silver;
    font-size: 1.3rem;
    text-align: center;
