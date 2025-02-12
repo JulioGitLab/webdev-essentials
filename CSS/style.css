@@ -44,8 +44,8 @@ canvas {
 p {
    width: 89vw;
    margin: 0 auto 3vw;
-   font-size: max(1vw, 1.3rem);
    line-height: 1.7em;
+   font-size: max(1vw, 1.3rem);
    letter-spacing: 0.7px;
 }
 
@@ -71,12 +71,28 @@ em {
 }
 
 nav {
-   display: flex;
-   justify-content: center;
-   line-height: 2.3rem;
-   font-size: 1.7rem;
-   letter-spacing: 1px;
+   margin-bottom: 7vw;
+   padding-left: 8.9vw;
+   line-height: 1.7em;
+   font-size: max(1.1vw, 1.5rem);
+   letter-spacing: 0.7px;
    text-align: left;
+}
+
+a {
+   color: goldenrod;
+   text-decoration: none;
+   transition-duration: 250ms;
+}
+
+a:visited {
+   color: darkgoldenrod;
+}
+
+a:hover {
+   color: silver;
+   font-size: 1.1em;
+   transition-duration: 350ms;
 }
 
 form {
@@ -194,32 +210,15 @@ fieldset .fw400 {
    vertical-align: middle;
 }
 
-a {
-   color: goldenrod;
-   text-decoration: none;
-   transition-duration: 250ms;
-}
-
-a:visited {
-   color: darkgoldenrod;
-}
-
-a:hover {
-   color: silver;
-   font-size: 1.1em;
-   transition-duration: 350ms;
-}
-
 footer {
    position: absolute;
-   /* right: 0; */
-   /* left: 0; */
    bottom: 0;
    width: 100%;
    margin-bottom: 2vw;
    color: silver;
-   font-size: 1.3rem;
+   font-size: max(1vw, 1.1rem);
    text-align: center;
+   letter-spacing: 0.3px;
 }
 
 #juliogitlab {
@@ -230,13 +229,12 @@ footer {
 #juliogitlab:hover {
    color: gold;
    font-size: 1.3em;
-   letter-spacing: 1px;
+   letter-spacing: 0.5px;
 }
 
 @media (min-width: 800px) {
    h1 {
       margin-top: 3vw;
-      /* margin: 4.3vw 7vw 2vw; */
       font-size: 3.7vw;
    }
 
@@ -246,5 +244,13 @@ footer {
 
    p.index {
       margin-top: 3vw;
+   }
+
+   nav {
+      padding-left: 37vw;
+   }
+
+   footer {
+      margin-bottom: 1.3vw;
    }
 }
