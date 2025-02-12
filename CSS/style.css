@@ -29,8 +29,8 @@ body {
 }
 
 h1 {
-   margin: 3.7rem 0 1.7rem;
-   font-size: 4.3rem;
+   margin: 4.3vw 7vw 2vw;
+   font-size: max(4.7vw, 2.9rem);
 }
 
 canvas {
@@ -42,30 +42,32 @@ canvas {
 }
 
 p {
-   width: 60vw;
-   max-width: 700px;
-   margin: 2rem auto;
-   font-size: 1.3rem;
-   line-height: 2.3rem;
-   letter-spacing: 1px;
+   width: 89vw;
+   margin: 0 auto 3vw;
+   font-size: max(1vw, 1.3rem);
+   line-height: 1.7em;
+   letter-spacing: 0.7px;
 }
 
 p:first-of-type {
-   margin-top: 3.7rem;
+   margin-top: 1.9vw;
 }
 
 p::first-letter {
-   font-size: x-large;
+   font-size: 1.7em;
    font-weight: bold;
 }
 
 p.index {
-   margin: 7rem auto 1rem;
-   font-size: 1.7rem;
+   margin: 4.3vw auto 1.3vw;
+   font-size: max(1.7vw, 1.7rem);
 }
 
-#description {
-   font-size: 1.5rem;
+em {
+   border-radius: 5px;
+   padding: 0.2rem 0.3rem 0.3rem 0.5rem;
+   background-color: #222;
+   font-size: 1.1em;
 }
 
 nav {
@@ -124,13 +126,6 @@ fieldset label {
 
 fieldset label:last-of-type {
    margin-right: 0;
-}
-
-em {
-   border-radius: 5px;
-   padding: 0.2rem 0.3rem 0.3rem 0.5rem;
-   background-color: #222;
-   font-size: 1.1em;
 }
 
 input, textarea {
@@ -236,4 +231,20 @@ footer {
    color: gold;
    font-size: 1.3em;
    letter-spacing: 1px;
+}
+
+@media (min-width: 800px) {
+   h1 {
+      margin-top: 3vw;
+      /* margin: 4.3vw 7vw 2vw; */
+      font-size: 3.7vw;
+   }
+
+   p {
+      margin-bottom: 1.3vw;
+   }
+
+   p.index {
+      margin-top: 3vw;
+   }
 }
