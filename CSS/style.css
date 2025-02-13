@@ -20,7 +20,7 @@ html {
 }
 
 body {
-   margin: 0 0 7vh;
+   margin: 0 0 11vh;
    padding: 0;
    background-color: black;
    color: goldenrod;
@@ -42,7 +42,7 @@ canvas {
 }
 
 p {
-   width: 89vw;
+   width: 90vw;
    margin: 0 auto 3vw;
    line-height: 1.7em;
    font-size: max(1vw, 1.3rem);
@@ -96,7 +96,7 @@ a:hover {
 }
 
 form {
-   width: 66vw;
+   width: 83vw;
    max-width: 540px;
    min-width: 320px;
    margin: 0 auto;
@@ -104,51 +104,17 @@ form {
 
 label {
    display: block;
-   margin: 1.7rem 0;
-   font-size: 1.3rem;
+   margin-bottom: 3.7vw;
+   font-size: max(1vw, 1.3rem);
    font-weight: bold;
-}
-
-.h30px {
-   height: 30px;
-   align-content: center;
-}
-.w100px {
-   display: inline-block;
-   width: 100px;
-}
-
-.fw400 {
-   font-weight: 400;
-   font-size: 1.5rem;
-   vertical-align: middle;
-}
-
-fieldset {
-   margin: 2.3rem;
-   border: ridge gray;
-   padding: 2rem;
-}
-
-legend {
-   font-size: 1.3rem;
-   font-weight: bold;
-}
-
-fieldset label {
-   display: inline;
-   margin-right: 3.7rem;
-}
-
-fieldset label:last-of-type {
-   margin-right: 0;
 }
 
 input, textarea {
    width: 100%;
-   min-height: 2rem;
-   margin: 0.7rem auto 0;
+   min-height: 1.7em;
+   margin: 1vw auto 0;
    border: 1px solid gray;
+   border-radius: 3px;
    background-color: #131313;
    color: gainsboro;
 }
@@ -159,66 +125,116 @@ input, textarea {
 }
 
 #name, #email, #number {
-   padding-left: 0.5rem;
+   padding-left: 0.3em;
 }
 
 select {
-   width: 7rem;
-   height: 2.3rem;
-   margin: 1rem 0;
+   width: max(5vw, 7.3rem);
+   margin: 0.5vw auto;
+   border: 2px outset gray;
+   border-radius: 5px;
+   padding: 2px 0;
+   font-size: max(0.97vw, 1.3rem);
+}
+
+.mw380px {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   height: 19vw;
+}
+
+.mw70px {
+   width: 31vw;
+   margin: 0 auto;
+   text-align: left;
+}
+
+.mw70px:first-of-type {
+   margin-top: 2vw;
+}
+
+.inline {
+   width: unset;
+   margin: 0 0.3em 0 0;
+   vertical-align: middle;
+}
+
+.fw400 {
+   font-weight: 400;
+   vertical-align: middle;
+}
+
+fieldset {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 80%;
+   min-width: 320px;
+   margin: 0 auto 5vw;
+   border: ridge gray;
+   border-radius: 3px;
+   padding: 5vw 0;
+}
+
+legend {
+   font-size: max(1vw, 1.3rem);
+   font-weight: bold;
+}
+
+fieldset label {
+   margin: 0 2em 0.2em 0;
+}
+
+fieldset label:last-of-type {
+   margin-right: 0;
 }
 
 textarea {
-   padding: 0.5rem;
+   margin-bottom: 1.3vw;
+   padding: 0.5em;
+   resize: vertical;
 }
 
 input[type="submit"] {
    display: block;
    width: 20%;
-   min-width: 100px;
-   height: 3rem;
-   margin: 2rem auto;
+   height: 2em;
+   margin: 0 auto;
+   border: 2px outset gray;
    border-radius: 7px;
-   box-shadow: 0.5px 0.5px 1px 2px gainsboro;
+   box-shadow: 0 0 2px 2px gainsboro;
    background-color: gray;
    color: #131313;
-   font-size: 1.5rem;
+   font-size: max(1vw, 1.5rem);
+   font-weight: bold;
+   letter-spacing: 0.3px;
    transition: transform 0.5s;
 }
 
 input[type="submit"]:hover {
-   background-color: gainsboro;
-   color: black;
+   background-color: silver;
+   color: #191919;
    transform: scale(1.1);
 }
 
 input[type="submit"]:active {
-   background-color: #131313;
-   color: gainsboro;
-   box-shadow: -0.5px -0.3px 1px 2px gainsboro;
-
-}
-
-.inline {
-   width: unset;
-   margin: 0 0.5rem 0 0;
-   vertical-align: middle;
-}
-
-fieldset .fw400 {
-   margin-left: -0.5rem;
-   vertical-align: middle;
+   border: inset;
+   background-color: #191919;
+   color: silver;
+   box-shadow: 0 0 1px 1px gainsboro;
 }
 
 footer {
    position: absolute;
    bottom: 0;
    width: 100%;
-   margin-bottom: 2vw;
-   color: silver;
-   font-size: max(1vw, 1.1rem);
+   padding-bottom: 2vw;
+   color: #AAA;
+   font-family: monospace;
+   font-size: max(0.7vw, 1rem);
    text-align: center;
-   letter-spacing: 0.3px;
+   letter-spacing: 0.2px;
 }
 
 #juliogitlab {
@@ -229,10 +245,14 @@ footer {
 #juliogitlab:hover {
    color: gold;
    font-size: 1.3em;
-   letter-spacing: 0.5px;
+   letter-spacing: 0.3px;
 }
 
 @media (min-width: 800px) {
+   body {
+      margin-bottom: 7.3vh;
+   }
+   
    h1 {
       margin-top: 3vw;
       font-size: 3.7vw;
@@ -250,7 +270,50 @@ footer {
       padding-left: 37vw;
    }
 
-   footer {
+   label {
       margin-bottom: 1.3vw;
+   }
+
+   input, textarea {
+      margin-top: 0.5vw;
+   }
+
+   select {
+      border-width: 3px;
+      padding-left: 2px;
+   }
+
+   .mw380px {
+      flex-direction: row;
+      align-items: center;
+      height: unset;
+      margin-bottom: 1.7vw;
+   }
+
+   .mw70px {
+      width: unset;
+      margin: 0;
+      margin-left: 1em;
+   }
+
+   .mw70px:first-of-type {
+      margin-top: 0;
+   }
+
+   fieldset {
+      margin-bottom: 1.7vw;
+      padding: 2vw 0;
+   }
+
+   fieldset .fw400 {
+      margin-left: 2px;
+   }
+
+   textarea {
+      margin-bottom: 0.3vw;
+   }
+
+   footer {
+      padding-bottom: 1.3vw;
    }
 }
