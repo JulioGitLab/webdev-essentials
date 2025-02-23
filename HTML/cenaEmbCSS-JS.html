@@ -16,9 +16,22 @@
     Intended for web development enthusiasts." />
   <title lang="es">Projecto 1: Cena</title>
   <style>
-    body {
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html {
+      position: relative;
+      min-height: 100vh;
+    }
+
+    body {
+      min-width: 320px;
+      margin-bottom: 70px; /* bottom margin = footer height */
       background-color: black;
       color: goldenrod;
       font-family: 'Courier New', Courier, monospace;
@@ -44,10 +57,11 @@
   
     footer {
       position: absolute;
-      right: 0;
-      left: 0;
       bottom: 0;
-      margin: 2.3em auto;
+      height: 70px;
+      width: 100%;
+      padding: 0 5%;
+      align-content: center;
       color: silver;
       font-size: 0.7em;
       text-align: center;
