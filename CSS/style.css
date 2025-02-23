@@ -9,311 +9,317 @@
 @import url(https://fonts.bunny.net/css?family=anonymous-pro:400,400i,700,700i);
 
 html {
-   box-sizing: border-box;
-   position: relative;
-   min-height: 100%;
-   font-size: 10px;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 100%;
+  font-size: 10px;
 }
 
-*, *::before, *::after {
-   box-sizing: inherit;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
-   margin: 0 0 11vh;
-   padding: 0;
-   background-color: black;
-   color: goldenrod;
-   font-family: 'Anonymous Pro', 'Courier New', Courier, monospace;
-   text-align: center;
+  margin: 0 0 11vh;
+  padding: 0;
+  background-color: black;
+  color: goldenrod;
+  font-family: 'Anonymous Pro', 'Courier New', Courier, monospace;
+  text-align: center;
 }
 
 h1 {
-   margin: 4.3vw 7vw 2vw;
-   font-size: max(4.7vw, 2.9rem);
+  margin: 4.3vw 7vw 2vw;
+  font-size: max(4.7vw, 2.9rem);
 }
 
 canvas {
-   border: 3px ridge grey;
+  border: 3px ridge grey;
 }
 
 #canvas-mt-2vh {
-   margin-top: 2vh;
+  margin-top: 2vh;
 }
 
 p {
-   width: 90vw;
-   margin: 0 auto 3vw;
-   line-height: 1.7em;
-   font-size: max(1vw, 1.3rem);
-   letter-spacing: 0.7px;
+  width: 90vw;
+  margin: 0 auto 3vw;
+  line-height: 1.7em;
+  font-size: max(1vw, 1.3rem);
+  letter-spacing: 0.7px;
 }
 
 p:first-of-type {
-   margin-top: 1.9vw;
+  margin-top: 1.9vw;
 }
 
 p::first-letter {
-   font-size: 1.7em;
-   font-weight: bold;
+  font-size: 1.7em;
+  font-weight: bold;
 }
 
 p.index {
-   margin: 4.3vw auto 1.3vw;
-   font-size: max(1.7vw, 1.7rem);
+  margin: 4.3vw auto 1.3vw;
+  font-size: max(1.7vw, 1.7rem);
 }
 
 em {
-   border-radius: 5px;
-   padding: 0.2rem 0.3rem 0.3rem 0.5rem;
-   background-color: #222;
-   font-size: 1.1em;
+  border-radius: 5px;
+  padding: 0.2rem 0.3rem 0.3rem 0.5rem;
+  background-color: #222;
+  font-size: 1.1em;
 }
 
 nav {
-   margin-bottom: 7vw;
-   padding-left: 8.9vw;
-   line-height: 1.7em;
-   font-size: max(1.1vw, 1.5rem);
-   letter-spacing: 0.7px;
-   text-align: left;
+  margin-bottom: 7vw;
+  padding-left: 8.9vw;
+  line-height: 1.7em;
+  font-size: max(1.1vw, 1.5rem);
+  letter-spacing: 0.7px;
+  text-align: left;
 }
 
 a {
-   color: goldenrod;
-   text-decoration: none;
-   transition-duration: 250ms;
+  color: goldenrod;
+  text-decoration: none;
+  transition-duration: 250ms;
 }
 
 a:visited {
-   color: darkgoldenrod;
+  color: darkgoldenrod;
 }
 
 a:hover {
-   color: silver;
-   font-size: 1.1em;
-   transition-duration: 350ms;
+  color: silver;
+  font-size: 1.1em;
+  transition-duration: 350ms;
 }
 
 form {
-   width: 83vw;
-   max-width: 540px;
-   min-width: 320px;
-   margin: 0 auto;
+  width: 83vw;
+  max-width: 540px;
+  min-width: 320px;
+  margin: 0 auto;
 }
 
 label {
-   display: block;
-   margin-bottom: 3.7vw;
-   font-size: max(1vw, 1.3rem);
-   font-weight: bold;
+  display: block;
+  margin-bottom: 3.7vw;
+  font-size: max(1vw, 1.3rem);
+  font-weight: bold;
 }
 
-input, textarea {
-   width: 100%;
-   min-height: 1.7em;
-   margin: 1vw auto 0;
-   border: 1px solid gray;
-   border-radius: 3px;
-   background-color: #131313;
-   color: gainsboro;
+input,
+textarea {
+  width: 100%;
+  min-height: 1.7em;
+  margin: 1vw auto 0;
+  border: 1px solid gray;
+  border-radius: 3px;
+  background-color: #131313;
+  color: gainsboro;
 }
 
 #number {
-   display: block;
-   width: 33%;
+  display: block;
+  width: 33%;
 }
 
-#name, #email, #number {
-   padding-left: 0.3em;
+#name,
+#email,
+#number {
+  padding-left: 0.3em;
 }
 
 select {
-   width: max(5vw, 7.3rem);
-   margin: 0.5vw auto;
-   border: 2px outset gray;
-   border-radius: 5px;
-   padding: 2px 0;
-   font-size: max(0.97vw, 1.3rem);
+  width: max(5vw, 7.3rem);
+  margin: 0.5vw auto;
+  border: 2px outset gray;
+  border-radius: 5px;
+  padding: 2px 0;
+  font-size: max(0.97vw, 1.3rem);
 }
 
 .mw380px {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   height: 19vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 19vw;
 }
 
 .mw70px {
-   width: 31vw;
-   margin: 0 auto;
-   text-align: left;
+  width: 31vw;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .mw70px:first-of-type {
-   margin-top: 2vw;
+  margin-top: 2vw;
 }
 
 .inline {
-   width: unset;
-   margin: 0 0.3em 0 0;
-   vertical-align: middle;
+  width: unset;
+  margin: 0 0.3em 0 0;
+  vertical-align: middle;
 }
 
 .fw400 {
-   font-weight: 400;
-   vertical-align: middle;
+  font-weight: 400;
+  vertical-align: middle;
 }
 
 fieldset {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 80%;
-   min-width: 320px;
-   margin: 0 auto 5vw;
-   border: ridge gray;
-   border-radius: 3px;
-   padding: 5vw 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  min-width: 320px;
+  margin: 0 auto 5vw;
+  border: ridge gray;
+  border-radius: 3px;
+  padding: 5vw 0;
 }
 
 legend {
-   font-size: max(1vw, 1.3rem);
-   font-weight: bold;
+  font-size: max(1vw, 1.3rem);
+  font-weight: bold;
 }
 
 fieldset label {
-   margin: 0 2em 0.2em 0;
+  margin: 0 2em 0.2em 0;
 }
 
 fieldset label:last-of-type {
-   margin-right: 0;
+  margin-right: 0;
 }
 
 textarea {
-   margin-bottom: 1.3vw;
-   padding: 0.5em;
-   resize: vertical;
+  margin-bottom: 1.3vw;
+  padding: 0.5em;
+  resize: vertical;
 }
 
 input[type="submit"] {
-   display: block;
-   width: 20%;
-   height: 2em;
-   margin: 0 auto;
-   border: 2px outset gray;
-   border-radius: 7px;
-   box-shadow: 0 0 2px 2px gainsboro;
-   background-color: gray;
-   color: #131313;
-   font-size: max(1vw, 1.5rem);
-   font-weight: bold;
-   letter-spacing: 0.3px;
-   transition: transform 0.5s;
+  display: block;
+  width: 20%;
+  height: 2em;
+  margin: 0 auto;
+  border: 2px outset gray;
+  border-radius: 7px;
+  box-shadow: 0 0 2px 2px gainsboro;
+  background-color: gray;
+  color: #131313;
+  font-size: max(1vw, 1.5rem);
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  transition: transform 0.5s;
 }
 
 input[type="submit"]:hover {
-   background-color: silver;
-   color: #191919;
-   transform: scale(1.1);
+  background-color: silver;
+  color: #191919;
+  transform: scale(1.1);
 }
 
 input[type="submit"]:active {
-   border: inset;
-   background-color: #191919;
-   color: silver;
-   box-shadow: 0 0 1px 1px gainsboro;
+  border: inset;
+  background-color: #191919;
+  color: silver;
+  box-shadow: 0 0 1px 1px gainsboro;
 }
 
 footer {
-   position: absolute;
-   bottom: 0;
-   width: 100%;
-   padding-bottom: 2vw;
-   color: #AAA;
-   font-family: monospace;
-   font-size: max(0.7vw, 1rem);
-   text-align: center;
-   letter-spacing: 0.2px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 2vw;
+  color: #AAA;
+  font-family: monospace;
+  font-size: max(0.7vw, 1rem);
+  text-align: center;
+  letter-spacing: 0.2px;
 }
 
 #juliogitlab {
-   font-size: 1.1em;
-   font-weight: bold;
+  font-size: 1.1em;
+  font-weight: bold;
 }
 
 #juliogitlab:hover {
-   color: gold;
-   font-size: 1.3em;
-   letter-spacing: 0.3px;
+  color: gold;
+  font-size: 1.3em;
+  letter-spacing: 0.3px;
 }
 
 @media (min-width: 800px) {
-   body {
-      margin-bottom: 7.3vh;
-   }
-   
-   h1 {
-      margin-top: 3vw;
-      font-size: 3.7vw;
-   }
+  body {
+    margin-bottom: 7.3vh;
+  }
 
-   p {
-      margin-bottom: 1.3vw;
-   }
+  h1 {
+    margin-top: 3vw;
+    font-size: 3.7vw;
+  }
 
-   p.index {
-      margin-top: 3vw;
-   }
+  p {
+    margin-bottom: 1.3vw;
+  }
 
-   nav {
-      padding-left: 37vw;
-   }
+  p.index {
+    margin-top: 3vw;
+  }
 
-   label {
-      margin-bottom: 1.3vw;
-   }
+  nav {
+    padding-left: 37vw;
+  }
 
-   input, textarea {
-      margin-top: 0.5vw;
-   }
+  label {
+    margin-bottom: 1.3vw;
+  }
 
-   select {
-      border-width: 3px;
-      padding-left: 2px;
-   }
+  input,
+  textarea {
+    margin-top: 0.5vw;
+  }
 
-   .mw380px {
-      flex-direction: row;
-      align-items: center;
-      height: unset;
-      margin-bottom: 1.7vw;
-   }
+  select {
+    border-width: 3px;
+    padding-left: 2px;
+  }
 
-   .mw70px {
-      width: unset;
-      margin: 0;
-      margin-left: 1em;
-   }
+  .mw380px {
+    flex-direction: row;
+    align-items: center;
+    height: unset;
+    margin-bottom: 1.7vw;
+  }
 
-   .mw70px:first-of-type {
-      margin-top: 0;
-   }
+  .mw70px {
+    width: unset;
+    margin: 0;
+    margin-left: 1em;
+  }
 
-   fieldset {
-      margin-bottom: 1.7vw;
-      padding: 2vw 0;
-   }
+  .mw70px:first-of-type {
+    margin-top: 0;
+  }
 
-   fieldset .fw400 {
-      margin-left: 2px;
-   }
+  fieldset {
+    margin-bottom: 1.7vw;
+    padding: 2vw 0;
+  }
 
-   textarea {
-      margin-bottom: 0.3vw;
-   }
+  fieldset .fw400 {
+    margin-left: 2px;
+  }
 
-   footer {
-      padding-bottom: 1.3vw;
-   }
+  textarea {
+    margin-bottom: 0.3vw;
+  }
+
+  footer {
+    padding-bottom: 1.3vw;
+  }
 }
