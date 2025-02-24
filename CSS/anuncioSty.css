@@ -7,38 +7,43 @@
   padding: 0;
 }
 
+html {
+  font-size: 10px;
+}
+
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   background-color: black;
   align-items: center;
-  color: whitesmoke;
   text-align: center;
+  color: whitesmoke;
   font-family: 'Courier New', Courier, monospace;
 }
 
 h1 {
-  margin: 1em 0 0.3em;
-  font-size: 2.3em;
+  margin: 2rem 0 0.7rem;
+  font-size: 3.1rem;
 }
 
 canvas {
-  border: 0.3em ridge grey;
+  margin-bottom: 3.7rem;
+  border: 0.3rem ridge grey;
 }
 
 ul {
-  width: 50%;
-  max-width: 800px;
-  margin: 2em auto;
+  width: 83%;
+  max-width: 600px;
   list-style-type: none;
   padding-inline-start: 0;
-  font-size: small;
 }
 
 li {
-  margin-bottom: 1.3em;
+  margin-bottom: 2rem;
   line-height: 1.7em;
+  font-size: 1.3rem;
+  letter-spacing: 0.2px;
 }
 
 /* Same emoji for all list items */
@@ -48,24 +53,21 @@ li {
 
 li:nth-child(1)::before {
   content: "🎨";
-  padding-inline-end: 0.3em;
-  font-size: 1.9em;
 }
 
 li:nth-child(2)::before {
   content: "🔻";
-  padding-inline-end: 0.3em;
-  font-size: 1.9em;
 }
 
 li:nth-child(3)::before {
   content: "🖱";
-  padding-inline-end: 0.3em;
-  font-size: 1.9em;
 }
 
 li:nth-child(4)::before {
   content: "↘";
+}
+
+li::before {
   padding-inline-end: 0.3em;
   font-size: 1.9em;
 }
@@ -84,6 +86,61 @@ footer {
   padding: 0 7.3%;
   align-content: center;
   text-align: center;
-  color: silver;
-  font-size: 0.7em;
+  color: #AAA;
+  font-size: 1rem;
+  letter-spacing: 0.1px;
+}
+
+body {
+  min-width: 360px;
+}
+
+@media (min-width: 540px) {
+  h1 {
+    margin-top: 1.7rem;
+    font-size: 3.3rem;
+  }
+
+  canvas {
+    margin-bottom: 4.3rem;
+  }
+
+  ul {
+    width: 73%;
+  }
+
+  li {
+    margin-bottom: 3rem;
+    line-height: 2rem;
+    font-size: 1.5rem;
+  }
+
+  footer {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 940px) and (min-height: 600px) {
+  h1 {
+    margin: 3rem 0 1rem;
+    font-size: 4.3rem;
+  }
+
+  canvas {
+    border-width: 0.5rem;
+  }
+
+  ul {
+    max-width: 720px;
+  }
+
+  li {
+    line-height: 3rem;
+    font-size: 1.7rem;
+  }
+
+  footer {
+    height: 75px;
+    font-size: 1.3rem;
+  }
 }
