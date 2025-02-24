@@ -14,13 +14,23 @@
     Intended as a demo for web development enthusiasts." />
   <title lang="es">Proyecto 2: Estrella Fugaz</title>
   <style>
-    body {
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
       background-color: black;
+      align-items: center;
       color: goldenrod;
-      font-family: 'Courier New', Courier, monospace;
       text-align: center;
+      font-family: 'Courier New', Courier, monospace;
     }
 
     h1 {
@@ -29,14 +39,15 @@
     }
 
     canvas {
+      max-width: 350px;
       border: 0.3em ridge grey;
     }
 
     p {
       width: 50%;
       margin: 0.7em auto;
-      font-size: small;
       line-height: 1.3rem;
+      font-size: small;
     }
 
     p::first-letter {
@@ -45,14 +56,12 @@
     }
 
     footer {
-      position: absolute;
-      right: 0;
-      left: 0;
-      bottom: 0;
-      margin: 2.3em auto;
+      height: 60px;
+      margin-top: auto;
+      align-content: center;
+      text-align: center;
       color: silver;
       font-size: 0.7em;
-      text-align: center;
     }
   </style>
 </head>
