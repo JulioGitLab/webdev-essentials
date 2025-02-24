@@ -13,13 +13,23 @@
     Intended as a demo for web development enthusiasts." />
   <title lang="es">Proyecto 3: Ataque Animal</title>
   <style>
-    body {
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
       background-color: black;
+      align-items: center;
       color: goldenrod;
-      font-family: 'Courier New', Courier, monospace;
       text-align: center;
+      font-family: 'Courier New', Courier, monospace;
     }
 
     h1 {
@@ -45,14 +55,13 @@
     }
 
     footer {
-      position: absolute;
-      right: 0;
-      left: 0;
-      bottom: 0;
-      margin: 2.3em auto;
+      height: 60px;
+      margin-top: auto;
+      padding: 0 7.3%;
+      align-content: center;
+      text-align: center;
       color: silver;
       font-size: 0.7em;
-      text-align: center;
     }
   </style>
 </head>
