@@ -38,8 +38,8 @@
       margin-bottom: var(--footer-size);
       background-color: black;
       color: goldenrod;
-      font-family: 'Courier New', Courier, monospace;
       text-align: center;
+      font-family: 'Courier New', Courier, monospace;
     }
 
     h1 {
@@ -63,12 +63,12 @@
     footer {
       position: absolute;
       bottom: 0;
-      height: var(--footer-size);
       width: 100%;
+      height: var(--footer-size);
       padding: 0 7.3%;
       align-content: center;
-      color: #AAA;
       text-align: center;
+      color: #AAA;
       font-size: 1rem;
       letter-spacing: 0.1px;
     }
@@ -114,13 +114,21 @@
 </head>
 
 <body>
-  <!-- DEMO FIGURES -->
-
   <h1 style="font-size: 4.3rem;">Canvas API</h1>
-
   <canvas id="myCanvas0" width="300" height="250" style="border: 0.3em ridge grey;"></canvas>
-
   <p>Some figures drawn as a demonstration.</p>
+
+  <h1 style="font-size: 3rem;">Dinner is ready!</h1>
+  <canvas id="myCanvas" width="300" height="250" style="border: 0.3em ridge grey;"></canvas>
+  <p>
+    The cheese holes, tortilla burn marks, and beans are randomly positioned each time the page is loaded.
+  </p>
+
+  <footer>
+    <small>This is a Canvas API demo intended for web development enthusiasts</small>
+  </footer>
+
+  <!-- DEMO FIGURES -->
 
   <script>
     const canvas0 = document.getElementById("myCanvas0");
@@ -204,14 +212,6 @@
   </script>
 
   <!-- DINNER PLATE -->
-
-  <h1 style="font-size: 3rem;">Dinner is ready!</h1>
-
-  <canvas id="myCanvas" width="300" height="250" style="border: 0.3em ridge grey;"></canvas>
-
-  <p>
-    The cheese holes, tortilla burn marks, and beans are randomly positioned each time the page is loaded.
-  </p>
 
   <script>
     const canvas = document.getElementById("myCanvas");
@@ -346,10 +346,6 @@
       ctx.fill();
     }
   </script>
-
-  <footer>
-    <small>This is a Canvas API demo intended for web development enthusiasts</small>
-  </footer>
 </body>
 
 </html>
