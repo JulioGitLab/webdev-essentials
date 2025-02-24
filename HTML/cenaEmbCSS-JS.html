@@ -16,6 +16,10 @@
     Intended for web development enthusiasts." />
   <title lang="es">Projecto 1: Cena</title>
   <style>
+    :root {
+      --footer-size: 60px;
+    }
+
     *,
     *::before,
     *::after {
@@ -27,44 +31,84 @@
     html {
       position: relative;
       min-height: 100vh;
+      font-size: 10px;
     }
 
     body {
-      min-width: 320px;
-      margin-bottom: 70px; /* bottom margin = footer height */
+      margin-bottom: var(--footer-size);
       background-color: black;
       color: goldenrod;
       font-family: 'Courier New', Courier, monospace;
       text-align: center;
     }
-  
+
     h1 {
-      margin: 1em 0 0.3em;
+      margin: 2rem 0 0.7rem;
     }
-  
+
     p {
-      width: 50%;
-      max-width: 600px;
-      margin: 0.7em auto;
-      font-size: small;
-      line-height: 1.3rem;
+      width: 83%;
+      max-width: 540px;
+      margin: 1rem auto 2.3rem;
+      line-height: 1.7rem;
+      font-size: 1.3rem;
+      letter-spacing: 0.2px;
     }
-  
+
     p::first-letter {
-      font-size: large;
+      font-size: 1.3em;
       font-weight: bold;
     }
-  
+
     footer {
       position: absolute;
       bottom: 0;
-      height: 70px;
+      height: var(--footer-size);
       width: 100%;
-      padding: 0 5%;
+      padding: 0 7.3%;
       align-content: center;
-      color: silver;
-      font-size: 0.7em;
+      color: #AAA;
       text-align: center;
+      font-size: 1rem;
+      letter-spacing: 0.1px;
+    }
+
+    body,
+    footer {
+      min-width: 320px;
+    }
+
+    @media (min-width: 540px) {
+      h1 {
+        margin: 1.3rem 0 0.3rem;
+      }
+
+      p {
+        line-height: 2rem;
+        font-size: 1.5rem;
+      }
+
+      footer {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (min-width: 940px) and (min-height: 600px) {
+      :root {
+        --footer-size: 75px;
+      }
+
+      h1 {
+        margin-top: 2.3rem;
+      }
+
+      p {
+        margin-bottom: 3rem;
+      }
+
+      footer {
+        font-size: 1.3rem;
+      }
     }
   </style>
 </head>
@@ -72,7 +116,7 @@
 <body>
   <!-- DEMO FIGURES -->
 
-  <h1 style="font-size: 2.3em;">Canvas API</h1>
+  <h1 style="font-size: 4.3rem;">Canvas API</h1>
 
   <canvas id="myCanvas0" width="300" height="250" style="border: 0.3em ridge grey;"></canvas>
 
@@ -161,7 +205,7 @@
 
   <!-- DINNER PLATE -->
 
-  <h1 style="font-size: 2.3em;">Dinner is ready!</h1>
+  <h1 style="font-size: 3rem;">Dinner is ready!</h1>
 
   <canvas id="myCanvas" width="300" height="250" style="border: 0.3em ridge grey;"></canvas>
 
