@@ -1,32 +1,44 @@
 /* Style instructions for /HTML/anuncioRefCSS-JS.html file */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-   background-color: black;
-   color: whitesmoke;
-   font-family: 'Courier New', Courier, monospace;
-   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: black;
+  align-items: center;
+  color: whitesmoke;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 h1 {
-   margin: 1em 0 0.3em;
-   font-size: 2.3em;
+  margin: 1em 0 0.3em;
+  font-size: 2.3em;
 }
 
 canvas {
-   border: 0.3em ridge grey;
+  border: 0.3em ridge grey;
 }
 
 ul {
-   width: 50%;
-   max-width: 800px;
-   margin: 2em auto;
-   font-size: small;
-   list-style-type: none;
-   padding-inline-start: 0;
+  width: 50%;
+  max-width: 800px;
+  margin: 2em auto;
+  list-style-type: none;
+  padding-inline-start: 0;
+  font-size: small;
 }
 
 li {
-   margin-bottom: 1.3em;
-   line-height: 1.7em;
+  margin-bottom: 1.3em;
+  line-height: 1.7em;
 }
 
 /* Same emoji for all list items */
@@ -35,27 +47,27 @@ li {
 } */
 
 li:nth-child(1)::before {
-   content: "🎨";
-   font-size: 1.9em;
-   padding-inline-end: 0.3em;
+  content: "🎨";
+  padding-inline-end: 0.3em;
+  font-size: 1.9em;
 }
 
 li:nth-child(2)::before {
-   content: "🔻";
-   font-size: 1.9em;
-   padding-inline-end: 0.3em;
+  content: "🔻";
+  padding-inline-end: 0.3em;
+  font-size: 1.9em;
 }
 
 li:nth-child(3)::before {
-   content: "🖱";
-   font-size: 1.9em;
-   padding-inline-end: 0.3em;
+  content: "🖱";
+  padding-inline-end: 0.3em;
+  font-size: 1.9em;
 }
 
 li:nth-child(4)::before {
-   content: "↘";
-   font-size: 1.9em;
-   padding-inline-end: 0.3em;
+  content: "↘";
+  padding-inline-end: 0.3em;
+  font-size: 1.9em;
 }
 
 /* For alternative description */
@@ -67,12 +79,11 @@ li:nth-child(4)::before {
 } */
 
 footer {
-   position: absolute;
-   right: 0;
-   left: 0;
-   bottom: 0;
-   margin: 2.3em auto;
-   color: silver;
-   font-size: 0.7em;
-   text-align: center;
+  height: 60px;
+  margin-top: auto;
+  padding: 0 7.3%;
+  align-content: center;
+  text-align: center;
+  color: silver;
+  font-size: 0.7em;
 }
