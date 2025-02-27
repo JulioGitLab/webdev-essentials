@@ -241,14 +241,20 @@ input[type="submit"]:active {
 
 footer {
   position: absolute;
+  left: 0;
+  right: 0;
   bottom: 0;
-  width: 100%;
+  /* width: 100%; */
   padding-bottom: 2vw;
   color: var(--color-light1);
   font-family: monospace;
   font-size: max(0.7vw, 1rem);
   text-align: center;
   letter-spacing: 0.2px;
+}
+
+footer aside {
+  animation: jump 3s infinite;
 }
 
 #juliogitlab {
@@ -330,5 +336,31 @@ footer {
 
   footer {
     padding-bottom: 1.3vw;
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+
+  5% {
+    transform: translateY(-5px);
+    animation-timing-function: ease-out;
+  }
+
+  10% {
+    transform: translateY(0);
+    animation-timing-function: ease-in;
+  }
+
+  15% {
+    transform: translateY(-5px);
+    animation-timing-function: ease-out;
+  }
+
+  20% {
+    transform: translateY(0);
+    animation-timing-function: ease-in;
   }
 }
