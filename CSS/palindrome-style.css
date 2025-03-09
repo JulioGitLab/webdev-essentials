@@ -19,7 +19,6 @@ body {
   height: 100vh;
   background: linear-gradient(#131313 20%, black 50%, #131313 80%);
   justify-content: center;
-  /* align-items: center; */
   text-align: center;
   color: silver;
 }
@@ -34,7 +33,6 @@ h1:after {
   content: "Palindrome checker | ";
   unicode-bidi: bidi-override;
   direction: rtl;
-  /* display: inline-block; */
 }
 
 form {
@@ -56,7 +54,6 @@ input {
   background-color: black;
   line-height: 1.5em;
   color: goldenrod;
-  /* font-size: 0.9em; */
 }
 
 button {
@@ -96,5 +93,5 @@ button:active {
 }
 
 em {
-  font-size: 1.3rem;
+  font-size: 1.1em;
 }
