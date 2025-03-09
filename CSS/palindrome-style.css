@@ -9,5 +9,92 @@
 }
 
 html {
+  font-family: 'Anonymous Pro', monospace;
   font-size: 10px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(#131313 20%, black 50%, #131313 80%);
+  justify-content: center;
+  /* align-items: center; */
+  text-align: center;
+  color: silver;
+}
+
+h1 {
+  color: gold;
+  font-family: 'Acme', sans-serif;
+  font-size: 3rem;
+}
+
+h1:after {
+  content: "Palindrome checker | ";
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  /* display: inline-block; */
+}
+
+form {
+  width: 500px;
+  margin: 1.3rem auto;
+  padding: 1.3rem 0 1rem;
+  border: 2px solid;
+  border-radius: 13px;
+  background-color: #111;
+  font-size: 1.3rem;
+}
+
+input {
+  width: 250px;
+  margin-top: 1em;
+  border: 1px solid silver;
+  border-radius: 5px;
+  padding: 0 3px 1px;
+  background-color: black;
+  line-height: 1.5em;
+  color: goldenrod;
+  /* font-size: 0.9em; */
+}
+
+button {
+  border: 3px outset silver;
+  border-radius: 7px;
+  padding: 3px 7px;
+  background-color: gainsboro;
+  font-size: 1.1em;
+}
+
+button:hover {
+  background-color: lightgray;
+}
+
+button:active {
+  border: 3px inset gainsboro;
+  background-color: silver;
+}
+
+#result {
+  margin: 1.7rem 0 1rem;
+}
+
+.definition {
+  width: 540px;
+  margin: 2rem auto;
+  border-radius: 19px;
+  padding: 0.7rem 1.1rem 1.1rem;
+  background-color: gray;
+  line-height: 1.3em;
+  color: black;
+  font-size: 1.1rem;
+}
+
+.definition p {
+  margin-bottom: 0.5rem;
+}
+
+em {
+  font-size: 1.3rem;
 }
