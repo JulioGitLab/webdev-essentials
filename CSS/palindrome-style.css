@@ -11,6 +11,7 @@
 html {
   font-family: 'Anonymous Pro', monospace;
   font-size: 10px;
+  letter-spacing: 0.2px;
 }
 
 body {
@@ -57,31 +58,33 @@ input {
 }
 
 button {
-  border: 3px outset silver;
+  vertical-align: middle;
+  border: 2px outset silver;
   border-radius: 7px;
   padding: 3px 7px;
-  background-color: gainsboro;
-  font-size: 1.1em;
+  background-color: lightgray;
+  font-weight: bold;
 }
 
 button:hover {
-  background-color: lightgray;
+  background-color: gainsboro;
 }
 
 button:active {
-  border: 3px inset gainsboro;
+  border: 2px inset gainsboro;
   background-color: silver;
 }
 
 #result {
   margin: 1.7rem 0 1rem;
+  font-size: 1.1em;
 }
 
 .definition {
-  width: 540px;
+  width: 480px;
   margin: 2rem auto;
   border-radius: 19px;
-  padding: 0.7rem 1.1rem 1.1rem;
+  padding: 1rem 1.3rem;
   background-color: gray;
   line-height: 1.3em;
   color: black;
@@ -90,6 +93,10 @@ button:active {
 
 .definition p {
   margin-bottom: 0.5rem;
+}
+
+.definition small {
+  font-size: 0.89em;
 }
 
 em {

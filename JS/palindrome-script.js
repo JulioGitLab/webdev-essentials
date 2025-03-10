@@ -24,8 +24,8 @@ checkBtn.addEventListener("click", (e) => {
    if (s === "") {
       alert("Please input a value");
    } else if (isPalindrome(s)) {
-      result.innerText = `${s} is a palindrome`;
+      result.innerText = `"${s}" is a palindrome`;
    } else {
-      result.innerText = `${s} is not a palindrome`;
+      result.innerText = `"${s}" is not a palindrome`;
    }
 });
