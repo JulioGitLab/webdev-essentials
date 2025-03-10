@@ -14,7 +14,9 @@ const isPalindrome = (s) => {
    return true;
 };
 
-checkBtn.addEventListener("click", () => {
+checkBtn.addEventListener("click", (e) => {
+   e.preventDefault(); // prevents the form from reloading the page
+
    result.innerText = "";
 
    const s = document.getElementById("text-input").value.trim(); // covers entering " " only
