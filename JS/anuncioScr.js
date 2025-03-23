@@ -27,26 +27,26 @@ function draw() {
    }
 
    // Text
+   ctx.font = "63px 'Lato', sans-serif";
    ctx.fillStyle = `rgb(220,0,${r})`;
-   ctx.font = "61px Candara";
-   ctx.fillText("BK", 140, 75);
-   ctx.font = "43px Candara";
-   ctx.fillText("UTE", 210, 75);
+   ctx.fillText("BK", 125, 75);
+   ctx.font = "47px 'Lato', sans-serif";
+   ctx.fillText("UTE", 205, 75);
    ctx.fillStyle = `rgb(163,${b},${r})`;
-   ctx.font = "31px Candara";
-   ctx.fillText("La mejor", 183, 130);
+   ctx.font = "31px 'Lato', sans-serif";
+   ctx.fillText("La mejor", 180, 125);
    ctx.fillStyle = `rgb(${r},69,${b})`;
-   ctx.font = "37px Candara";
-   ctx.fillText('!', 300, 130);
+   ctx.font = "37px 'Lato', sans-serif";
+   ctx.fillText('!', 303, 125);
    ctx.fillStyle = `rgb(${r},33,${b})`;
-   ctx.font = "41px Candara";
-   ctx.fillText('!', 310, 130);
+   ctx.font = "43px 'Lato', sans-serif";
+   ctx.fillText('!', 311, 125);
    ctx.fillStyle = `rgb(${r},0,${b})`;
-   ctx.font = "47px Candara";
-   ctx.fillText('!', 320, 130);
+   ctx.font = "47px 'Lato', sans-serif";
+   ctx.fillText('!', 320, 125);
    ctx.fillStyle = `rgb(${r},${b},101)`;
-   ctx.font = "19px sans-serif";
-   ctx.fillText("y al mejor precio!", 23, 310);
+   ctx.font = "23px 'Lato', sans-serif";
+   ctx.fillText("y al mejor precio!", 19, 320);
 
    // Figures
    ctx.lineWidth = 1.3;
@@ -74,9 +74,9 @@ function draw() {
    ctx.fill();
 
    // Action
-   r += 0.7;
+   r += 1;
    g -= 0.5;
-   b -= 0.5;
+   b -= 0.7;
    triangleX += 1.3;
    triangleY += 1.1;
 
