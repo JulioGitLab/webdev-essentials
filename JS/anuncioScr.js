@@ -1,13 +1,13 @@
-/* The text color changes depending on the values of the R, G and B variables
+/* The text color changes depending on the values of the r, g and b variables
    which are also being modified during the animation.
    The triangular figure moves from the top-left to the bottom-right as it
-   also grows and changes color depending on R, G and B.
+   also grows and changes color depending on r, g and b.
    The ellipses color changes depending on the mouse position in the canvas.
-   The triangle movement restarts once it moves out of the canvas and the R,
-   G and B values are reset. */
+   The triangle movement restarts once it moves out of the canvas and the r,
+   g and b values are reset. */
 
 const canvas = document.getElementById("aCanvas");
-const cx = canvas.getContext("2d");
+const ctx = canvas.getContext("2d");
 
 let mouseX = 0, mouseY = 0;
 canvas.addEventListener('mousemove', (event) => {
@@ -17,78 +17,77 @@ canvas.addEventListener('mousemove', (event) => {
    // console.log(`Mouse Y: ${mouseY}`);
 });
 
-let R = 0, G = 191, B = 255;
-let pantX = 1, pantY = pantX * 11 / 14;
+let r = 0, g = 191, b = 255;
+let triangleX = 1, triangleY = triangleX * 11 / 14;
 
-draw = function () {
-   if (pantX === 1) {
-      cx.fillStyle = "LightSalmon";
-      cx.fillRect(0, 0, canvas.width, canvas.height);
+function draw() {
+   if (triangleX === 1) {
+      ctx.fillStyle = "LightSalmon";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
    }
 
    // Text
-   cx.fillStyle = "rgb(220,0," + R; // + ")"; // ???
-   cx.font = "61px Candara";
-   cx.fillText("BK", 140, 75);
-   cx.font = "43px Candara";
-   cx.fillText("UTE", 210, 75);
-   cx.fillStyle = "rgb(163," + B + "," + R;
-   cx.font = "31px Candara";
-   cx.fillText("La mejor", 183, 130);
-   cx.fillStyle = "rgb(" + R + ",69," + B;
-   cx.font = "37px Candara";
-   cx.fillText('!', 300, 130);
-   cx.fillStyle = "rgb(" + R + ",33," + B;
-   cx.font = "41px Candara";
-   cx.fillText('!', 310, 130);
-   cx.fillStyle = "rgb(" + R + ",0," + B;
-   cx.font = "47px Candara";
-   cx.fillText('!', 320, 130);
-   cx.fillStyle = "rgb(" + R + ',' + B + ",101)";
-   cx.font = "19px sans-serif";
-   cx.fillText("y al mejor precio!", 23, 310);
+   ctx.fillStyle = `rgb(220,0,${r})`;
+   ctx.font = "61px Candara";
+   ctx.fillText("BK", 140, 75);
+   ctx.font = "43px Candara";
+   ctx.fillText("UTE", 210, 75);
+   ctx.fillStyle = `rgb(163,${b},${r})`;
+   ctx.font = "31px Candara";
+   ctx.fillText("La mejor", 183, 130);
+   ctx.fillStyle = `rgb(${r},69,${b})`;
+   ctx.font = "37px Candara";
+   ctx.fillText('!', 300, 130);
+   ctx.fillStyle = `rgb(${r},33,${b})`;
+   ctx.font = "41px Candara";
+   ctx.fillText('!', 310, 130);
+   ctx.fillStyle = `rgb(${r},0,${b})`;
+   ctx.font = "47px Candara";
+   ctx.fillText('!', 320, 130);
+   ctx.fillStyle = `rgb(${r},${b},101)`;
+   ctx.font = "19px sans-serif";
+   ctx.fillText("y al mejor precio!", 23, 310);
 
    // Figures
-   cx.lineWidth = 1.3;
-   cx.lineJoin = "round";
-   cx.beginPath();
-   cx.fillStyle = "rgb(" + R + ',' + G + ',' + B;
-   cx.moveTo(pantX, pantY);
-   cx.lineTo(pantX * 19 / 28, pantY * 12 / 11);
-   cx.lineTo(pantX * 25 / 28, pantY * 27 / 22);
-   cx.lineTo(pantX, pantY);
-   cx.stroke();
-   cx.fill();
-   cx.beginPath(); // comment for additional effect
-   cx.fillStyle = "rgb(255," + (mouseX - 50) + ',' + (mouseY - 50);
-   cx.ellipse(20, 75, 5, 13, 0, 0, Math.PI * 2);
-   // cx.stroke();
-   cx.fill();
-   cx.moveTo(60, 135);
-   cx.ellipse(45, 125, 10, 35, Math.PI * .7, 0, Math.PI * 2);
-   cx.fill();
-   cx.moveTo(55, 200);
-   cx.ellipse(30, 175, 20, 25, 0, 0, Math.PI * 2);
-   cx.fill();
-   cx.moveTo(135, 240);
-   cx.ellipse(75, 220, 55, 20, Math.PI * .65, 0, Math.PI * 2);
-   cx.fill();
+   ctx.lineWidth = 1.3;
+   ctx.lineJoin = "round";
+   ctx.beginPath();
+   ctx.fillStyle = `rgb(${r},${g},${b})`;
+   ctx.moveTo(triangleX, triangleY);
+   ctx.lineTo(triangleX * 19 / 28, triangleY * 12 / 11);
+   ctx.lineTo(triangleX * 25 / 28, triangleY * 27 / 22);
+   ctx.lineTo(triangleX, triangleY);
+   ctx.stroke();
+   ctx.fill();
+   ctx.beginPath();
+   ctx.fillStyle = `rgb(255,${mouseX - 50},${mouseY - 50})`;
+   ctx.ellipse(20, 75, 5, 13, 0, 0, Math.PI * 2);
+   ctx.fill();
+   ctx.moveTo(60, 135);
+   ctx.ellipse(45, 125, 10, 35, Math.PI * .7, 0, Math.PI * 2);
+   ctx.fill();
+   ctx.moveTo(55, 200);
+   ctx.ellipse(30, 175, 20, 25, 0, 0, Math.PI * 2);
+   ctx.fill();
+   ctx.moveTo(135, 240);
+   ctx.ellipse(75, 220, 55, 20, Math.PI * .65, 0, Math.PI * 2);
+   ctx.fill();
 
    // Action
-   R += 0.7;
-   G -= 0.5;
-   B -= 0.5;
-   pantX += 1.3;
-   pantY += 1.1;
+   r += 0.7;
+   g -= 0.5;
+   b -= 0.5;
+   triangleX += 1.3;
+   triangleY += 1.1;
 
-   if (pantX > 500) R = 0, G = 191, B = 255, pantX = 1, pantY = pantX * 11 / 14;
+   if (triangleX > 500) r = 0, g = 191, b = 255, triangleX = 1, triangleY = triangleX * 11 / 14;
 
    requestAnimationFrame(fpsTo50); // for 50 fps
    // requestAnimationFrame(draw); // for default fps
 }
 
 function fpsTo50() {
-   setTimeout(draw, 1000/50); // ms/fps
+   setTimeout(draw, 1000 / 50); // ms/fps
 }
 
 requestAnimationFrame(fpsTo50); // for 50 fps
