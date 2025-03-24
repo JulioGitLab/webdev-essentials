@@ -277,26 +277,23 @@
     // Beans
     ctx.lineWidth = 5;
     ctx.lineCap = "round";
-    ctx.strokeStyle = "rgba(140,93,13,.9)";
-    for (let i = 0; i < 131; i++) {
+    ctx.strokeStyle = "rgba(140,93,13,0.9)";
+    let count = 0;
+    while (count < 137) {
       let x = Math.round(Math.random() * 90 + 100); // 100-190
       let y = Math.round(Math.random() * 40 + 30); // 30-70
-      if (x < 110 && y < 35) {
-        i--;
-        continue;
-      } else if (x > 180 && y < 35) {
-        i--;
-        continue;
-      } else if (x < 110 && y > 60) {
-        i--;
-        continue;
-      } else if (x > 175 && y > 55) {
-        i--;
+      if (
+        (x < 110 && y < 35) ||
+        (x > 180 && y < 35) ||
+        (x < 110 && y > 60) ||
+        (x > 175 && y > 55)
+      ) {
         continue;
       }
       ctx.beginPath();
-      ctx.arc(x, y, 4, Math.PI * 1.9, Math.PI * .6);
+      ctx.arc(x, y, 4, Math.PI * 1.9, Math.PI * 0.6);
       ctx.stroke();
+      count++;
     }
 
     // Steak
