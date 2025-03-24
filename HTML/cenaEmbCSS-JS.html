@@ -138,13 +138,10 @@
     ctx0.strokeStyle = "white";
     ctx0.lineWidth = 2;
 
+    ctx0.beginPath();
     // Define a circle
-    ctx0.beginPath();
     ctx0.arc(140, 35, 25, 0, 2 * Math.PI, false); // false = clockwise (default)
-    ctx0.stroke();
-
     // Define an irregular polygon
-    ctx0.beginPath();
     ctx0.moveTo(200, 15);
     ctx0.lineTo(250, 15);
     ctx0.lineTo(285, 50);
@@ -153,20 +150,17 @@
     ctx0.stroke();
 
     ctx0.beginPath();
-
     // Define a rectangle
     ctx0.moveTo(10, 70);
     ctx0.lineTo(90, 70);
     ctx0.lineTo(90, 110);
     ctx0.lineTo(10, 110);
     ctx0.lineTo(10, 70);
-
     // Define a triangle
     ctx0.moveTo(50, 70);
     ctx0.lineTo(90, 110);
     ctx0.lineTo(10, 110);
-    ctx0.lineTo(50, 70)
-
+    ctx0.lineTo(50, 70);
     ctx0.strokeStyle = "blue";
     ctx0.stroke();
 
@@ -197,15 +191,6 @@
     ctx0.bezierCurveTo(55, 170, 80, 160, 80, 150);
     ctx0.bezierCurveTo(80, 145, 80, 135, 70, 130);
     ctx0.bezierCurveTo(60, 130, 55, 130, 50, 135);
-    // Old
-    // ctx0.moveTo(75, 40);
-    // ctx0.bezierCurveTo(75, 37, 70, 25, 50, 25);
-    // ctx0.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5);
-    // ctx0.bezierCurveTo(20, 80, 40, 102, 75, 120);
-    // ctx0.bezierCurveTo(110, 102, 130, 80, 130, 62.5);
-    // ctx0.bezierCurveTo(130, 62.5, 130, 25, 100, 25);
-    // ctx0.bezierCurveTo(85, 25, 75, 37, 75, 40);
-    // ctx0.fillStyle = "#ffffff";
     ctx0.fill();
   </script>
 
