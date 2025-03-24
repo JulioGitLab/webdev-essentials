@@ -257,14 +257,20 @@
     ctx.stroke();
     ctx.fillStyle = "rgba(239,239,93,.7)";
     ctx.fill();
+    const burnMarks = [];
     for (let i = 0; i < 31; i++) {
-      // burn marks
-      ctx.fillStyle = 'peru';
-      let x = Math.random() * 71 + 181, y = Math.random() * 79 + 61;
-      if (x < 191) { y < 97 ? y += 19 : y -= 23; }
-      if (x > 241) { y < 97 ? y += 19 : y -= 13; }
-      if (y < 71) { x < 211 ? x += 13 : x -= 7; }
-      if (y > 131) { x < 211 ? x += 13 : x -= 7; }
+      let x, y;
+      do {
+        x = Math.random() * 71 + 181;
+        y = Math.random() * 79 + 61;
+      } while ((x < 191 && (y < 97 || y > 114)) ||
+        (x > 241 && (y < 97 || y > 114)) ||
+        (y < 71 && (x < 211 || x > 224)) ||
+        (y > 131 && (x < 211 || x > 224)));
+      burnMarks.push([x, y]);
+    }
+    ctx.fillStyle = 'peru';
+    for (const [x, y] of burnMarks) {
       drawMiniArc(x, y, 2);
     }
 
