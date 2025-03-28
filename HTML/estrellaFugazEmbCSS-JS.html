@@ -150,8 +150,8 @@
     }
 
     function drawStar(x, y) {
-      ctx.beginPath();
       ctx.fillStyle = "rgb(255,238,0)";
+      ctx.beginPath();
       ctx.moveTo(x, y);
       ctx.lineTo(x - 2, y + 5);
       ctx.lineTo(x + 3, y + 2);
@@ -162,10 +162,10 @@
     }
 
     // Adds stars by clicking on the canvas
-    canvas.addEventListener("click", (e) => {
-      let rect = canvas.getBoundingClientRect();
-      rsX.push(e.clientX - rect.left);
-      rsY.push(e.clientY - rect.top);
+    canvas.addEventListener("click", ({ clientX: x, clientY: y }) => {
+      const { left, top } = canvas.getBoundingClientRect();
+      rsX.push(x - left);
+      rsY.push(y - top);
     });
 
     draw = function () {
