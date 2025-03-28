@@ -164,8 +164,8 @@
     // Adds stars by clicking on the canvas
     canvas.addEventListener("click", ({ clientX: x, clientY: y }) => {
       const { left, top } = canvas.getBoundingClientRect();
-      rsX.push(x - left);
-      rsY.push(y - top);
+      rsX.push(x - left - 5);
+      rsY.push(y - top - 9);
     });
 
     draw = function () {
