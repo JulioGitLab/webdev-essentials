@@ -209,21 +209,18 @@
 
       // Buildings
       ctx.fillStyle = "rgb(61,57,77)";
-      ctx.fillRect(60, 220, 80, 130);
-      ctx.fillRect(210, 190, 75, 160)
-      for (let i = 0, wy = 230; i < 4; i++) { // windows
-        for (let j = 0, wx = 70; j < 3; j++) {
-          if (i + j == 2 || i + j == 4) {
-            ctx.fillStyle = "rgb(227,198,12)"; // on
-          } else {
-            ctx.fillStyle = "rgb(1,0,38)"; // off
-          }
-          ctx.fillRect(wx, wy, 14, 14);
-          wx += 23;
+      ctx.fillRect(60, 220, 80, 130); // left
+      ctx.fillRect(210, 190, 75, 160) // right
+      for (let row = 0, y = 230; row < 4; row++) { // left windows
+        for (let col = 0, x = 70; col < 3; col++) {
+          const isOn = row + col === 2 || row + col === 4;
+          ctx.fillStyle = isOn ? "rgb(227,198,12)" : "rgb(1,0,38)";
+          ctx.fillRect(x, y, 14, 14);
+          x += 23;
         }
-        wy += 30;
+        y += 30;
       }
-      for (i = 0, wy = 200; i < 6; i++) {
+      for (i = 0, wy = 200; i < 6; i++) { // right windows
         ctx.fillStyle = "rgb(1,0,38)";
         if (i % 2 == 0) {
           ctx.fillRect(221, wy, 12, 12);
