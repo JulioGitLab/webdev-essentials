@@ -141,6 +141,15 @@
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
 
+    const colors = {
+      star: "rgb(255,238,0)",
+      sky: "rgb(26,37,110)",
+      moon: "rgb(136,154,158)",
+      building: "rgb(61,57,77)",
+      windowOn: "rgb(227,198,12)",
+      windowOff: "rgb(1,0,38)"
+    }
+
     let cX = -10, cY = 160, sX = 360, sY = 60, rsX = [], rsY = [];
 
     // Initialize rsX and rsY
@@ -150,7 +159,7 @@
     }
 
     function drawStar(x, y) {
-      ctx.fillStyle = "rgb(255,238,0)";
+      ctx.fillStyle = colors.star;
       ctx.beginPath();
       ctx.moveTo(x, y);
       ctx.lineTo(x - 2, y + 5);
@@ -170,7 +179,7 @@
 
     draw = function () {
       // Night
-      ctx.fillStyle = "rgb(26,37,110)";
+      ctx.fillStyle =   colors.sky;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Random stars
@@ -179,17 +188,17 @@
       }
 
       // Moon
-      ctx.fillStyle = "rgb(136,154,158)";
+      ctx.fillStyle = colors.moon;
       ctx.ellipse(130, 190, 40, 42, 0, 0, Math.PI * 2);
       ctx.fill();
       ctx.beginPath();
-      ctx.fillStyle = "rgb(26,37,110)";
+      ctx.fillStyle = colors.sky;
       ctx.ellipse(148, 172, 40, 43, 0, 0, Math.PI * 2);
       ctx.fill();
 
       // Comet
       ctx.beginPath();
-      ctx.fillStyle = "rgb(255,238,0)";
+      ctx.fillStyle = colors.star;
       ctx.arc(cX, cY, 3, 0, Math.PI * 2);
       ctx.fill();
       cX += 1.3;
@@ -208,20 +217,20 @@
       }
 
       // Buildings
-      ctx.fillStyle = "rgb(61,57,77)";
+      ctx.fillStyle = colors.building;
       ctx.fillRect(60, 220, 80, 130); // left
       ctx.fillRect(210, 190, 75, 160) // right
       for (let row = 0, y = 230; row < 4; row++) { // left windows
         for (let col = 0, x = 70; col < 3; col++) {
           const isOn = row + col === 2 || row + col === 4;
-          ctx.fillStyle = isOn ? "rgb(227,198,12)" : "rgb(1,0,38)";
+          ctx.fillStyle = isOn ? colors.windowOn : colors.windowOff;
           ctx.fillRect(x, y, 14, 14);
           x += 23;
         }
         y += 30;
       }
       for (windowRow = 0, windowY = 200; windowRow < 6; windowRow++) { // right windows
-        ctx.fillStyle = "rgb(1,0,38)";
+        ctx.fillStyle = colors.windowOff;
         if (windowRow % 2 === 0) {
           ctx.fillRect(221, windowY, 12, 12);
           ctx.fillRect(244, windowY, 30, 12);
@@ -230,7 +239,7 @@
           ctx.fillRect(262, windowY, 12, 12);
         }
         // on
-        ctx.fillStyle = "rgb(227,198,12)";
+        ctx.fillStyle = colors.windowOn;
         switch (windowRow) {
           case 0:
           case 4:
