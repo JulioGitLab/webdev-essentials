@@ -230,17 +230,18 @@
           ctx.fillRect(262, windowY, 12, 12);
         }
         // on
-        if (windowRow == 0 || windowRow == 4) {
-          ctx.fillStyle = "rgb(227,198,12)";
-          ctx.fillRect(244, windowY, 30, 12);
-        }
-        if (windowRow == 2) {
-          ctx.fillStyle = "rgb(227,198,12)";
-          ctx.fillRect(221, windowY, 12, 12);
-        }
-        if (windowRow == 5) {
-          ctx.fillStyle = "rgb(227,198,12)";
-          ctx.fillRect(262, windowY, 12, 12);
+        ctx.fillStyle = "rgb(227,198,12)";
+        switch (windowRow) {
+          case 0:
+          case 4:
+            ctx.fillRect(244, windowY, 30, 12);
+            break;
+          case 2:
+            ctx.fillRect(221, windowY, 12, 12);
+            break;
+          case 5:
+            ctx.fillRect(262, windowY, 12, 12);
+            break;
         }
         windowY += 25;
       }
