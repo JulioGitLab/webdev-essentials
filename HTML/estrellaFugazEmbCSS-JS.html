@@ -220,29 +220,29 @@
         }
         y += 30;
       }
-      for (i = 0, wy = 200; i < 6; i++) { // right windows
+      for (windowRow = 0, windowY = 200; windowRow < 6; windowRow++) { // right windows
         ctx.fillStyle = "rgb(1,0,38)";
-        if (i % 2 == 0) {
-          ctx.fillRect(221, wy, 12, 12);
-          ctx.fillRect(244, wy, 30, 12);
+        if (windowRow % 2 === 0) {
+          ctx.fillRect(221, windowY, 12, 12);
+          ctx.fillRect(244, windowY, 30, 12);
         } else {
-          ctx.fillRect(221, wy, 30, 12);
-          ctx.fillRect(262, wy, 12, 12);
+          ctx.fillRect(221, windowY, 30, 12);
+          ctx.fillRect(262, windowY, 12, 12);
         }
         // on
-        if (i == 0 || i == 4) {
+        if (windowRow == 0 || windowRow == 4) {
           ctx.fillStyle = "rgb(227,198,12)";
-          ctx.fillRect(244, wy, 30, 12);
+          ctx.fillRect(244, windowY, 30, 12);
         }
-        if (i == 2) {
+        if (windowRow == 2) {
           ctx.fillStyle = "rgb(227,198,12)";
-          ctx.fillRect(221, wy, 12, 12);
+          ctx.fillRect(221, windowY, 12, 12);
         }
-        if (i == 5) {
+        if (windowRow == 5) {
           ctx.fillStyle = "rgb(227,198,12)";
-          ctx.fillRect(262, wy, 12, 12);
+          ctx.fillRect(262, windowY, 12, 12);
         }
-        wy += 25;
+        windowY += 25;
       }
 
       requestAnimationFrame(draw);
