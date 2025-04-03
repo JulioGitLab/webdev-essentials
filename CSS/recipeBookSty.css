@@ -5,13 +5,9 @@ header h1 {
   text-shadow: 1px 1px 2px black, 0 0 23px black, 0 0 7px darkred;
 }
 
-h2 {
+/* h2 {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: dimgray;
-  /* color:firebrick; */
-  border: medium outset silver;
-  padding: 5px;
-}
+} */
 
 #cont {
   background-color: moccasin;
