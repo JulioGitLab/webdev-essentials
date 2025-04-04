@@ -21,7 +21,7 @@ ol li:hover {
   transition: transform 0.3s;
 }
 
-/* MAIN */
+/* MAIN & FOOTER */
 
 section {
   min-height: 100vh;
@@ -40,8 +40,6 @@ p {
 p {
   text-align: justify;
 }
-
-/* FOOTER */
 
 aside {
   font-size: 0.73em;
