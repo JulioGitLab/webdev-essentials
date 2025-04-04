@@ -28,31 +28,34 @@ section {
 }
 
 .time_serves {
-  background-color: tomato;
-  /* list-style-type:circle; */
-  padding: 7px 31px;
-  font-size: 13px;
+  list-style-type:circle;
+  font-size: 0.7em;
+}
+
+table,
+p {
+  font-size: 0.83em;
 }
 
 p {
-  background-color: dimgray;
-  padding: 7px;
   text-align: justify;
-}
-
-em {
-  font-size: small;
 }
 
 /* FOOTER */
 
 aside {
-  font-size: small;
-  color: gray;
+  font-size: 0.73em;
 }
 
 @media (min-width: 540px) {
-  ol {
+  ol,
+  .time_serves,
+  table,
+  p {
     font-size: initial;
+  }
+
+  aside {
+    font-size: 0.83em;
   }
 }
