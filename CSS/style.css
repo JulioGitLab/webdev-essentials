@@ -12,7 +12,7 @@
   --color-dark1: #131313;
   --color-dark2: #191919;
   --color-dark3: #222;
-  --color-light1: #AAA;
+  --color-light1: #aaa;
 }
 
 html {
@@ -35,7 +35,7 @@ body {
   padding: 0;
   background-color: black;
   color: goldenrod;
-  font-family: 'Anonymous Pro', 'Courier New', Courier, monospace;
+  font-family: "Anonymous Pro", "Courier New", Courier, monospace;
   text-align: center;
 }
 

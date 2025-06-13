@@ -3,8 +3,12 @@
 /* HEADER */
 
 header h1 {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  text-shadow: 1px 1px 2px black, 0 0 23px black, 0 0 7px darkred;
+  font-family:
+    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  text-shadow:
+    1px 1px 2px black,
+    0 0 23px black,
+    0 0 7px darkred;
 }
 
 ol {
@@ -28,7 +32,7 @@ section {
 }
 
 .time_serves {
-  list-style-type:circle;
+  list-style-type: circle;
   font-size: 0.7em;
 }
 
