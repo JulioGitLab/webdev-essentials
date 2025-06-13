@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <!-- A single page project using the Canvas API to draw a plate with dinner served.
 
    The CSS instructions for this page are embedded in the head element except for some
@@ -8,332 +8,343 @@
    All the JavaScript code is embedded in the body element.
    Canvas API article https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API -->
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A dinner plate in a canvas.
-    Intended for web development enthusiasts." />
-  <title lang="es">Projecto 1: Cena</title>
-  <style>
-    :root {
-      --min-width: 320px;
-      --footer-height: 60px;
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      position: relative;
-      min-height: 100vh;
-      font-size: 10px;
-    }
-
-    body {
-      min-width: var(--min-width);
-      margin-bottom: var(--footer-height);
-      background-color: black;
-      color: goldenrod;
-      text-align: center;
-      font-family: 'Courier New', Courier, monospace;
-    }
-
-    h1 {
-      margin: 2rem 0 0.7rem;
-    }
-
-    p {
-      width: 83%;
-      max-width: 540px;
-      margin: 1rem auto 2.3rem;
-      line-height: 1.7rem;
-      font-size: 1.3rem;
-      letter-spacing: 0.2px;
-    }
-
-    p::first-letter {
-      font-size: 1.3em;
-      font-weight: bold;
-    }
-
-    footer {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      min-width: var(--min-width);
-      height: var(--footer-height);
-      padding: 0 7.3%;
-      align-content: center;
-      text-align: center;
-      color: #AAA;
-      font-size: 1rem;
-      letter-spacing: 0.1px;
-    }
-
-    @media (min-width: 540px) {
-      h1 {
-        margin: 1.3rem 0 0.3rem;
-      }
-
-      p {
-        line-height: 2rem;
-        font-size: 1.5rem;
-      }
-
-      footer {
-        font-size: 1.1rem;
-      }
-    }
-
-    @media (min-width: 940px) and (min-height: 600px) {
+  <head>
+    <title lang="es">Projecto 1: Cena</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A dinner plate in a canvas. Intended for web development enthusiasts."
+    />
+    <style>
       :root {
-        --footer-height: 75px;
+        --min-width: 320px;
+        --footer-height: 60px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        position: relative;
+        min-height: 100vh;
+        font-size: 10px;
+      }
+
+      body {
+        min-width: var(--min-width);
+        margin-bottom: var(--footer-height);
+        background-color: black;
+        color: goldenrod;
+        text-align: center;
+        font-family: "Courier New", Courier, monospace;
       }
 
       h1 {
-        margin-top: 2.3rem;
+        margin: 2rem 0 0.7rem;
       }
 
       p {
-        margin-bottom: 3rem;
+        width: 83%;
+        max-width: 540px;
+        margin: 1rem auto 2.3rem;
+        line-height: 1.7rem;
+        font-size: 1.3rem;
+        letter-spacing: 0.2px;
+      }
+
+      p::first-letter {
+        font-size: 1.3em;
+        font-weight: bold;
       }
 
       footer {
-        font-size: 1.3rem;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        min-width: var(--min-width);
+        height: var(--footer-height);
+        padding: 0 7.3%;
+        align-content: center;
+        text-align: center;
+        color: #aaa;
+        font-size: 1rem;
+        letter-spacing: 0.1px;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <h1 style="font-size: 4.3rem;">Canvas API</h1>
-  <canvas id="myCanvas0" width="300" height="250" style="border: 0.3em ridge grey;"></canvas>
-  <p>Some figures drawn as a demonstration.</p>
+      @media (min-width: 540px) {
+        h1 {
+          margin: 1.3rem 0 0.3rem;
+        }
 
-  <h1 style="font-size: 3rem;">Dinner is ready!</h1>
-  <canvas id="myCanvas" width="300" height="250" style="border: 0.3em ridge grey;"></canvas>
-  <p>
-    The cheese holes, tortilla burn marks, and beans are randomly positioned each time the page is loaded.
-  </p>
+        p {
+          line-height: 2rem;
+          font-size: 1.5rem;
+        }
 
-  <footer>
-    <small>This is a Canvas API demo intended for web development enthusiasts</small>
-  </footer>
-
-  <!-- DEMO FIGURES -->
-
-  <script>
-    const canvas0 = document.getElementById("myCanvas0");
-    const ctx0 = canvas0.getContext("2d");
-
-    ctx0.fillStyle = "#dc143c"; // crimson
-    ctx0.fillRect(10, 10, 75, 45);
-
-    ctx0.strokeStyle = "white";
-    ctx0.lineWidth = 2;
-
-    ctx0.beginPath();
-    // Define a circle
-    ctx0.arc(140, 35, 25, 0, 2 * Math.PI, false); // false = clockwise (default)
-    // Define an irregular polygon
-    ctx0.moveTo(200, 15);
-    ctx0.lineTo(250, 15);
-    ctx0.lineTo(285, 50);
-    ctx0.lineTo(200, 50);
-    ctx0.lineTo(200, 15);
-    ctx0.stroke();
-
-    ctx0.beginPath();
-    // Define a rectangle
-    ctx0.moveTo(10, 70);
-    ctx0.lineTo(90, 70);
-    ctx0.lineTo(90, 110);
-    ctx0.lineTo(10, 110);
-    ctx0.lineTo(10, 70);
-    // Define a triangle
-    ctx0.moveTo(50, 70);
-    ctx0.lineTo(90, 110);
-    ctx0.lineTo(10, 110);
-    ctx0.lineTo(50, 70);
-    ctx0.strokeStyle = "blue";
-    ctx0.stroke();
-
-    // Define a rectangle using rect()
-    ctx0.beginPath();
-    ctx0.rect(115, 75, 60, 35);
-    ctx0.strokeStyle = "green";
-    ctx0.stroke();
-
-    // Quadratic curves example
-    ctx0.beginPath();
-    ctx0.strokeStyle = "orange";
-    ctx0.moveTo(240, 70);
-    ctx0.quadraticCurveTo(210, 70, 210, 85);
-    ctx0.quadraticCurveTo(210, 100, 225, 100);
-    ctx0.quadraticCurveTo(225, 110, 215, 110);
-    ctx0.quadraticCurveTo(235, 110, 235, 100);
-    ctx0.quadraticCurveTo(265, 100, 265, 85);
-    ctx0.quadraticCurveTo(265, 70, 240, 70);
-    ctx0.stroke();
-
-    // Cubic curves example
-    ctx0.beginPath();
-    ctx0.moveTo(50, 135);
-    ctx0.bezierCurveTo(45, 130, 40, 130, 30, 130);
-    ctx0.bezierCurveTo(20, 135, 20, 145, 20, 150);
-    ctx0.bezierCurveTo(20, 160, 45, 170, 50, 180);
-    ctx0.bezierCurveTo(55, 170, 80, 160, 80, 150);
-    ctx0.bezierCurveTo(80, 145, 80, 135, 70, 130);
-    ctx0.bezierCurveTo(60, 130, 55, 130, 50, 135);
-    ctx0.fill();
-  </script>
-
-  <!-- DINNER PLATE -->
-
-  <script>
-    const canvas = document.getElementById("myCanvas");
-    const ctx = canvas.getContext("2d");
-
-    // Wooden table
-    ctx.fillStyle = "rgb(186,145,20)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    // Plate
-    ctx.arc(150, 125, 115, 0, Math.PI * 2);
-    ctx.fillStyle = "#FFFFFF";
-    ctx.fill();
-    ctx.moveTo(251, 128);
-    ctx.arc(150, 125, 100, Math.PI * 0.05, Math.PI * 1.77);
-    ctx.stroke();
-
-    // Cheese
-    ctx.beginPath();
-    ctx.lineWidth = 2;
-    ctx.lineJoin = "round";
-    ctx.strokeStyle = "#803300";
-    ctx.moveTo(50, 105);
-    ctx.lineTo(80, 65);
-    ctx.lineTo(125, 95);
-    ctx.lineTo(50, 104);
-    ctx.stroke();
-    ctx.fillStyle = "rgb(247,203,27)";
-    ctx.fill();
-    ctx.lineTo(60, 125);
-    ctx.lineTo(135, 115);
-    ctx.lineTo(126, 96);
-    ctx.lineTo(50, 105);
-    ctx.stroke();
-    ctx.fill();
-    for (let i = 0; i < 5; i++) {
-      // holes
-      ctx.fillStyle = 'Khaki';
-      let x1 = Math.random() * 7 + 79, y1 = Math.random() * 13 + 71;
-      let x2 = Math.random() * 43 + 67, y2 = Math.random() * 7 + 89;
-      let x3 = Math.random() * 67 + 59, y3 = Math.random() * 5 + 101;
-      let x4 = Math.random() * 67 + 61, y4 = Math.random() * 5 + 109;
-      if (y1 > 79) { (x1 < 83) ? x1 -= 3 : x1 += 7; }
-      drawMiniArc(x1, y1, (y1 > 79) ? 3 : 2);
-      drawMiniArc(x2, y2, 3);
-      drawMiniArc(x3, y3, 4);
-      if (x4 < 89) { y4 += 3; }
-      drawMiniArc(x4, y4, (x4 < 101) ? 4 : 2);
-    }
-
-    // Tortillas
-    ctx.beginPath();
-    ctx.ellipse(216, 95, 37, 37, 0, Math.PI, Math.PI * 2);
-    ctx.moveTo(184, 100);
-    ctx.ellipse(215, 100, 36, 36, 0, Math.PI * .8, Math.PI * 1.7);
-    ctx.moveTo(185, 104);
-    ctx.ellipse(220, 104, 35, 36, 0, Math.PI, Math.PI * 2);
-    ctx.moveTo(255, 110);
-    ctx.ellipse(220, 110, 35, 36, 0, 0, Math.PI * 2);
-    ctx.stroke();
-    ctx.fillStyle = "rgba(239,239,93,.7)";
-    ctx.fill();
-    const burnMarks = [];
-    for (let i = 0; i < 31; i++) {
-      let x, y;
-      do {
-        x = Math.random() * 71 + 181;
-        y = Math.random() * 79 + 61;
-      } while ((x < 191 && (y < 97 || y > 114)) ||
-        (x > 241 && (y < 97 || y > 114)) ||
-        (y < 71 && (x < 211 || x > 224)) ||
-        (y > 131 && (x < 211 || x > 224)));
-      burnMarks.push([x, y]);
-    }
-    ctx.fillStyle = 'peru';
-    for (const [x, y] of burnMarks) {
-      drawMiniArc(x, y, 2);
-    }
-
-    // Beans
-    ctx.lineWidth = 5;
-    ctx.lineCap = "round";
-    ctx.strokeStyle = "rgba(140,93,13,0.9)";
-    let count = 0;
-    while (count < 137) {
-      let x = Math.round(Math.random() * 90 + 100); // 100-190
-      let y = Math.round(Math.random() * 40 + 30); // 30-70
-      if (
-        (x < 110 && y < 35) ||
-        (x > 180 && y < 35) ||
-        (x < 110 && y > 60) ||
-        (x > 175 && y > 55)
-      ) {
-        continue;
+        footer {
+          font-size: 1.1rem;
+        }
       }
-      ctx.beginPath();
-      ctx.arc(x, y, 4, Math.PI * 1.9, Math.PI * 0.6);
-      ctx.stroke();
-      count++;
-    }
 
-    // Steak
-    ctx.beginPath();
-    ctx.fillStyle = "darkred";
-    ctx.moveTo(130, 150);
-    ctx.quadraticCurveTo(100, 135, 90, 165);
-    ctx.quadraticCurveTo(85, 195, 130, 200);
-    ctx.quadraticCurveTo(185, 205, 185, 170);
-    ctx.quadraticCurveTo(185, 150, 115, 145);
-    ctx.fill();
-    ctx.beginPath();
-    ctx.fillStyle = "crimson";
-    ctx.moveTo(130, 145);
-    ctx.quadraticCurveTo(100, 130, 90, 160);
-    ctx.quadraticCurveTo(85, 190, 130, 195);
-    ctx.quadraticCurveTo(185, 200, 185, 165);
-    ctx.quadraticCurveTo(185, 145, 115, 140);
-    ctx.fill();
-    ctx.strokeStyle = "maroon";
-    ctx.lineWidth = 4;
-    ctx.beginPath(); // grill marks
-    let x = 100;
-    let y1 = 139;
-    for (let i = 5, j = 173; i > 0; i--, j += 3) {
-      const y2 = Math.random() * 5 + j;
-      y1 += Math.random() * 3 + i;
-      ctx.moveTo(x, y2);
-      x += Math.random() * 3 + 13;
-      ctx.lineTo(x, y1);
-    }
-    ctx.stroke();
+      @media (min-width: 940px) and (min-height: 600px) {
+        :root {
+          --footer-height: 75px;
+        }
 
-    // for drawing cheese holes and tortilla burn marks
-    function drawMiniArc(x, y, w) {
-      ctx.beginPath();
-      ctx.arc(x, y, Math.random() * w, 0, 2 * Math.PI);
+        h1 {
+          margin-top: 2.3rem;
+        }
+
+        p {
+          margin-bottom: 3rem;
+        }
+
+        footer {
+          font-size: 1.3rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 style="font-size: 4.3rem;">Canvas API</h1>
+    <canvas id="myCanvas0" width="300" height="250" style="border: 0.3em ridge grey;"></canvas>
+    <p>Some figures drawn as a demonstration.</p>
+
+    <h1 style="font-size: 3rem;">Dinner is ready!</h1>
+    <canvas id="myCanvas" width="300" height="250" style="border: 0.3em ridge grey;"></canvas>
+    <p>
+      The cheese holes, tortilla burn marks, and beans are randomly positioned each time the page
+      is loaded.
+    </p>
+
+    <footer>
+      <small>This is a Canvas API demo intended for web development enthusiasts</small>
+    </footer>
+
+    <!-- DEMO FIGURES -->
+
+    <script>
+      const canvas0 = document.getElementById("myCanvas0");
+      const ctx0 = canvas0.getContext("2d");
+
+      ctx0.fillStyle = "#dc143c"; // crimson
+      ctx0.fillRect(10, 10, 75, 45);
+
+      ctx0.strokeStyle = "white";
+      ctx0.lineWidth = 2;
+
+      ctx0.beginPath();
+      // Define a circle
+      ctx0.arc(140, 35, 25, 0, 2 * Math.PI, false); // false = clockwise (default)
+      // Define an irregular polygon
+      ctx0.moveTo(200, 15);
+      ctx0.lineTo(250, 15);
+      ctx0.lineTo(285, 50);
+      ctx0.lineTo(200, 50);
+      ctx0.lineTo(200, 15);
+      ctx0.stroke();
+
+      ctx0.beginPath();
+      // Define a rectangle
+      ctx0.moveTo(10, 70);
+      ctx0.lineTo(90, 70);
+      ctx0.lineTo(90, 110);
+      ctx0.lineTo(10, 110);
+      ctx0.lineTo(10, 70);
+      // Define a triangle
+      ctx0.moveTo(50, 70);
+      ctx0.lineTo(90, 110);
+      ctx0.lineTo(10, 110);
+      ctx0.lineTo(50, 70);
+      ctx0.strokeStyle = "blue";
+      ctx0.stroke();
+
+      // Define a rectangle using rect()
+      ctx0.beginPath();
+      ctx0.rect(115, 75, 60, 35);
+      ctx0.strokeStyle = "green";
+      ctx0.stroke();
+
+      // Quadratic curves example
+      ctx0.beginPath();
+      ctx0.strokeStyle = "orange";
+      ctx0.moveTo(240, 70);
+      ctx0.quadraticCurveTo(210, 70, 210, 85);
+      ctx0.quadraticCurveTo(210, 100, 225, 100);
+      ctx0.quadraticCurveTo(225, 110, 215, 110);
+      ctx0.quadraticCurveTo(235, 110, 235, 100);
+      ctx0.quadraticCurveTo(265, 100, 265, 85);
+      ctx0.quadraticCurveTo(265, 70, 240, 70);
+      ctx0.stroke();
+
+      // Cubic curves example
+      ctx0.beginPath();
+      ctx0.moveTo(50, 135);
+      ctx0.bezierCurveTo(45, 130, 40, 130, 30, 130);
+      ctx0.bezierCurveTo(20, 135, 20, 145, 20, 150);
+      ctx0.bezierCurveTo(20, 160, 45, 170, 50, 180);
+      ctx0.bezierCurveTo(55, 170, 80, 160, 80, 150);
+      ctx0.bezierCurveTo(80, 145, 80, 135, 70, 130);
+      ctx0.bezierCurveTo(60, 130, 55, 130, 50, 135);
+      ctx0.fill();
+    </script>
+
+    <!-- DINNER PLATE -->
+
+    <script>
+      const canvas = document.getElementById("myCanvas");
+      const ctx = canvas.getContext("2d");
+
+      // Wooden table
+      ctx.fillStyle = "rgb(186,145,20)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Plate
+      ctx.arc(150, 125, 115, 0, Math.PI * 2);
+      ctx.fillStyle = "#FFFFFF";
       ctx.fill();
-    }
-  </script>
-</body>
+      ctx.moveTo(251, 128);
+      ctx.arc(150, 125, 100, Math.PI * 0.05, Math.PI * 1.77);
+      ctx.stroke();
 
+      // Cheese
+      ctx.beginPath();
+      ctx.lineWidth = 2;
+      ctx.lineJoin = "round";
+      ctx.strokeStyle = "#803300";
+      ctx.moveTo(50, 105);
+      ctx.lineTo(80, 65);
+      ctx.lineTo(125, 95);
+      ctx.lineTo(50, 104);
+      ctx.stroke();
+      ctx.fillStyle = "rgb(247,203,27)";
+      ctx.fill();
+      ctx.lineTo(60, 125);
+      ctx.lineTo(135, 115);
+      ctx.lineTo(126, 96);
+      ctx.lineTo(50, 105);
+      ctx.stroke();
+      ctx.fill();
+      for (let i = 0; i < 5; i++) {
+        // holes
+        ctx.fillStyle = "Khaki";
+        let x1 = Math.random() * 7 + 79,
+          y1 = Math.random() * 13 + 71;
+        let x2 = Math.random() * 43 + 67,
+          y2 = Math.random() * 7 + 89;
+        let x3 = Math.random() * 67 + 59,
+          y3 = Math.random() * 5 + 101;
+        let x4 = Math.random() * 67 + 61,
+          y4 = Math.random() * 5 + 109;
+        if (y1 > 79) {
+          x1 < 83 ? (x1 -= 3) : (x1 += 7);
+        }
+        drawMiniArc(x1, y1, y1 > 79 ? 3 : 2);
+        drawMiniArc(x2, y2, 3);
+        drawMiniArc(x3, y3, 4);
+        if (x4 < 89) {
+          y4 += 3;
+        }
+        drawMiniArc(x4, y4, x4 < 101 ? 4 : 2);
+      }
+
+      // Tortillas
+      ctx.beginPath();
+      ctx.ellipse(216, 95, 37, 37, 0, Math.PI, Math.PI * 2);
+      ctx.moveTo(184, 100);
+      ctx.ellipse(215, 100, 36, 36, 0, Math.PI * 0.8, Math.PI * 1.7);
+      ctx.moveTo(185, 104);
+      ctx.ellipse(220, 104, 35, 36, 0, Math.PI, Math.PI * 2);
+      ctx.moveTo(255, 110);
+      ctx.ellipse(220, 110, 35, 36, 0, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fillStyle = "rgba(239,239,93,.7)";
+      ctx.fill();
+      const burnMarks = [];
+      for (let i = 0; i < 31; i++) {
+        let x, y;
+        do {
+          x = Math.random() * 71 + 181;
+          y = Math.random() * 79 + 61;
+        } while (
+          (x < 191 && (y < 97 || y > 114)) ||
+          (x > 241 && (y < 97 || y > 114)) ||
+          (y < 71 && (x < 211 || x > 224)) ||
+          (y > 131 && (x < 211 || x > 224))
+        );
+        burnMarks.push([x, y]);
+      }
+      ctx.fillStyle = "peru";
+      for (const [x, y] of burnMarks) {
+        drawMiniArc(x, y, 2);
+      }
+
+      // Beans
+      ctx.lineWidth = 5;
+      ctx.lineCap = "round";
+      ctx.strokeStyle = "rgba(140,93,13,0.9)";
+      let count = 0;
+      while (count < 137) {
+        let x = Math.round(Math.random() * 90 + 100); // 100-190
+        let y = Math.round(Math.random() * 40 + 30); // 30-70
+        if (
+          (x < 110 && y < 35) ||
+          (x > 180 && y < 35) ||
+          (x < 110 && y > 60) ||
+          (x > 175 && y > 55)
+        ) {
+          continue;
+        }
+        ctx.beginPath();
+        ctx.arc(x, y, 4, Math.PI * 1.9, Math.PI * 0.6);
+        ctx.stroke();
+        count++;
+      }
+
+      // Steak
+      ctx.beginPath();
+      ctx.fillStyle = "darkred";
+      ctx.moveTo(130, 150);
+      ctx.quadraticCurveTo(100, 135, 90, 165);
+      ctx.quadraticCurveTo(85, 195, 130, 200);
+      ctx.quadraticCurveTo(185, 205, 185, 170);
+      ctx.quadraticCurveTo(185, 150, 115, 145);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.fillStyle = "crimson";
+      ctx.moveTo(130, 145);
+      ctx.quadraticCurveTo(100, 130, 90, 160);
+      ctx.quadraticCurveTo(85, 190, 130, 195);
+      ctx.quadraticCurveTo(185, 200, 185, 165);
+      ctx.quadraticCurveTo(185, 145, 115, 140);
+      ctx.fill();
+      ctx.strokeStyle = "maroon";
+      ctx.lineWidth = 4;
+      ctx.beginPath(); // grill marks
+      let x = 100;
+      let y1 = 139;
+      for (let i = 5, j = 173; i > 0; i--, j += 3) {
+        const y2 = Math.random() * 5 + j;
+        y1 += Math.random() * 3 + i;
+        ctx.moveTo(x, y2);
+        x += Math.random() * 3 + 13;
+        ctx.lineTo(x, y1);
+      }
+      ctx.stroke();
+
+      // for drawing cheese holes and tortilla burn marks
+      function drawMiniArc(x, y, w) {
+        ctx.beginPath();
+        ctx.arc(x, y, Math.random() * w, 0, 2 * Math.PI);
+        ctx.fill();
+      }
+    </script>
+  </body>
 </html>
