@@ -1,200 +1,230 @@
-<!DOCTYPE html>
+<!doctype html>
 <!-- A single page project of an animated bird growing in a canvas.
   
    All the CSS instructions for this page are embedded in the head element.
    
    All the JavaScript code is embedded in the body element -->
 <html lang="en">
+  <head>
+    <title lang="es">Proyecto 3: Ataque Animal</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="An animated bird growing in a canvas. Intended as a demo for web development enthusiasts."
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="An animated bird growing in a canvas.
-    Intended as a demo for web development enthusiasts." />
-  <title lang="es">Proyecto 3: Ataque Animal</title>
-  <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+      html {
+        font-size: 10px;
+      }
 
-    html {
-      font-size: 10px;
-    }
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: black;
+        align-items: center;
+        color: goldenrod;
+        text-align: center;
+        font-family: "Courier New", Courier, monospace;
+      }
 
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      background-color: black;
-      align-items: center;
-      color: goldenrod;
-      text-align: center;
-      font-family: 'Courier New', Courier, monospace;
-    }
-
-    h1 {
-      margin: 2rem 0 0.7rem;
-      font-size: 3.1rem;
-    }
-
-    canvas {
-      margin-bottom: 3rem;
-      border: 0.3rem ridge grey;
-    }
-
-    p {
-      width: 83%;
-      max-width: 540px;
-      margin-bottom: 2rem;
-      line-height: 1.7rem;
-      font-size: 1.3rem;
-      letter-spacing: 0.2px;
-    }
-
-    p::first-letter {
-      font-size: 1.5em;
-      font-weight: bold;
-    }
-
-    footer {
-      height: 60px;
-      margin-top: auto;
-      padding: 0 7.3%;
-      align-content: center;
-      text-align: center;
-      color: #AAA;
-      font-size: 1rem;
-      letter-spacing: 0.1px;
-    }
-
-    body {
-      min-width: 360px;
-    }
-
-    @media (min-width: 540px) {
       h1 {
-        margin-top: 1.7rem;
-        font-size: 3.3rem;
-      }
-
-      p {
-        line-height: 2rem;
-        font-size: 1.5rem;
-      }
-
-      footer {
-        font-size: 1.1rem;
-      }
-    }
-
-    @media (min-width: 940px) and (min-height: 600px) {
-      h1 {
-        margin: 3rem 0 1.3rem;
-        font-size: 3.7rem;
+        margin: 2rem 0 0.7rem;
+        font-size: 3.1rem;
       }
 
       canvas {
-        margin-bottom: 4.7rem;
-        border-width: 0.5rem;
+        margin-bottom: 3rem;
+        border: 0.3rem ridge grey;
       }
 
       p {
-        max-width: 700px;
-        margin-bottom: 3rem;
-        line-height: 3rem;
-        font-size: 1.7rem;
+        width: 83%;
+        max-width: 540px;
+        margin-bottom: 2rem;
+        line-height: 1.7rem;
+        font-size: 1.3rem;
+        letter-spacing: 0.2px;
+      }
+
+      p::first-letter {
+        font-size: 1.5em;
+        font-weight: bold;
       }
 
       footer {
-        height: 75px;
-        font-size: 1.3rem;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <h1>Animal Attack</h1>
-
-  <canvas id="aCanvas" width="350" height="350"></canvas>
-
-  <p>
-    The bird's size increases, and when its eyes (which grow faster) cover the whole canvas,
-    everything goes back to its original size and starts growing again.
-  </p>
-
-  <footer>
-    <small>This is a Canvas API demo intended for web development enthusiasts</small>
-  </footer>
-
-  <script>
-    const canvas = document.getElementById("aCanvas");
-    const cx = canvas.getContext("2d");
-
-    let bodyX = 150, bodyY = 190, bodyW = 30, bodyH = bodyW * 8 / 11, eyeSz = bodyW / 23;
-
-    draw = function () {
-      cx.fillStyle = "#00cccc";
-      cx.fillRect(0, 0, canvas.width, canvas.height);
-
-      // Tail
-      cx.fillStyle = "rgb(240,209,36)";
-      cx.moveTo(bodyX - bodyW * 10 / 11, bodyY - bodyH * 11 / 11);
-      cx.lineTo(bodyX - bodyW * 15 / 11, bodyY - bodyH * 6 / 11);
-      cx.lineTo(bodyX - bodyW * 4 / 11, bodyY + bodyH * 1 / 17);
-      cx.lineTo(bodyX - bodyW * 10 / 11, bodyY - bodyH * 11 / 11);
-      cx.stroke();
-      cx.fill();
-      // Body
-      cx.beginPath();
-      cx.ellipse(bodyX, bodyY, bodyW, bodyH, 0, 0, Math.PI * 2);
-      cx.stroke();
-      cx.fill();
-      // Head
-      cx.beginPath();
-      cx.ellipse(bodyX + bodyW * 6 / 7, bodyY - bodyH * 4 / 7, bodyW * 6 / 11, bodyH * 6 / 11, 0, 0, Math.PI * 2);
-      cx.stroke();
-      cx.fill();
-      // Wing
-      cx.beginPath()
-      cx.arc(bodyX - bodyW * 1 / 11, bodyY, bodyW * 3 / 7, 0, Math.PI * 1.4);
-      cx.stroke();
-      cx.fill();
-      // Beak
-      cx.beginPath();
-      cx.fillStyle = "rgb(224,152,27)";
-      cx.moveTo(bodyX + bodyW * 14 / 11, bodyY - bodyH * 6 / 11);
-      cx.lineTo(bodyX + bodyW * 17 / 11, bodyY - bodyH * 3 / 11);
-      cx.lineTo(bodyX + bodyW * 12 / 11, bodyY - bodyH * 4 / 11);
-      cx.lineTo(bodyX + bodyW * 14 / 11, bodyY - bodyH * 6 / 11);
-      cx.stroke();
-      cx.fill();
-      // Eyes
-      cx.beginPath();
-      cx.fillStyle = "rgb(99,70,19)";
-      cx.ellipse(bodyX + bodyW * 10 / 11, bodyY - bodyH * 7 / 11, eyeSz, eyeSz, 0, 0, Math.PI * 2);
-      cx.moveTo(bodyX + bodyW * 12 / 11, bodyY - bodyH * 8 / 11 + eyeSz);
-      cx.ellipse(bodyX + bodyW * 12 / 11, bodyY - bodyH * 8 / 11, eyeSz, eyeSz, 0, 0, Math.PI * 2);
-      cx.stroke();
-      cx.fill();
-
-      // Attack!
-      bodyW *= 1.005;
-      bodyH *= 1.006;
-      eyeSz *= 1.013;
-
-      if (bodyW > 350) {
-        bodyW = 30, bodyH = bodyW * 8 / 11, eyeSz = bodyW / 23;
+        height: 60px;
+        margin-top: auto;
+        padding: 0 7.3%;
+        align-content: center;
+        text-align: center;
+        color: #aaa;
+        font-size: 1rem;
+        letter-spacing: 0.1px;
       }
 
+      body {
+        min-width: 360px;
+      }
+
+      @media (min-width: 540px) {
+        h1 {
+          margin-top: 1.7rem;
+          font-size: 3.3rem;
+        }
+
+        p {
+          line-height: 2rem;
+          font-size: 1.5rem;
+        }
+
+        footer {
+          font-size: 1.1rem;
+        }
+      }
+
+      @media (min-width: 940px) and (min-height: 600px) {
+        h1 {
+          margin: 3rem 0 1.3rem;
+          font-size: 3.7rem;
+        }
+
+        canvas {
+          margin-bottom: 4.7rem;
+          border-width: 0.5rem;
+        }
+
+        p {
+          max-width: 700px;
+          margin-bottom: 3rem;
+          line-height: 3rem;
+          font-size: 1.7rem;
+        }
+
+        footer {
+          height: 75px;
+          font-size: 1.3rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Animal Attack</h1>
+
+    <canvas id="aCanvas" width="350" height="350"></canvas>
+
+    <p>
+      The bird's size increases, and when its eyes (which grow faster) cover the whole canvas,
+      everything goes back to its original size and starts growing again.
+    </p>
+
+    <footer>
+      <small>This is a Canvas API demo intended for web development enthusiasts</small>
+    </footer>
+
+    <script>
+      const canvas = document.getElementById("aCanvas");
+      const cx = canvas.getContext("2d");
+
+      let bodyX = 150,
+        bodyY = 190,
+        bodyW = 30,
+        bodyH = (bodyW * 8) / 11,
+        eyeSz = bodyW / 23;
+
+      draw = function () {
+        cx.fillStyle = "#00cccc";
+        cx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Tail
+        cx.fillStyle = "rgb(240,209,36)";
+        cx.moveTo(bodyX - (bodyW * 10) / 11, bodyY - (bodyH * 11) / 11);
+        cx.lineTo(bodyX - (bodyW * 15) / 11, bodyY - (bodyH * 6) / 11);
+        cx.lineTo(bodyX - (bodyW * 4) / 11, bodyY + (bodyH * 1) / 17);
+        cx.lineTo(bodyX - (bodyW * 10) / 11, bodyY - (bodyH * 11) / 11);
+        cx.stroke();
+        cx.fill();
+        // Body
+        cx.beginPath();
+        cx.ellipse(bodyX, bodyY, bodyW, bodyH, 0, 0, Math.PI * 2);
+        cx.stroke();
+        cx.fill();
+        // Head
+        cx.beginPath();
+        cx.ellipse(
+          bodyX + (bodyW * 6) / 7,
+          bodyY - (bodyH * 4) / 7,
+          (bodyW * 6) / 11,
+          (bodyH * 6) / 11,
+          0,
+          0,
+          Math.PI * 2
+        );
+        cx.stroke();
+        cx.fill();
+        // Wing
+        cx.beginPath();
+        cx.arc(bodyX - (bodyW * 1) / 11, bodyY, (bodyW * 3) / 7, 0, Math.PI * 1.4);
+        cx.stroke();
+        cx.fill();
+        // Beak
+        cx.beginPath();
+        cx.fillStyle = "rgb(224,152,27)";
+        cx.moveTo(bodyX + (bodyW * 14) / 11, bodyY - (bodyH * 6) / 11);
+        cx.lineTo(bodyX + (bodyW * 17) / 11, bodyY - (bodyH * 3) / 11);
+        cx.lineTo(bodyX + (bodyW * 12) / 11, bodyY - (bodyH * 4) / 11);
+        cx.lineTo(bodyX + (bodyW * 14) / 11, bodyY - (bodyH * 6) / 11);
+        cx.stroke();
+        cx.fill();
+        // Eyes
+        cx.beginPath();
+        cx.fillStyle = "rgb(99,70,19)";
+        cx.ellipse(
+          bodyX + (bodyW * 10) / 11,
+          bodyY - (bodyH * 7) / 11,
+          eyeSz,
+          eyeSz,
+          0,
+          0,
+          Math.PI * 2
+        );
+        cx.moveTo(bodyX + (bodyW * 12) / 11, bodyY - (bodyH * 8) / 11 + eyeSz);
+        cx.ellipse(
+          bodyX + (bodyW * 12) / 11,
+          bodyY - (bodyH * 8) / 11,
+          eyeSz,
+          eyeSz,
+          0,
+          0,
+          Math.PI * 2
+        );
+        cx.stroke();
+        cx.fill();
+
+        // Attack!
+        bodyW *= 1.005;
+        bodyH *= 1.006;
+        eyeSz *= 1.013;
+
+        if (bodyW > 350) {
+          bodyW = 30;
+          bodyH = (bodyW * 8) / 11;
+          eyeSz = bodyW / 23;
+        }
+
+        requestAnimationFrame(draw);
+      };
       requestAnimationFrame(draw);
-    }
-    requestAnimationFrame(draw);
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
