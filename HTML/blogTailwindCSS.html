@@ -1,151 +1,185 @@
-<!DOCTYPE html>
+<!doctype html>
 <!-- Most of the class attributes of the elements in this project use Tailwind CSS, with the exception of "developer" and "fuente",
    which are defined in blogSty.css for demonstration purposes. -->
 <html lang="en">
-   
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="description" content="A blog about programming languages.
-        Intended as a demo for web development enthusiasts." />
-      <title lang="es">Proyecto 10: Blog</title>
-      <!-- for pure CSS -->
-      <link rel="stylesheet" href="../CSS/blogSty.css" />
-      <!-- for Tailwind CSS -->
-      <script src="https://cdn.tailwindcss.com"></script>
-   </head>
+  <head>
+    <title lang="es">Proyecto 10: Blog</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A blog about programming languages. Intended as a demo for web development enthusiasts."
+    />
+    <!-- for pure CSS -->
+    <link rel="stylesheet" href="../CSS/blogSty.css" />
+    <!-- for Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-   <body class="dark:bg-slate-950 dark:text-slate-300 p-3 text-justify">
-      <h1 class="text-5xl text-center font-mono mt-3 mb-5">Programming language's blog</h1>
+  <body class="dark:bg-slate-950 dark:text-slate-300 p-3 text-justify">
+    <h1 class="text-5xl text-center font-mono mt-3 mb-5">Programming language's blog</h1>
 
-      <h3 class="text-2xl">Contents</h3>
+    <h3 class="text-2xl">Contents</h3>
 
-      <ul role="list" class="marker:text-gray-500 list-disc pl-6 space-y-1">
-         <li><a href="#c" class="hover:text-lg hover:text-slate-400 duration-500">C</a></li>
-         <li><a href="#python" class="hover:text-lg hover:text-slate-400 duration-500">Python</a></li>
-         <li><a href="#java" class="hover:text-lg hover:text-slate-400 duration-500">Java</a></li>
-         <li><a href="#js" class="hover:text-lg hover:text-slate-400 duration-500">JavaScript</a></li>
-      </ul>
+    <ul role="list" class="marker:text-gray-500 list-disc pl-6 space-y-1">
+      <li>
+        <a href="#c" class="hover:text-lg hover:text-slate-400 duration-500">C</a>
+      </li>
+      <li>
+        <a href="#python" class="hover:text-lg hover:text-slate-400 duration-500">Python</a>
+      </li>
+      <li>
+        <a href="#java" class="hover:text-lg hover:text-slate-400 duration-500">Java</a>
+      </li>
+      <li>
+        <a href="#js" class="hover:text-lg hover:text-slate-400 duration-500">JavaScript</a>
+      </li>
+    </ul>
 
-      <section id="c" class="text-sm target:text-lg duration-[1300ms] delay-200">
-         <hr class="h-px mx-auto mt-5 mb-3 border-0 dark:bg-slate-700">
+    <section id="c" class="text-sm target:text-lg duration-[1300ms] delay-200">
+      <hr class="h-px mx-auto mt-5 mb-3 border-0 dark:bg-slate-700" />
 
-         <h2 class="text-3xl m-3">C</h2>
+      <h2 class="text-3xl m-3">C</h2>
 
-         <h6 class="text-xs m-1">Developed between 1972 and 1973.</h6>
+      <h6 class="text-xs m-1">Developed between 1972 and 1973.</h6>
 
-         <p>
-            Originally created at <em>Bell Labs</em> by <span class="developer">Dennis Ritchie</span>, <strong>C</strong>
-            (/<em>si:</em>/, as in the letter <em>c</em>) is a general-purpose, procedural computer programming language
-            supporting structured programming, lexical variable scope, and recursion, while a static type system prevents
-            unintended operations. By design, <strong>C</strong> provides constructs that map efficiently to typical
-            machine instructions and has found lasting use in applications previously coded in assembly language. Such
-            applications include operating systems and various application software for computers, from supercomputers to
-            embedded systems.<br />A successor to the programming language <em>B</em>, <strong>C</strong> was originally
-            developed to construct utilities runing on <em>Unix</em>. It was applied to re-implementing the kernel of the
-            Unix operating system. During the 1980s, <strong>C</strong> gradually gained popularity. It has become one of
-            the most widely used programming languages, with <strong>C</strong> compilers available for practically all
-            modern computer architectures and operating systems. The book <em>The <strong>C</strong> Programming
-            Language</em>, co-authored by the original language designer, served for many years as the <em>de facto</em>
-            standard for the language. <strong>C</strong> has been standarized since 1989 by the <em>American National
-            Standards Institute (ANSI)</em> and, subsequently, jointly by the <em>International Organization for
-            Standardization (ISO)</em> and the <em>International Electrotechnical Commision (IEC)</em>.
-         </p>
-      </section>
-
-      <p class="fuente">Source:
-         <a target="_blank" href="https://en.wikipedia.org/wiki/C_(programming_language)">wikipedia.org</a>
+      <p>
+        Originally created at <em>Bell Labs</em> by <span class="developer">Dennis Ritchie</span>,
+        <strong>C</strong> (/<em>si:</em>/, as in the letter <em>c</em>) is a general-purpose,
+        procedural computer programming language supporting structured programming, lexical
+        variable scope, and recursion, while a static type system prevents unintended operations.
+        By design, <strong>C</strong> provides constructs that map efficiently to typical machine
+        instructions and has found lasting use in applications previously coded in assembly
+        language. Such applications include operating systems and various application software for
+        computers, from supercomputers to embedded systems.<br />A successor to the programming
+        language <em>B</em>, <strong>C</strong> was originally developed to construct utilities
+        running on <em>Unix</em>. It was applied to re-implementing the kernel of the Unix
+        operating system. During the 1980s, <strong>C</strong> gradually gained popularity. It has
+        become one of the most widely used programming languages, with <strong>C</strong>
+        compilers available for practically all modern computer architectures and operating
+        systems. The book <em>The <strong>C</strong> Programming Language</em>, co-authored by the
+        original language designer, served for many years as the <em>de facto</em> standard for
+        the language. <strong>C</strong> has been standardized since 1989 by the <em>American
+        National Standards Institute (ANSI)</em> and, subsequently, jointly by the
+        <em>International Organization for Standardization (ISO)</em> and the <em>International
+        Electrotechnical commission (IEC)</em>.
       </p>
-      
-      <section id="python" class="text-sm target:text-lg duration-[1300ms] delay-200">
-         <hr class="h-px mx-auto mt-5 mb-3 border-0 dark:bg-slate-700">
+    </section>
 
-         <h2 class="text-3xl m-3">Python</h2>
+    <p class="fuente">
+      Source:
+      <a target="_blank" href="https://en.wikipedia.org/wiki/C_(programming_language)">
+        wikipedia.org
+      </a>
+    </p>
 
-         <h6 class="text-xs m-1">Released in 1991.</h6>
+    <section id="python" class="text-sm target:text-lg duration-[1300ms] delay-200">
+      <hr class="h-px mx-auto mt-5 mb-3 border-0 dark:bg-slate-700" />
 
-         <p>
-            Created by <span class="developer">Guido van Rossum</span>, <strong>Python</strong> is an interpreted, high-level,
-            general-purpose programming language. <strong>Python</strong>'s design philosophy emphasizes code readability with
-            its notable use of significant whitespace. Its language constructs and object-oriented approach aim to help
-            programmers write clear, logical code for small and large-scale projects.<br /><strong>Python</strong> is
-            dynamically typed and garbage-collected. It supports multiple programming paradigms, including procedural,
-            object-oriented, and functional programming. <strong>Python</strong> is often described as a "batteries included"
-            language due to its comprehensive standard library.<br /><strong>Python</strong> was conceived in the late 1980s
-            as a successor to the <em>ABC</em> language. <strong>Python 2.0</strong>, released in 2000, introduced features
-            like list comprehensions and a garbage collection system capable of collecting reference cycles. <strong>Python
-            3.0</strong>, released in 2008, was a major revision of the language that is not completely backward-compatible,
-            and much <strong>Python 2</strong> code does not run unmodified on <strong>Python 3</strong>.
-         </p>
-      </section>
-      
-      <p class="fuente">
-         Source: <a target="_blank" href="https://en.wikipedia.org/wiki/Python_(programming_language)">wikipedia.org</a>
+      <h2 class="text-3xl m-3">Python</h2>
+
+      <h6 class="text-xs m-1">Released in 1991.</h6>
+
+      <p>
+        Created by <span class="developer">Guido van Rossum</span>, <strong>Python</strong> is an
+        interpreted, high-level, general-purpose programming language. <strong>Python</strong>'s
+        design philosophy emphasizes code readability with its notable use of significant
+        whitespace. Its language constructs and object-oriented approach aim to help programmers
+        write clear, logical code for small and large-scale projects.<br /><strong>Python</strong>
+        is dynamically typed and garbage-collected. It supports multiple programming paradigms,
+        including procedural, object-oriented, and functional programming. <strong>Python</strong>
+        is often described as a "batteries included" language due to its comprehensive standard
+        library.<br /><strong>Python</strong> was conceived in the late 1980s as a successor to
+        the <em>ABC</em> language. <strong>Python 2.0</strong>, released in 2000, introduced
+        features like list comprehensions and a garbage collection system capable of collecting
+        reference cycles. <strong>Python 3.0</strong>, released in 2008, was a major revision of
+        the language that is not completely backward-compatible, and much <strong>Python
+        2</strong> code does not run unmodified on <strong>Python 3</strong>.
       </p>
+    </section>
 
-      <section id="java" class="text-sm target:text-lg duration-[1300ms] delay-200">
-         <hr class="h-px mx-auto mt-5 mb-3 border-0 dark:bg-slate-700">
+    <p class="fuente">
+      Source:
+      <a target="_blank" href="https://en.wikipedia.org/wiki/Python_(programming_language)">
+        wikipedia.org
+      </a>
+    </p>
 
-         <h2 class="text-3xl m-3">Java</h2>
+    <section id="java" class="text-sm target:text-lg duration-[1300ms] delay-200">
+      <hr class="h-px mx-auto mt-5 mb-3 border-0 dark:bg-slate-700" />
 
-         <h6 class="text-xs m-1">Released in 1995.</h6>
+      <h2 class="text-3xl m-3">Java</h2>
 
-         <p>
-            Originally developed by <span class="developer">James Gosling</span> at <em>Sun Microsystems</em> (which has
-            since been acquired by <em>Oracle</em>), <strong>Java</strong> is a general-purpose programming language
-            that is class-based, object-oriented, and designed to have as few implementation dependencies as possible.
-            It is intended to let application developers <em>write once, run anywhere (WORA)</em>, meaning that compiled
-            <strong>Java</strong> code can run on all platforms that support <strong>Java</strong> without the need for
-            recompilation. <strong>Java</strong> applications are typically compiled to <em>bytecode</em> that can run
-            on any <em>Java virtual machine (JVM)</em> regardless of the underlying computer architecture. The syntax of
-            <strong>Java</strong> is similar to <em><a href="#c" class="underline hover:text-slate-400">C</a></em> and
-            <em>C++</em>, but it has fewer low-level facilities than either of them. The <strong>Java</strong> runtime
-            provides dynamic capabilities (such as reflection and runtime code modification) thet are typically not
-            available in traditional compiled languages. <strong>Java</strong> was the third most popular programming
-            language in 2022 according to <em>GitHub</em>.<br />As of March 2024, <em><strong>Java</strong> 22</em> is
-            the latest version (previous LTS versions 8, 11, 17, and 21 are still officially supported).
-         </p>
-      </section>
+      <h6 class="text-xs m-1">Released in 1995.</h6>
 
-      <p class="fuente">
-         Source: <a target="_blank" href="https://en.wikipedia.org/wiki/Java_(programming_language)">wikipedia.org</a>
+      <p>
+        Originally developed by <span class="developer">James Gosling</span> at <em>Sun
+        Microsystems</em> (which has since been acquired by <em>Oracle</em>),
+        <strong>Java</strong> is a general-purpose programming language that is class-based,
+        object-oriented, and designed to have as few implementation dependencies as possible. It
+        is intended to let application developers <em>write once, run anywhere (WORA)</em>,
+        meaning that compiled <strong>Java</strong> code can run on all platforms that support
+        <strong>Java</strong> without the need for recompilation. <strong>Java</strong>
+        applications are typically compiled to <em>bytecode</em> that can run on any <em>Java
+        virtual machine (JVM)</em> regardless of the underlying computer architecture. The syntax
+        of <strong>Java</strong> is similar to
+        <em><a href="#c" class="underline hover:text-slate-400">C</a></em> and <em>C++</em>, but
+        it has fewer low-level facilities than either of them. The <strong>Java</strong> runtime
+        provides dynamic capabilities (such as reflection and runtime code modification) that are
+        typically not available in traditional compiled languages. <strong>Java</strong> was the
+        third most popular programming language in 2022 according to <em>GitHub</em>.<br />As of
+        March 2024, <em><strong>Java</strong> 22</em> is the latest version (previous LTS versions
+        8, 11, 17, and 21 are still officially supported).
       </p>
+    </section>
 
-      <section id="js" class="text-sm target:text-lg duration-[1300ms] delay-200">
-         <hr class="h-px mx-auto mt-5 mb-3 border-0 dark:bg-slate-700">
+    <p class="fuente">
+      Source:
+      <a target="_blank" href="https://en.wikipedia.org/wiki/Java_(programming_language)">
+        wikipedia.org
+      </a>
+    </p>
 
-         <h2 class="text-3xl m-3">JavaScript</h2>
+    <section id="js" class="text-sm target:text-lg duration-[1300ms] delay-200">
+      <hr class="h-px mx-auto mt-5 mb-3 border-0 dark:bg-slate-700" />
 
-         <h6 class="text-xs m-1">Released in 1995.</h6>
+      <h2 class="text-3xl m-3">JavaScript</h2>
 
-         <p>
-            Designed by <span class="developer">Brendan Eich</span> of <em>Netscape</em>, <strong>JavaScript</strong>
-            (often abbreviated as <strong>JS</strong>) is a programming language and core technology of the Web,
-            alongside <em>HTML</em> and <em>CSS</em>. 99% of websites use it on the <em>client side</em> for webpage
-            behavior.<br />Web browsers have a dedicated <em><strong>JavaScript</strong> engine</em> that executes
-            the client code. These engines are also utilized in some servers and a variety of apps. The most popular
-            <em>runtime system</em> for non-browser usage is <em>Node.js</em>. <strong>JavaScript</strong> is a
-            high-level, often <em>just-in-time</em> compiled language that conforms to the <em>ECMAScript</em>
-            standard. It has dynamic typing, prototype-based object-orientation, and first class functions. It is
-            multi-paradigm, supporting event-driven, functional, and imperative programming styles. It has
-            <em>application programming interfaces (APIs)</em> for working with text, dates, regular expressions,
-            standard data structures, and the <em>Document Object Model (DOM)</em>.<br />The ECMAScript standard does
-            not include any input/output (I/O), such as networking, storage, or graphics facilities. In practice, the
-            web browser or other runtime system provides <strong>JavaScript</strong> APIs for I/O.<br />Although
-            <em><a href="#java" class="underline hover:text-slate-400">Java</a></em> and <strong>JavaScript</strong>
-            are similar in name, syntax, and respective standard libraries, the two languages are distinct and differ
-            greatly in design.
-         </p>
-      </section>
+      <h6 class="text-xs m-1">Released in 1995.</h6>
 
-      <p class="fuente">
-         Source: <a target="_blank" href="https://en.wikipedia.org/wiki/JavaScript">wikipedia.org</a>
+      <p>
+        Designed by <span class="developer">Brendan Eich</span> of <em>Netscape</em>,
+        <strong>JavaScript</strong> (often abbreviated as <strong>JS</strong>) is a programming
+        language and core technology of the Web, alongside <em>HTML</em> and <em>CSS</em>. 99% of
+        websites use it on the <em>client side</em> for webpage behavior.<br />Web browsers have
+        a dedicated <em><strong>JavaScript</strong> engine</em> that executes the client code.
+        These engines are also utilized in some servers and a variety of apps. The most popular
+        <em>runtime system</em> for non-browser usage is <em>Node.js</em>.
+        <strong>JavaScript</strong> is a high-level, often <em>just-in-time</em> compiled language
+        that conforms to the <em>ECMAScript</em> standard. It has dynamic typing, prototype-based
+        object-orientation, and first class functions. It is multi-paradigm, supporting
+        event-driven, functional, and imperative programming styles. It has <em>application
+        programming interfaces (APIs)</em> for working with text, dates, regular expressions,
+        standard data structures, and the <em>Document Object Model (DOM)</em>.<br />The
+        ECMAScript standard does not include any input/output (I/O), such as networking, storage,
+        or graphics facilities. In practice, the web browser or other runtime system provides
+        <strong>JavaScript</strong> APIs for I/O.<br />Although
+        <em><a href="#java" class="underline hover:text-slate-400">Java</a></em> and
+        <strong>JavaScript</strong> are similar in name, syntax, and respective standard
+        libraries, the two languages are distinct and differ greatly in design.
       </p>
+    </section>
 
-      <hr class="w-1/2 h-1 mx-auto mt-7 dark:bg-slate-700 border-0 rounded"/>
-      <footer class="flex mt-1 mb-3">
-         <aside class="text-xs mx-auto mt-2">This is a blog page demo intended for web development enthusiasts</aside>
-      </footer>
-   </body>
+    <p class="fuente">
+      Source:
+      <a target="_blank" href="https://en.wikipedia.org/wiki/JavaScript">wikipedia.org</a>
+    </p>
 
+    <hr class="w-1/2 h-1 mx-auto mt-7 dark:bg-slate-700 border-0 rounded" />
+    <footer class="flex mt-1 mb-3">
+      <aside class="text-xs mx-auto mt-2">
+        This is a blog page demo intended for web development enthusiasts
+      </aside>
+    </footer>
+  </body>
 </html>
