@@ -48,8 +48,8 @@ const color = {
   White: "#FFF"
 };
 
-var createCuboid = function (x, y, z, w, h, d) {
-   var nodes = [
+const createCuboid = function (x, y, z, w, h, d) {
+   const nodes = [
       [x,   y,   z  ],
       [x,   y,   z+d],
       [x,   y+h, z  ],
@@ -59,7 +59,7 @@ var createCuboid = function (x, y, z, w, h, d) {
       [x+w, y+h, z  ],
       [x+w, y+h, z+d]
    ];
-   var edges = [
+   const edges = [
       [0, 1], [1, 3], [3, 2], [2, 0],
       [4, 5], [5, 7], [7, 6], [6, 4],
       [0, 4], [1, 5], [2, 6], [3, 7]
@@ -67,48 +67,48 @@ var createCuboid = function (x, y, z, w, h, d) {
    return { nodes: nodes, edges: edges };
 };
 
-var cuboid = createCuboid(0, 0, 0, 110, 170, 70);
-var nodes = cuboid.nodes;
-var edges = cuboid.edges;
+const cuboid = createCuboid(0, 0, 0, 110, 170, 70);
+const nodes = cuboid.nodes;
+const edges = cuboid.edges;
 
 // Rotate shape around the z-axis
-var rotateZ3D = function (theta) {
+const rotateZ3D = function (theta) {
   // t_rad = theta * (Math.PI / 180);
-  var sinTheta = Math.sin(theta);
-  var cosTheta = Math.cos(theta);
+  const sinTheta = Math.sin(theta);
+  const cosTheta = Math.cos(theta);
 
   for (let n = 0; n < nodes.length; n++) {
-    var node = nodes[n];
-    var x = node[0];
-    var y = node[1];
+    const node = nodes[n];
+    const x = node[0];
+    const y = node[1];
     node[0] = x * cosTheta - y * sinTheta;
     node[1] = y * cosTheta + x * sinTheta;
   }
 };
 
-var rotateX3D = function (theta) {
+const rotateX3D = function (theta) {
   // t_rad = theta * (Math.PI / 180);
-  var sinTheta = Math.sin(theta);
-  var cosTheta = Math.cos(theta);
+  const sinTheta = Math.sin(theta);
+  const cosTheta = Math.cos(theta);
 
   for (let n = 0; n < nodes.length; n++) {
-    var node = nodes[n];
-    var y = node[1];
-    var z = node[2];
+    const node = nodes[n];
+    const y = node[1];
+    const z = node[2];
     node[1] = y * cosTheta - z * sinTheta;
     node[2] = z * cosTheta + y * sinTheta;
   }
 };
 
-var rotateY3D = function (theta) {
+const rotateY3D = function (theta) {
   // t_rad = theta * (Math.PI / 180);
-  var sinTheta = Math.sin(theta);
-  var cosTheta = Math.cos(theta);
+  const sinTheta = Math.sin(theta);
+  const cosTheta = Math.cos(theta);
 
   for (let n = 0; n < nodes.length; n++) {
-    var node = nodes[n];
-    var x = node[0];
-    var z = node[2];
+    const node = nodes[n];
+    const x = node[0];
+    const z = node[2];
     node[0] = x * cosTheta + z * sinTheta;
     node[2] = z * cosTheta - x * sinTheta;
   }
@@ -123,10 +123,10 @@ function draw() {
   // Draw edges
   stroke(color.WhiteSmoke);
   for (let e = 0; e < edges.length; e++) {
-    var n0 = edges[e][0];
-    var n1 = edges[e][1];
-    var node0 = nodes[n0];
-    var node1 = nodes[n1];
+    const n0 = edges[e][0];
+    const n1 = edges[e][1];
+    const node0 = nodes[n0];
+    const node1 = nodes[n1];
     line(node0[0], node0[1], node1[0], node1[1]);
   }
 
@@ -134,7 +134,7 @@ function draw() {
   fill(color.Aqua);
   noStroke();
   for (let n = 0; n < nodes.length; n++) {
-    var node = nodes[n];
+    const node = nodes[n];
     circle(node[0], node[1], 11);
   }
 
