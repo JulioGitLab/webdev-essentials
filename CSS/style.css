@@ -40,8 +40,8 @@ body {
 }
 
 h1 {
-  margin: 4.3vw 7vw 2vw;
-  font-size: max(4.7vw, 2.9rem);
+  margin: 4.7vw 7vw 2vw;
+  font-size: max(4.5vw, 2.7rem);
 }
 
 canvas {
@@ -274,8 +274,8 @@ footer aside {
   }
 
   h1 {
-    margin-top: 3vw;
-    font-size: 3.7vw;
+    margin-top: 3vh;
+    font-size: 3.5vw;
   }
 
   p {
@@ -283,7 +283,7 @@ footer aside {
   }
 
   p.index {
-    margin-top: 3vw;
+    margin-top: 2.3vh;
   }
 
   nav {
