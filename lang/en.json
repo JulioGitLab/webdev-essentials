@@ -25,8 +25,6 @@
       "header1": "Collection of web development essentials",
       "paragraph": "Open a project by clicking on its name in the list."
     },
-    "footer": {
-      "aside": "Created by:"
-    }
+    "footer": "<aside role='complementary'>Created by: <a href='https://juliogitlab.github.io/' target='_blank' rel='noreferrer' id='juliogitlab'>JulioGitLab</a></aside>"
   }
 }
