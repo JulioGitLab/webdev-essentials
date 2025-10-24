@@ -1,0 +1,32 @@
+{
+  "shared": {
+    "projects": {
+      "dinner": "Dinner",
+      "night": "Night Animation",
+      "attack": "Animal Attack",
+      "ad": "Ad",
+      "fishbowl": "Fishbowl",
+      "survey": "Coders Survey",
+      "travel": "Travel Page",
+      "event": "Event Invite",
+      "recipe": "Recipe Book",
+      "blog": "Programming Languages Blog",
+      "shakky": "Shakky Chihuahua",
+      "line": "Tic-Tac-Toe",
+      "memory": "Memoji Quest",
+      "ortho": "Rotating Orthohedron",
+      "palindrome": "Palindrome Checker"
+    }
+  },
+  "index": {
+    "title": "Set of WebDev Examples",
+    "metaDescription": "Explore a collection of web development examples that make use of essential tools and resources.",
+    "header": {
+      "header1": "Collection of web development essentials",
+      "paragraph": "Open a project by clicking on its name in the list."
+    },
+    "footer": {
+      "aside": "Created by:"
+    }
+  }
+}

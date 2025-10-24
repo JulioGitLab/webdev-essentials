@@ -1,0 +1,32 @@
+{
+  "shared": {
+    "projects": {
+      "dinner": "Cena",
+      "night": "Animación Nocturna",
+      "attack": "Ataque Animal",
+      "ad": "Anuncio",
+      "fishbowl": "Pecera",
+      "survey": "Encuesta para Programadores",
+      "travel": "Página de Viajes",
+      "event": "Invitación a Evento",
+      "recipe": "Libro de Recetas",
+      "blog": "Blog de Lenguajes de Programación",
+      "shakky": "Treppi el Chihuahua",
+      "line": "Tres en Línea",
+      "memory": "Memojirama",
+      "ortho": "Ortoedro Giratorio",
+      "palindrome": "Verificador de Palíndromos"
+    }
+  },
+  "index": {
+    "title": "Conjunto de Ejemplos de Desarrollo Web",
+    "metaDescription": "Explora una colección de ejemplos de desarrollo web que utilizan herramientas y recursos esenciales.",
+    "header": {
+      "header1": "Colección de elementos esenciales para el desarrollo web",
+      "paragraph": "Abre un proyecto haciendo clic en su nombre en la lista."
+    },
+    "footer": {
+      "aside": "Creado por:"
+    }
+  }
+}
