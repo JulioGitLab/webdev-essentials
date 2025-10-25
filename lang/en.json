@@ -16,7 +16,8 @@
       "memory": "Memoji Quest",
       "ortho": "Rotating Orthohedron",
       "palindrome": "Palindrome Checker"
-    }
+    },
+    "footer": "<small>This is a Canvas API demo intended for web development enthusiasts.</small>"
   },
   "index": {
     "title": "Set of WebDev Examples",
@@ -26,5 +27,13 @@
       "paragraph": "Open a project by clicking on its name in the list."
     },
     "footer": "<aside role='complementary'>Created by: <a href='https://juliogitlab.github.io/' target='_blank' rel='noreferrer' id='juliogitlab'>JulioGitLab</a></aside>"
+  },
+  "dinner": {
+    "title": "Project 1: Dinner",
+    "metaDescription": "A dinner plate in a canvas. Intended for web development enthusiasts.",
+    "h1": "Canvas API",
+    "p1": "Some figures drawn as a demonstration.",
+    "h2": "Dinner is ready!",
+    "p2": "The cheese holes, tortilla burn marks, steak grill marks, and beans are randomly positioned each time the page is loaded."
   }
 }

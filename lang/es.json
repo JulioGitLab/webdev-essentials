@@ -16,7 +16,8 @@
       "memory": "Memojirama",
       "ortho": "Ortoedro Giratorio",
       "palindrome": "Verificador de Palíndromos"
-    }
+    },
+    "footer": "<small>Esta es una demostración de la API de Canvas dirigida a entusiastas del desarrollo web.</small>"
   },
   "index": {
     "title": "Conjunto de Ejemplos de Desarrollo Web",
@@ -26,5 +27,13 @@
       "paragraph": "Abre un proyecto haciendo clic en su nombre en la lista."
     },
     "footer": "<aside role='complementary'>Creado por: <a href='https://juliogitlab.github.io/' target='_blank' rel='noreferrer' id='juliogitlab'>JulioGitLab</a></aside>"
+  },
+  "dinner": {
+    "title": "Proyecto 1: Cena",
+    "metaDescription": "Un plato de cena en un canvas. Dirigido a entusiastas del desarrollo web.",
+    "h1": "API de Canvas",
+    "p1": "Algunas figuras dibujadas como demostración.",
+    "h2": "¡La cena está lista!",
+    "p2": "Los agujeros del queso, las marcas de quemadura de la tortilla, las marcas de la parrilla del bistec y los frijoles se posicionan aleatoriamente cada vez que se carga la página."
   }
 }

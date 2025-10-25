@@ -1,20 +1,27 @@
 <!doctype html>
-<!-- A single page project using the Canvas API to draw a plate with dinner served.
+<!-- ES: Un proyecto de página única que utiliza la API de Canvas (https://developer.mozilla.org/es/docs/Web/API/Canvas_API)
+   para dibujar un plato con cena servida.
 
-   The CSS instructions for this page are embedded in the head element except for some
-   examples of inline CSS; one in each opening h1 tag setting the font size, some more
-   in each opening canvas tag setting their borders width, style, and color.
+   Las instrucciones CSS para esta página están incrustadas en el elemento head, excepto algunos ejemplos de CSS en línea;
+   uno en cada etiqueta h1 de apertura que establece el tamaño de fuente, y algunos más en cada etiqueta canvas de apertura
+   que establecen el ancho, estilo y color de sus bordes.
+   Todo el código JavaScript para los canvas está incrustado en el elemento body.
 
-   All the JavaScript code is embedded in the body element.
-   Canvas API article https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API -->
-<html lang="en">
+   EN: A single page project using the Canvas API (https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) to draw a
+   plate with dinner served.
+
+   The CSS instructions for this page are embedded in the head element except for some examples of inline CSS; one in each
+   opening h1 tag setting the font size, some more in each opening canvas tag setting their borders width, style, and color.
+   All the JavaScript code for the canvases is embedded in the body element. -->
+<html lang="es">
   <head>
-    <title lang="es">Projecto 1: Cena</title>
+    <title data-i18n="dinner.title">Proyecto 1: Cena</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
       content="A dinner plate in a canvas. Intended for web development enthusiasts."
+      data-attr="dinner.metaDescription"
     />
     <style>
       :root {
@@ -45,13 +52,14 @@
         font-family: "Courier New", Courier, monospace;
       }
 
-      h1 {
+      h1,
+      h2 {
         margin: 2rem 0 0.7rem;
       }
 
       p {
         width: 83%;
-        max-width: 540px;
+        max-width: 600px;
         margin: 1rem auto 2.3rem;
         line-height: 1.7rem;
         font-size: 1.3rem;
@@ -78,7 +86,8 @@
       }
 
       @media (min-width: 540px) {
-        h1 {
+        h1,
+        h2 {
           margin: 1.3rem 0 0.3rem;
         }
 
@@ -97,7 +106,8 @@
           --footer-height: 75px;
         }
 
-        h1 {
+        h1,
+        h2 {
           margin-top: 2.3rem;
         }
 
@@ -113,19 +123,33 @@
   </head>
 
   <body>
-    <h1 style="font-size: 4.3rem;">Canvas API</h1>
-    <canvas id="myCanvas0" width="300" height="250" style="border: 0.3em ridge grey;"></canvas>
-    <p>Some figures drawn as a demonstration.</p>
+    <h1 style="font-size: 4.3rem" data-i18n="dinner.h1">Canvas API</h1><!-- API de Canvas -->
+    <canvas
+      id="myCanvas0"
+      width="300"
+      height="250"
+      style="border: 0.3em ridge grey"
+    ></canvas>
+    <p data-i18n="dinner.p1">Algunas figuras dibujadas como demostración.</p>
 
-    <h1 style="font-size: 3rem;">Dinner is ready!</h1>
-    <canvas id="myCanvas" width="300" height="250" style="border: 0.3em ridge grey;"></canvas>
-    <p>
-      The cheese holes, tortilla burn marks, and beans are randomly positioned each time the page
-      is loaded.
+    <h2 style="font-size: 3rem" data-i18n="dinner.h2">La cena está lista!</h2>
+    <canvas
+      id="myCanvas"
+      width="300"
+      height="250"
+      style="border: 0.3em ridge grey"
+    ></canvas>
+    <p data-i18n="dinner.p2">
+      Los agujeros del queso, las marcas de quemadura de la tortilla, las marcas
+      de la parrilla del bistec y los frijoles se posicionan aleatoriamente cada
+      vez que se carga la página.
     </p>
 
-    <footer>
-      <small>This is a Canvas API demo intended for web development enthusiasts</small>
+    <footer role="contentinfo" data-innerhtml="shared.footer">
+      <small>
+        Esta es una demostración de la API de Canvas dirigida a entusiastas del
+        desarrollo web
+      </small>
     </footer>
 
     <!-- DEMO FIGURES -->
@@ -346,5 +370,7 @@
         ctx.fill();
       }
     </script>
+
+    <script src="../JS/i18n.js"></script>
   </body>
 </html>

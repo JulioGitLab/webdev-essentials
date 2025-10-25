@@ -1,6 +1,6 @@
 async function loadTranslations(locale) {
   try {
-    const response = await fetch(`./lang/${locale}.json`);
+    const response = await fetch(`./lang/${locale}.json`); // `./...` for prod, `../...` for dev
     if (!response.ok) throw new Error("Translation file not found");
     const translations = await response.json();
     return translations;
