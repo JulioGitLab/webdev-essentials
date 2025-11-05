@@ -1,7 +1,12 @@
 async function loadTranslations(locale) {
   try {
-    const response = await fetch(`./lang/${locale}.json`); // `./...` for prod, `../...` for dev
-    if (!response.ok) throw new Error("Translation file not found");
+    let response = await fetch(`./lang/${locale}.json`); // for index.html
+    if (!response.ok) {
+      console.log("Primary fetch failed; attempting fallback...");
+      response = await fetch(`../lang/${locale}.json`); // for HTML/project-name.html
+      if (!response.ok) throw new Error("Translation file not found");
+    }
+    console.log(`${locale}.json loaded successfully.`);
     const translations = await response.json();
     return translations;
   } catch (error) {
