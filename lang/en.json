@@ -35,5 +35,13 @@
     "p1": "Some figures drawn as a demonstration.",
     "h2": "Dinner is ready!",
     "p2": "The cheese holes, tortilla burn marks, steak grill marks, and beans are randomly positioned each time the page is loaded."
+  },
+  "night": {
+    "title": "Project 2: Night Animation",
+    "metaDescription": "An animated cityscape at night drawn on a canvas. Intended for web development enthusiasts.",
+    "h1": "Night Animation",
+    "p1": "The stars in the background are added in random positions every time the page loads.",
+    "p2": "The comet and shooting star keep reappearing in random positions.",
+    "p3": "Click on the canvas to add stars at the pointer position."
   }
 }

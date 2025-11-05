@@ -1,18 +1,24 @@
 <!doctype html>
-<!-- A single page project using the Canvas API to draw an animated night in the city.
+<!-- ES: Un proyecto de una sola página que utiliza la API de Canvas (https://developer.mozilla.org/es/docs/Web/API/Canvas_API)
+   para dibujar una animación de un paisaje urbano de noche.
+   
+   Todas las instrucciones CSS para esta página están incrustadas en el elemento head.
+   Todo el código JavaScript para el canvas está incrustado en el elemento body.
+   
+   EN: A single page project using the Canvas API (https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) to draw an
+   animation of a cityscape at night.
    
    All the CSS instructions for this page are embedded in the head element.
-   
-   All the JavaScript code is embedded in the body element.
-   Canvas API article https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API -->
-<html lang="en">
+   All the JavaScript code for the canvas is embedded in the body element. -->
+<html lang="es">
   <head>
-    <title lang="es">Proyecto 2: Estrella Fugaz</title>
+    <title data-i18n="night.title">Proyecto 2: Estrella Fugaz</title><!-- Animación Nocturna -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="An animated night in the city drawn in a canvas. Intended as a demo for web development enthusiasts."
+      content="Una animación de un paisaje urbano nocturno dibujado en un canvas. Dirigido a entusiastas del desarrollo web."
+      data-attr="night.metaDescription"
     />
     <style>
       *,
@@ -120,16 +126,27 @@
   </head>
 
   <body>
-    <h1>Night Animation</h1>
+    <h1 data-i18n="night.h1">Animación Nocturna</h1>
 
     <canvas id="myCanvas" width="350" height="350"></canvas>
 
-    <p>Multiple stars in the back are added in random positions every time the page loads.</p>
-    <p>The comet and shooting star keep reappearing in random positions.</p>
-    <p>Click on the canvas to add stars at the pointer position.</p>
+    <p data-i18n="night.p1">
+      Las estrellas en el fondo se añaden en posiciones aleatorias cada vez que
+      se carga la página.
+    </p>
+    <p data-i18n="night.p2">
+      El cometa y la estrella fugaz siguen reapareciendo en posiciones
+      aleatorias.
+    </p>
+    <p data-i18n="night.p3">
+      Haz clic en el canvas para añadir estrellas en la posición del puntero.
+    </p>
 
-    <footer>
-      <small>This is a Canvas API demo intended for web development enthusiasts</small>
+    <footer role="contentinfo" data-innerhtml="shared.footer">
+      <small>
+        Esta es una demostración de la API de Canvas dirigida a entusiastas del
+        desarrollo web
+      </small>
     </footer>
 
     <script>
@@ -262,5 +279,7 @@
       };
       requestAnimationFrame(draw);
     </script>
+
+    <script src="../JS/i18n.js"></script>
   </body>
 </html>

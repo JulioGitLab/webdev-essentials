@@ -35,5 +35,13 @@
     "p1": "Algunas figuras dibujadas como demostración.",
     "h2": "¡La cena está lista!",
     "p2": "Los agujeros del queso, las marcas de quemadura de la tortilla, las marcas de la parrilla del bistec y los frijoles se posicionan aleatoriamente cada vez que se carga la página."
+  },
+  "night": {
+    "title": "Proyecto 2: Animación Nocturna",
+    "metaDescription": "Una animación de un paisaje urbano nocturno dibujado en un canvas. Dirigido a entusiastas del desarrollo web.",
+    "h1": "Animación Nocturna",
+    "p1": "Las estrellas en el fondo se añaden en posiciones aleatorias cada vez que se carga la página.",
+    "p2": "El cometa y la estrella fugaz siguen reapareciendo en posiciones aleatorias.",
+    "p3": "Haz clic en el canvas para añadir estrellas en la posición del puntero."
   }
 }
