@@ -1,17 +1,24 @@
 <!doctype html>
-<!-- A single page project of an animated bird growing in a canvas.
+<!-- ES: Un proyecto de una sola página que utiliza la API de Canvas para dibujar una animación de un pájaro
+   creciendo desproporcionadamente en un canvas.
+
+   Todas las instrucciones CSS para esta página están incrustadas en el elemento head.
+   Todo el código JavaScript para el canvas está incrustado en el elemento body.
+
+   EN: A single-page project using the Canvas API to draw an animation of a bird growing disproportionately
+   on a canvas.
   
    All the CSS instructions for this page are embedded in the head element.
-   
-   All the JavaScript code is embedded in the body element -->
-<html lang="en">
+   All the JavaScript code for the canvas is embedded in the body element. -->
+<html lang="es">
   <head>
-    <title lang="es">Proyecto 3: Ataque Animal</title>
+    <title data-i18n="attack.title">Proyecto 3: Ataque Animal</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="An animated bird growing in a canvas. Intended as a demo for web development enthusiasts."
+      content="Una animación de un pájaro creciendo en un canvas. Dirigido a entusiastas del desarrollo web."
+      data-attr="attack.metaDescription"
     />
     <style>
       *,
@@ -119,17 +126,21 @@
   </head>
 
   <body>
-    <h1>Animal Attack</h1>
+    <h1 data-i18n="attack.h1">Ataque Animal</h1>
 
     <canvas id="aCanvas" width="350" height="350"></canvas>
 
-    <p>
-      The bird's size increases, and when its eyes (which grow faster) cover the whole canvas,
-      everything goes back to its original size and starts growing again.
+    <p data-i18n="attack.p">
+      El tamaño del pájaro aumenta, y cuando sus ojos (que crecen más rápido)
+      cubren todo el canvas, todo vuelve a su tamaño original y comienza a
+      crecer de nuevo.
     </p>
 
-    <footer>
-      <small>This is a Canvas API demo intended for web development enthusiasts</small>
+    <footer role="contentinfo" data-innerhtml="shared.footer">
+      <small>
+        Esta es una demostración de la API de Canvas dirigida a entusiastas del
+        desarrollo web
+      </small>
     </footer>
 
     <script>
@@ -174,7 +185,13 @@
         cx.fill();
         // Wing
         cx.beginPath();
-        cx.arc(bodyX - (bodyW * 1) / 11, bodyY, (bodyW * 3) / 7, 0, Math.PI * 1.4);
+        cx.arc(
+          bodyX - (bodyW * 1) / 11,
+          bodyY,
+          (bodyW * 3) / 7,
+          0,
+          Math.PI * 1.4
+        );
         cx.stroke();
         cx.fill();
         // Beak
@@ -226,5 +243,7 @@
       };
       requestAnimationFrame(draw);
     </script>
+
+    <script src="../JS/i18n.js"></script>
   </body>
 </html>

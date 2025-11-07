@@ -43,5 +43,11 @@
     "p1": "The stars in the background are added in random positions every time the page loads.",
     "p2": "The comet and shooting star keep reappearing in random positions.",
     "p3": "Click on the canvas to add stars at the pointer position."
+  },
+  "attack": {
+    "title": "Project 3: Animal Attack",
+    "metaDescription": "An animation of a bird growing in a canvas. Intended for web development enthusiasts.",
+    "h1": "Animal Attack",
+    "p": "The bird's size increases, and when its eyes (which grow faster) cover the entire canvas, everything returns to its original size and starts growing again."
   }
 }
