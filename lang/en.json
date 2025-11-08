@@ -49,5 +49,14 @@
     "metaDescription": "An animation of a bird growing in a canvas. Intended for web development enthusiasts.",
     "h1": "Animal Attack",
     "p": "The bird's size increases, and when its eyes (which grow faster) cover the entire canvas, everything returns to its original size and starts growing again."
+  },
+  "ad": {
+    "title": "Project 4: Ad",
+    "metaDescription": "An animated ad on a canvas. Intended for web development enthusiasts.",
+    "h1": "Ad",
+    "li1": "The text color changes during the animation.",
+    "li2": "The triangular figure moves from the top-left to the bottom-right as it also grows and changes color.",
+    "li3": "The color of the ellipses changes depending on the mouse position on the canvas.",
+    "li4": "The triangle's movement restarts once it moves out of the canvas, and its colors, as well as those of the text, are reset."
   }
 }

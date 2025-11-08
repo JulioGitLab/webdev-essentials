@@ -49,5 +49,14 @@
     "metaDescription": "Una animación de un pájaro creciendo en un canvas. Dirigido a entusiastas del desarrollo web.",
     "h1": "Ataque Animal",
     "p": "El tamaño del pájaro aumenta, y cuando sus ojos (que crecen más rápido) cubren todo el canvas, todo vuelve a su tamaño original y comienza a crecer de nuevo."
+  },
+  "ad": {
+    "title": "Proyecto 4: Anuncio",
+    "metaDescription": "Un anuncio animado en un canvas. Dirigido a entusiastas del desarrollo web.",
+    "h1": "Anuncio",
+    "li1": "El color del texto cambia durante la animación.",
+    "li2": "La figura triangular se mueve desde la esquina superior izquierda hasta la inferior derecha mientras también crece y cambia de color.",
+    "li3": "El color de los elipses cambia dependiendo de la posición del mouse en el canvas.",
+    "li4": "El movimiento del triángulo se reinicia una vez que sale del canvas, y sus colores, así como los del texto, se reinician."
   }
 }

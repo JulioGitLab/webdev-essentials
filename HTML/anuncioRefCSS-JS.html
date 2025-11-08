@@ -1,39 +1,46 @@
 <!doctype html>
-<!-- A single page project using the Canvas API to draw an animated ad.
-   
-   Both the CSS instructions and JS code for this page are located on their respective
-   .css (/CSS/anuncioSty.css) and .js (/JS/anuncioScr.js) files. -->
-<html lang="en">
+<!-- ES: Un proyecto de una sola página que utiliza la API de Canvas para dibujar un anuncio animado.
+
+   Tanto las instrucciones CSS como el código JS para el canvas en esta página se encuentran en
+   sus respectivos archivos .css (CSS/anuncioSty.css) y .js (JS/anuncioScr.js).
+
+   EN: A single-page project using the Canvas API to draw an animated ad.
+
+   Both the CSS instructions and JS code for the canvas on this page are located in their respective
+   .css (CSS/anuncioSty.css) and .js (JS/anuncioScr.js) files. -->
+<html lang="es">
   <head>
-    <title lang="es">Proyecto 4: Anuncio</title>
+    <title data-i18n="ad.title">Proyecto 4: Anuncio</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="An animated ad. Intended as a demo for web development enthusiasts."
+      content="Un anuncio animado en un canvas. Dirigido a entusiastas del desarrollo web."
+      data-attr="ad.metaDescription"
     />
     <link rel="stylesheet" href="../CSS/anuncioSty.css" />
   </head>
 
   <body>
-    <h1>Ad</h1>
+    <h1 data-i18n="ad.h1">Anuncio</h1>
 
     <canvas id="aCanvas" width="350" height="350"></canvas>
 
     <ul>
-      <li>
-        The text color changes during the animation.
+      <li data-i18n="ad.li1">
+        El color del texto cambia durante la animación.
       </li>
-      <li>
-        The triangular figure moves from the top-left to the bottom-right as it also grows and
-        changes color.
+      <li data-i18n="ad.li2">
+        La figura triangular se mueve desde la esquina superior izquierda hasta
+        la inferior derecha mientras también crece y cambia de color.
       </li>
-      <li>
-        The ellipses color changes depending on the mouse position in the canvas.
+      <li data-i18n="ad.li3">
+        El color de los elipses cambia dependiendo de la posición del mouse en
+        el canvas.
       </li>
-      <li>
-        The triangle movement restarts once it moves out of the canvas and its colors as well as
-        those of the text are reset.
+      <li data-i18n="ad.li4">
+        El movimiento del triángulo se reinicia una vez que sale del canvas, y
+        sus colores, así como los del texto, se reinician.
       </li>
     </ul>
     <!-- ALternative description. Must uncomment in CSS file too -->
@@ -46,10 +53,14 @@
       those of the text are reset.
     </p> -->
 
-    <footer>
-      <small>This is a Canvas API demo intended for web development enthusiasts</small>
+    <footer role="contentinfo" data-innerhtml="shared.footer">
+      <small>
+        Esta es una demostración de la API de Canvas dirigida a entusiastas del
+        desarrollo web
+      </small>
     </footer>
 
     <script src="../JS/anuncioScr.js"></script>
+    <script src="../JS/i18n.js"></script>
   </body>
 </html>
