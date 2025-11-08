@@ -76,14 +76,6 @@ li::before {
   font-size: 1.9em;
 }
 
-/* For alternative description */
-/* p {
-   color:whitesmoke;
-   font-family:'Courier New';
-   font-size:small;
-   text-align:justify;
-} */
-
 footer {
   height: 60px;
   margin-top: auto;
