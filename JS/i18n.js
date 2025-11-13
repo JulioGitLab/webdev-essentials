@@ -30,16 +30,13 @@ function applyTranslations(translations) {
   const metaValue = resolvePath(translations, metaKey);
   if (metaValue) metaDescription.setAttribute("content", metaValue);
 
-  document.querySelectorAll("[data-i18n]").forEach((el) => {
-    const key = el.getAttribute("data-i18n");
+  document.querySelectorAll("[data-i18n], [data-i18n-html]").forEach((el) => {
+    // const key = el.getAttribute("data-i18n") || el.getAttribute("data-i18n-html");
+    const key = el.dataset.i18n || el.dataset.i18nHtml;
     const value = resolvePath(translations, key);
-    if (value) el.textContent = value;
+    // if (value) el[el.getAttribute("data-i18n") ? "textContent" : "innerHTML"] = value;
+    if (value) el[el.dataset.i18n ? "textContent" : "innerHTML"] = value;
   });
-
-  const footer = document.querySelector("footer");
-  const footerKey = footer.getAttribute("data-innerhtml");
-  const footerValue = resolvePath(translations, footerKey);
-  if (footerValue) footer.innerHTML = footerValue;
 }
 
 async function initTranslation() {
