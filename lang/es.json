@@ -58,5 +58,15 @@
     "li2": "La figura triangular se mueve desde la esquina superior izquierda hasta la inferior derecha mientras también crece y cambia de color.",
     "li3": "El color de los elipses cambia dependiendo de la posición del mouse en el canvas.",
     "li4": "El movimiento del triángulo se reinicia una vez que sale del canvas, y sus colores, así como los del texto, se reinician."
+  },
+  "fishbowl": {
+    "title": "Proyecto 5: Pecera",
+    "metaDescription": "Una pecera interactiva dibujada con la biblioteca processing.js. Diseñado para entusiastas del desarrollo web.",
+    "h1": "Pecera",
+    "p1": "Este es un lienzo <em>interactivo</em> creado con la biblioteca <em>processing.js</em>.",
+    "p2": "Todos los <em>colores</em> se establecen <em>aleatoriamente</em> cuando se carga la página, excepto el fondo, el cuerpo del pez y la boca.",
+    "p3": "Las <em>posiciones</em> de todas las <em>figuras</em> también son aleatorias.",
+    "p4": "¡Haz clic en el lienzo para agregar <em>nuevas burbujas</em> en posiciones aleatorias!",
+    "footer": "<small>Esta es una demostración de la biblioteca processing.js dirigida a entusiastas del desarrollo web.</small>"
   }
 }

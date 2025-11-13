@@ -58,5 +58,15 @@
     "li2": "The triangular figure moves from the top-left to the bottom-right as it also grows and changes color.",
     "li3": "The color of the ellipses changes depending on the mouse position on the canvas.",
     "li4": "The triangle's movement restarts once it moves out of the canvas, and its colors, as well as those of the text, are reset."
+  },
+  "fishbowl": {
+    "title": "Project 5: Fishbowl",
+    "metaDescription": "An interactive fishbowl drawn using the processing.js library. Intended for web development enthusiasts.",
+    "h1": "Fishbowl",
+    "p1": "This is an <em>interactive</em> canvas created with the <em>processing.js</em> library.",
+    "p2": "All the <em>colors</em> are set <em>randomly</em> when the page loads, except for the background, fish body, and mouth.",
+    "p3": "The <em>positions</em> of all the <em>figures</em> are also random.",
+    "p4": "Click on the canvas to add <em>new bubbles</em> in random positions!",
+    "footer": "<small>This is a demo of the processing.js library, designed for web development enthusiasts.</small>"
   }
 }
