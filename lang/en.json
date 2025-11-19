@@ -68,5 +68,25 @@
     "p3": "The <em>positions</em> of all the <em>figures</em> are also random.",
     "p4": "Click on the canvas to add <em>new bubbles</em> in random positions!",
     "footer": "<small>This is a demo of the processing.js library, designed for web development enthusiasts.</small>"
+  },
+  "survey": {
+    "title": "Project 6: Coders survey",
+    "metaDescription": "Project on how to create a form. Intended for web development enthusiasts.",
+    "h1": "Coders Survey",
+    "p": "Please take the time to help us improve",
+    "name": "Name: <input id='name' name='name' type='text' placeholder='full name' required />",
+    "email": "Email: <input id='email' name='email' type='email' placeholder='email@email.com' required />",
+    "number": "Age (number):",
+    "dropdown": "Do you code?",
+    "opt1": "select",
+    "opt2": "Yes",
+    "opt3": "What?",
+    "radio": "Do you want to be better?",
+    "yeah": "Yeah!",
+    "oc": "Of course!",
+    "legend": "Which technologies do you know?",
+    "comment": "Any comments?:<textarea id='comment' name='comment' rows='5' cols='31' placeholder='I think...' ></textarea>",
+    "submit": "<input id='submit' type='submit' value='Send' />",
+    "footer": "<small>This is a form creation demo intended for web development enthusiasts.</small>"
   }
 }

@@ -68,5 +68,25 @@
     "p3": "Las <em>posiciones</em> de todas las <em>figuras</em> también son aleatorias.",
     "p4": "¡Haz clic en el lienzo para agregar <em>nuevas burbujas</em> en posiciones aleatorias!",
     "footer": "<small>Esta es una demostración de la biblioteca processing.js dirigida a entusiastas del desarrollo web.</small>"
+  },
+  "survey": {
+    "title": "Proyecto 6: Encuesta para programadores",
+    "metaDescription": "Proyecto sobre cómo crear un formulario. Dirigido a entusiastas del desarrollo web.",
+    "h1": "Encuesta para Programadores",
+    "p": "Por favor, tómate un momento para ayudarnos a mejorar",
+    "name": "Nombre: <input id='name' name='name' type='text' placeholder='nombre completo' required />",
+    "email": "Correo electrónico: <input id='email' name='email' type='email' placeholder='correo@email.com' required />",
+    "number": "Edad (número):",
+    "dropdown": "¿Programas?",
+    "opt1": "elige",
+    "opt2": "Sí",
+    "opt3": "¿Qué?",
+    "radio": "¿Quieres mejorar?",
+    "yeah": "¡Sí!",
+    "oc": "¡Por supuesto!",
+    "legend": "¿Qué tecnologías conoces?",
+    "comment": "¿Algún comentario?:<textarea id='comment' name='comment' rows='5' cols='31' placeholder='Considero que...' ></textarea>",
+    "submit": "<input id='submit' type='submit' value='Enviar' />",
+    "footer": "<small>Esta es una demostración de creación de formularios dirigida a entusiastas del desarrollo web.</small>"
   }
 }

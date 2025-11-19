@@ -1,44 +1,72 @@
 <!doctype html>
-<!-- This project demonstrates the process of creating a form and showcases how its components interact with each other. -->
-<html lang="en">
+<!-- ES: Este proyecto demuestra el proceso de creación de un formulario y muestra cómo interactúan sus componentes entre sí.
+   EN: This project demonstrates the process of creating a form and showcases how its components interact with each other. -->
+<html lang="es">
   <head>
-    <title lang="es">Proyecto 6: Encuesta Para Programadores</title>
+    <title data-i18n="survey.title">
+      Proyecto 6: Encuesta Para Programadores
+    </title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Project on how to create a form. Intended as a demo for web development enthusiasts"
+      content="Proyecto sobre cómo crear un formulario. Dirigido a entusiastas del desarrollo web."
+      data-attr="survey.metaDescription"
     />
     <link rel="stylesheet" href="../CSS/style.css" />
   </head>
 
   <body>
     <main>
-      <h1 id="title">Coders Survey</h1>
-      <p id="description">Please take the time to help us improve</p>
+      <h1 id="title" data-i18n="survey.h1">Encuesta para Programadores</h1>
+      <p id="description" data-i18n="survey.p">
+        Por favor, tómate un momento para ayudarnos a mejorar
+      </p>
       <form id="survey-form">
-        <label for="name" id="name-label">
-          Name: <input id="name" name="name" type="text" placeholder="full name" required />
+        <label for="name" id="name-label" data-i18n-html="survey.name">
+          Nombre:
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="nombre completo"
+            required
+          />
         </label>
-        <label for="email" id="email-label">
-          Email:
-          <input id="email" name="email" type="email" placeholder="email@email.com" required />
+        <label for="email" id="email-label" data-i18n-html="survey.email">
+          Correo electrónico:
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="correo@email.com"
+            required
+          />
         </label>
         <label for="number" id="number-label">
-          Age (number):
-          <input id="number" name="number" type="number" min="13" max="99" placeholder="13-99" />
+          <span data-i18n="survey.number">Edad (número):</span>
+          <input
+            id="number"
+            name="number"
+            type="number"
+            min="13"
+            max="99"
+            placeholder="13-99"
+          />
         </label>
         <label for="dropdown">
-          Do you code?
+          <span data-i18n="survey.dropdown">¿Programas?</span>
           <select id="dropdown" name="dropdown">
-            <option hidden disabled selected value="">select</option>
-            <option value="yes">Yes</option>
+            <option hidden disabled selected value="" data-i18n="survey.opt1">
+              elige
+            </option>
+            <option value="yes" data-i18n="survey.opt2">Sí</option>
             <option value="no">No</option>
-            <option value="what">What?</option>
+            <option value="what" data-i18n="survey.opt3">¿Qué?</option>
           </select>
         </label>
         <label class="mw380px">
-          Do you want to be better?
+          <span data-i18n="survey.radio">¿Quieres mejorar?</span>
           <span class="mw70px">
             <input
               id="yeah"
@@ -47,7 +75,7 @@
               value="yeah"
               class="inline"
               checked
-            /><span class="fw400">Yeah!</span>
+            /><span class="fw400" data-i18n="survey.yeah">¡Sí!</span>
           </span>
           <span class="mw70px">
             <input
@@ -56,34 +84,59 @@
               type="radio"
               value="oc"
               class="inline"
-            /><span class="fw400">Of course!</span>
+            /><span class="fw400" data-i18n="survey.oc">¡Por supuesto!</span>
           </span>
         </label>
         <fieldset>
-          <legend>Which technologies do you know?</legend>
-          <input id="opt1" name="tech" type="checkbox" value="html" class="inline" />
+          <legend data-i18n="survey.legend">¿Qué tecnologías conoces?</legend>
+          <input
+            id="opt1"
+            name="tech"
+            type="checkbox"
+            value="html"
+            class="inline"
+          />
           <label for="opt1"><span class="fw400">HTML</span></label>
-          <input id="opt2" name="tech" type="checkbox" value="css" class="inline" />
+          <input
+            id="opt2"
+            name="tech"
+            type="checkbox"
+            value="css"
+            class="inline"
+          />
           <label for="opt2"><span class="fw400">CSS</span></label>
-          <input id="opt3" name="tech" type="checkbox" value="js" class="inline" />
+          <input
+            id="opt3"
+            name="tech"
+            type="checkbox"
+            value="js"
+            class="inline"
+          />
           <label for="opt3"><span class="fw400">JavaScript</span></label>
         </fieldset>
-        <label for="comment">
-          Any comments?:
+        <label for="comment" data-i18n-html="survey.comment">
+          ¿Algún comentario?:
           <textarea
             id="comment"
             name="comment"
             rows="5"
             cols="31"
-            placeholder="I think..."
+            placeholder="Yo creo que..."
           ></textarea>
         </label>
         <!-- <label for=""><input id="" name="" type="" /></label> -->
-        <input id="submit" type="submit" value="Send" />
+        <span data-i18n-html="survey.submit">
+          <input id="submit" type="submit" value="Enviar"/>
+        </span>
       </form>
     </main>
-    <footer>
-      <small>This is a form creation demo intended for web development enthusiasts</small>
+    <footer role="contentinfo" data-i18n-html="survey.footer">
+      <small>
+        Esta es una demostración de creación de formularios dirigida a
+        entusiastas del desarrollo web.
+      </small>
     </footer>
   </body>
+
+  <script src="../JS/i18n.js"></script>
 </html>
