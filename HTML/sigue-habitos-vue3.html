@@ -1,13 +1,39 @@
 <!doctype html>
+<!-- ES: Este proyecto muestra un rastreador de hábitos sencillo construido con Vue.js, usando la Options API y la sintaxis HTML.
+
+   Por simplicidad, Vue se carga desde un CDN mediante módulos ES nativos. El código de la aplicación está incrustado
+   directamente en el HTML e incluye un componente separado en un archivo JS para ilustrar la división y montaje de módulos.
+
+   EN: This project showcases a simple habits tracker built with Vue.js, using the Options API and HTML syntax.
+
+   For simplicity, Vue is loaded from a CDN via native ES modules. The app code is embedded directly in the HTML and includes
+   a separate component in a JS file to illustrate module splitting and mounting. -->
 <html lang="es">
   <head>
     <title>Proyecto 16: Monitor de Hábitos</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Proyecto que muestra cómo crear una aplicación de seguimiento de hábitos con Vue.js utilizando la Options API, módulos ES y división de componentes. Dirigido a entusiastas del desarrollo web."
+    />
+    <!-- Project showcasing how to build a habits tracker app with Vue.js using Options API, ES modules, and component splitting. Intended for web development enthusiasts. -->
     <link rel="stylesheet" href="../CSS/sigue-habitos-style.css" />
   </head>
 
   <body>
-    
+    <div id="app">{{ msg }}</div>
+
+    <script type="module">
+      import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+
+      createApp({
+        data() {
+          return {
+            msg: "Hola Vue!"
+          };
+        }
+      }).mount("#app");
+    </script>
   </body>
 </html>
