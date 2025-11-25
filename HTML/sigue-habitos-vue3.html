@@ -22,7 +22,47 @@
   </head>
 
   <body>
-    <div id="app">{{ msg }}</div>
+    <div id="app" class="container" aria-live="polite">
+      <h1>Monitor de Hábitos</h1>
+
+      <form v-on:submit.prevent="addHabit">
+        <div>
+          <label>¿Qué hábito quieres monitorear?</label>
+          <input
+            type="text"
+            v-model="form.name"
+            placeholder="e.g., Leer, Caminar, No fumar, etc."
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label>¿Cuando quieres empezar?</label>
+          <input type="date" v-model="form.startDate" required />
+        </div>
+
+        <div class="form-group">
+          <label>
+            ¿Quieres contar desde el día uno o hacia atrás hasta una fecha
+            objetivo
+          </label>
+          <select v-model="form.mode">
+            <option value="indefinite">Empezando el día uno</option>
+            <option value="timed">Hasta una fecha objetivo</option>
+          </select>
+        </div>
+
+        <div v-if="form.mode === 'timed'" class="form-group">
+          <label>¿Cuál es la fecha objetivo?</label>
+          <input type="date" v-model="form.targetDate" required />
+        </div>
+
+        <div class="form-actions">
+          <button type="submit">Agregar</button>
+          <div class="muted">Hábitos en progreso: {{ habits.length }}</div>
+        </div>
+      </form>
+    </div>
 
     <script type="module">
       import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
@@ -30,7 +70,13 @@
       createApp({
         data() {
           return {
-            msg: "Hola Vue!"
+            habits: [],
+            form: {
+              name: "",
+              startDate: new Date().toISOString().slice(0, 10),
+              mode: "indefinite",
+              targetDate: new Date().toISOString().slice(0, 10)
+            }
           };
         }
       }).mount("#app");
