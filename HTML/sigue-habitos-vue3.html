@@ -59,6 +59,7 @@
 
         <div class="form-actions">
           <button type="submit">Agregar</button>
+          <button type="reset">Reiniciar</button>
           <div class="muted">Hábitos en progreso: {{ habits.length }}</div>
         </div>
       </form>
@@ -78,6 +79,62 @@
               targetDate: new Date().toISOString().slice(0, 10)
             }
           };
+        },
+        methods: {
+          // Unique ID
+          uid() {
+            return (
+              Date.now().toString(36) + Math.random().toString(36).slice(2, 6)
+            );
+          },
+          // Add habit method with timed mode validation
+          addHabit() {
+            const startMs = new Date(this.form.startDate).getTime();
+            if (isNaN(startMs)) return alert("Fecha de inicio inválida");
+
+            let targetMs = null;
+            if (this.form.mode === "timed") {
+              targetMs = new Date(this.form.targetDate).getTime();
+              if (isNaN(targetMs)) return alert("Fecha objetivo inválida");
+              if (targetMs <= startMs) {
+                return alert(
+                  "La fecha objetivo debe ser posterior a la fecha de inicio."
+                );
+              }
+            }
+
+            this.habits.push({
+              id: this.uid(),
+              name: (this.form.name || "Untitled").trim(),
+              start: startMs,
+              mode: this.form.mode,
+              target: targetMs,
+              active: true,
+              logs: [],
+              showLogs: false
+            });
+            console.table(
+              this.habits.map((h) => ({
+                id: h.id,
+                name: h.name,
+                start: new Date(h.start).toISOString().slice(0, 10),
+                mode: h.mode,
+                target: h.target
+                  ? new Date(h.target).toISOString().slice(0, 10)
+                  : null,
+                active: h.active
+              }))
+            );
+
+            this.resetForm();
+          },
+
+          resetForm() {
+            this.form.name = "";
+            this.form.startDate = new Date().toISOString().slice(0, 10);
+            this.form.mode = "indefinite";
+            this.form.targetDate = new Date().toISOString().slice(0, 10);
+          }
         }
       }).mount("#app");
     </script>
