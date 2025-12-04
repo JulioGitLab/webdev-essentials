@@ -80,6 +80,13 @@
             }
           };
         },
+        computed: {
+          sortedHabits() {
+            return [...this.habits].sort(
+              (a, b) => (b.start || 0) - (a.start || 0)
+            );
+          }
+        },
         watch: {
           // When startDate changes, if mode is timed set targetDate to next day
           "form.startDate"(newStart) {
