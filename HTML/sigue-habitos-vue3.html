@@ -80,7 +80,20 @@
             }
           };
         },
+        watch: {
+          // When startDate changes, if mode is timed set targetDate to next day
+          "form.startDate"(newStart) {
+            if (this.form.mode !== "timed") return;
+            this.form.targetDate = this.nextDayStr(newStart);
+          },
 
+          // When mode switches to timed, set targetDate to startDate + 1 day
+          "form.mode"(newMode) {
+            if (newMode === "timed") {
+              this.form.targetDate = this.nextDayStr(this.form.startDate);
+            }
+          }
+        },
         methods: {
           // Unique ID
           uid() {
@@ -158,21 +171,6 @@
             this.form.startDate = new Date().toISOString().slice(0, 10);
             this.form.mode = "indefinite";
             this.form.targetDate = new Date().toISOString().slice(0, 10);
-          }
-        },
-
-        watch: {
-          // When startDate changes, if mode is timed set targetDate to next day
-          "form.startDate"(newStart) {
-            if (this.form.mode !== "timed") return;
-            this.form.targetDate = this.nextDayStr(newStart);
-          },
-
-          // When mode switches to timed, set targetDate to startDate + 1 day
-          "form.mode"(newMode) {
-            if (newMode === "timed") {
-              this.form.targetDate = this.nextDayStr(this.form.startDate);
-            }
           }
         }
       }).mount("#app");
