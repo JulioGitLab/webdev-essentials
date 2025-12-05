@@ -67,6 +67,21 @@
       <div v-if="habits.length === 0" class="muted no-habits">
         Agrega un hábito para empezar.
       </div>
+
+      <div v-for="habit in sortedHabits" :key="habit.id" class="habit">
+        <div class="meta">
+          <div>
+            <strong>{{ habit.name }}</strong>
+            <span class="small">
+              ({{ habit.mode === "indefinite" ? "Indefinido" : "Temporal" }})
+            </span>
+          </div>
+          <div class="small" v-if="habit.mode === 'indefinite'">
+            <span>Inicio: {{ dateStrFromDayMs(habit.start) }}</span>
+            <span> ({{ daysFromStart(habit.start) }})</span>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script type="module">
@@ -133,6 +148,17 @@
             const dayMs = this.dayMsFromDateStr(dateStr);
             const nextDayMs = dayMs + 24 * 60 * 60 * 1000;
             return this.dateStrFromDayMs(nextDayMs);
+          },
+
+          // compute days from start to today's date
+          daysFromStart(startMs) {
+            const todayMs = Date.now();
+            const differenceMs = todayMs - startMs;
+            const days =
+              differenceMs <= 0
+                ? 0
+                : Math.ceil(differenceMs / 24 / 60 / 60 / 1000);
+            return `${days} ${days > 1 ? "días" : "dia"}`;
           },
 
           // Add habit with target date validation and logging
