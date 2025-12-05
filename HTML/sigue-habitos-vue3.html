@@ -63,6 +63,10 @@
           <div class="muted">Hábitos en progreso: {{ habits.length }}</div>
         </div>
       </form>
+
+      <div v-if="habits.length === 0" class="muted no-habits">
+        Agrega un hábito para empezar.
+      </div>
     </div>
 
     <script type="module">
