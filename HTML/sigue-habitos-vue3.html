@@ -80,6 +80,10 @@
             <span>Inicio: {{ dateStrFromDayMs(habit.start) }}</span>
             <span> ({{ daysFromStart(habit.start) }})</span>
           </div>
+          <div class="small" v-if="habit.mode === 'timed'">
+            <span>Objetivo: {{ dateStrFromDayMs(habit.target) }}</span>
+            <span> ({{ daysLeft(habit.target) }})</span>
+          </div>
         </div>
       </div>
     </div>
@@ -152,13 +156,26 @@
 
           // compute days from start to today's date
           daysFromStart(startMs) {
-            const todayMs = Date.now();
-            const differenceMs = todayMs - startMs;
+            const differenceMs = Date.now() - startMs;
             const days =
               differenceMs <= 0
                 ? 0
                 : Math.ceil(differenceMs / 24 / 60 / 60 / 1000);
             return `${days} ${days > 1 ? "días" : "dia"}`;
+          },
+
+          // compute days from today to target date
+          daysLeft(targetMs) {
+            const targetDays = Math.ceil(
+              (targetMs - Date.now()) / 24 / 60 / 60 / 1000
+            );
+            return targetDays > 1
+              ? `en ${targetDays} días`
+              : targetDays === 1
+                ? "¡mañana!"
+                : targetDays === 0
+                  ? "¡hoy!"
+                  : `Completado hace ${-targetDays} días`;
           },
 
           // Add habit with target date validation and logging
