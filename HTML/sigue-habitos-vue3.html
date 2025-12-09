@@ -59,7 +59,7 @@
 
         <div class="form-actions">
           <button type="submit">Agregar</button>
-          <button type="reset">Reiniciar</button>
+          <button type="button" v-on:click="resetForm">Reiniciar</button>
           <div class="muted">Hábitos en progreso: {{ habits.length }}</div>
         </div>
       </form>
@@ -99,7 +99,7 @@
               name: "",
               startDate: new Date().toISOString().slice(0, 10),
               mode: "indefinite",
-              targetDate: new Date().toISOString().slice(0, 10)
+              targetDate: null
             }
           };
         },
@@ -224,7 +224,7 @@
             this.form.name = "";
             this.form.startDate = new Date().toISOString().slice(0, 10);
             this.form.mode = "indefinite";
-            this.form.targetDate = new Date().toISOString().slice(0, 10);
+            this.form.targetDate = null;
           }
         }
       }).mount("#app");
