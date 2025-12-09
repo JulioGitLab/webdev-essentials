@@ -86,6 +86,10 @@
           </div>
         </div>
       </div>
+
+      <div v-if="habits.length > 0">
+        <button type="button" v-on:click="clearAll">BORRAR TODO</button>
+      </div>
     </div>
 
     <script type="module">
@@ -225,6 +229,12 @@
             this.form.startDate = new Date().toISOString().slice(0, 10);
             this.form.mode = "indefinite";
             this.form.targetDate = null;
+          },
+
+          clearAll() {
+            if (confirm("¿Deseas eliminar todos los hábitos registrados?")) {
+              this.habits.length = 0;
+            }
           }
         }
       }).mount("#app");
