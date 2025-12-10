@@ -26,7 +26,7 @@
       <h1>Monitor de Hábitos</h1>
 
       <form v-on:submit.prevent="addHabit">
-        <div>
+        <div class="form-group">
           <label>¿Qué hábito quieres monitorear?</label>
           <input
             type="text"
@@ -44,7 +44,7 @@
         <div class="form-group">
           <label>
             ¿Quieres contar desde el día uno o hacia atrás hasta una fecha
-            objetivo
+            objetivo?
           </label>
           <select v-model="form.mode">
             <option value="indefinite">Empezando el día uno</option>
@@ -60,9 +60,10 @@
         <div class="form-actions">
           <button type="submit">Agregar</button>
           <button type="button" v-on:click="resetForm">Reiniciar</button>
-          <div class="muted">Hábitos en progreso: {{ habits.length }}</div>
         </div>
       </form>
+      
+      <div class="muted">Hábitos en progreso: {{ habits.length }}</div>
 
       <div v-if="habits.length === 0" class="muted no-habits">
         Agrega un hábito para empezar.
