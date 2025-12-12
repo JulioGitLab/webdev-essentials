@@ -62,8 +62,8 @@
           <button type="button" v-on:click="resetForm">Reiniciar</button>
         </div>
       </form>
-      
-      <div class="muted">Hábitos en progreso: {{ habits.length }}</div>
+
+      <div class="muted">Registros: <b>{{ habits.length }}</b></div>
 
       <div v-if="habits.length === 0" class="muted no-habits">
         Agrega un hábito para empezar.
@@ -205,10 +205,9 @@
               start: startMs,
               mode: this.form.mode,
               target: targetMs,
-              active: true,
-              logs: [],
-              showLogs: false
+              active: true
             });
+
             console.table(
               this.habits.map((h) => ({
                 id: h.id,

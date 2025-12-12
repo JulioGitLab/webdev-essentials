@@ -141,3 +141,14 @@ button:hover {
 button:active {
   transform: scale(0.97);
 }
+
+.muted {
+  width: max-content;
+  margin: 0 auto;
+  border: 1px ridge var(--highlight-text-color);
+  border-radius: 7px;
+  padding: 0.3rem 0.7rem 0.2rem;
+  text-align: center;
+  font-size: 13px;
+  color: var(--highlight-text-color);
+}
