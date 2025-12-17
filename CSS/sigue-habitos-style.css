@@ -153,11 +153,28 @@ button:active {
   color: var(--highlight-text-color);
 }
 
-.no-habits {
+.no-habits,
+.habit {
   border: 3px solid aquamarine;
   border-radius: 7px;
-  padding: 17px;
   background-color: var(--highlight-text-color);
-  font-size: 1.7rem;
   color: aquamarine;
+  font-size: 1.7rem;
+}
+
+.no-habits {
+  padding: 17px;
+}
+
+.habit {
+  margin-bottom: 0.7rem;
+  padding: 13px;
+}
+
+.habit-main {
+  margin-bottom: 0.2rem;
+}
+
+.small {
+  font-size: 1.3rem;
 }

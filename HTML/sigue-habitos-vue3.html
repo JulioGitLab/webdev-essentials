@@ -71,7 +71,7 @@
 
       <div v-for="habit in sortedHabits" :key="habit.id" class="habit">
         <div class="meta">
-          <div>
+          <div class="habit-main">
             <strong>{{ habit.name }}</strong>
             <span class="small">
               ({{ habit.mode === "indefinite" ? "Indefinido" : "Temporal" }})
@@ -99,7 +99,33 @@
       createApp({
         data() {
           return {
-            habits: [],
+            habits: [ // for preloaded data
+              {
+                id: "test1",
+                name: "Leer antes de dormir por un mes",
+                start: new Date().getTime(),
+                mode: "timed",
+                target: new Date().setMonth(new Date().getMonth() + 1),
+                active: true
+              },
+              {
+                id: "test2",
+                name: "Caminar al menos 3 km al día",
+                start: new Date().getTime(),
+                mode: "indefinite",
+                target: null,
+                active: true
+              },
+              {
+                id: "test3",
+                name: "No fumar",
+                start: new Date(Date.now() - 6 * 24 * 60 * 60 * 1000),
+                mode: "indefinite",
+                target: null,
+                active: true
+              }
+            ],
+            // habits: [], // for empty data
             form: {
               name: "",
               startDate: new Date().toISOString().slice(0, 10),
