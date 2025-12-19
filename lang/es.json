@@ -15,7 +15,8 @@
       "line": "Tres en Línea",
       "memory": "Memojirama",
       "ortho": "Ortoedro Giratorio",
-      "palindrome": "Verificador de Palíndromos"
+      "palindrome": "Verificador de Palíndromos",
+      "habits": "Monitor de Hábitos"
     },
     "footer": "<small>Esta es una demostración de la API de Canvas dirigida a entusiastas del desarrollo web.</small>"
   },

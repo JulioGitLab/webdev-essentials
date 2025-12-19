@@ -15,7 +15,8 @@
       "line": "Tic-Tac-Toe",
       "memory": "Memoji Quest",
       "ortho": "Rotating Orthohedron",
-      "palindrome": "Palindrome Checker"
+      "palindrome": "Palindrome Checker",
+      "habits": "Habits Tracker"
     },
     "footer": "<small>This is a Canvas API demo intended for web development enthusiasts.</small>"
   },
